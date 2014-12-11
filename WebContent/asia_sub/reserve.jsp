@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -15,6 +14,7 @@
 <script>
 	var lea_city = "";
 	var arr_city = "";
+	var res_sig_dou = "왕복";
 	$.datepicker.setDefaults({
 		dateFormat : 'yy-mm-dd'
 	});
@@ -35,7 +35,7 @@
 			
 			$('.btn-type-1 span').css('background' ,'url("img/bg_typeL_off.gif") no-repeat left 0');
 			$('.btn-type-1 a').css('background' ,'url("img/bg_typeR_off.gif") no-repeat right 0').css('color','#333').css('padding', '0 29px 0 26px');
-			
+			res_sig_dou = "편도";
 		});
 		
 		//왕복 클릭시
@@ -47,7 +47,7 @@
 			
 			$('.btn-type-2 span').css('background' ,'url("img/bg_typeL_off.gif") no-repeat left 0');
 			$('.btn-type-2 a').css('background' ,'url("img/bg_typeR_off.gif") no-repeat right 0').css('color','#333').css('padding', '0 29px 0 26px');
-			
+			res_sig_dou = "왕복";
 		});
 		
 		// 도시선택 리스트UI 값 저장함수
@@ -120,15 +120,17 @@
 	}
 	
 	function submit_form() {
-		docu6ment.frm.submit();
+		var lea_time = $('#datepicker').val();
+		var arr_time = $('#datepicker1').val();
+		var res_count = $('#adultCount option:selected').text().replace('명','');
+		location.href="./reserve2.re?lea_city="+lea_city+"&arr_city="+arr_city+"&res_sig_dou="+res_sig_dou+"&lea_time="+lea_time+"&arr_time="+arr_time+"&res_count="+res_count;
 	}
 </script>
-
 <style type="text/css">
 </style>
 </head>
 <body>
-<form action="reserve2.jsp" method="post" name="frm">
+<form method="post">
 	<header>
 		<jsp:include page="../asiana_inc/header.jsp" />
 	</header>

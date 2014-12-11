@@ -9,4 +9,14 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>main.jsp</welcome-file>
   </welcome-file-list>
+  
+  <servlet>
+  	<servlet-name>ReservationController</servlet-name>
+  	<servlet-class>com.cafe24.itwill3.ReservationController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>ReservationController</servlet-name>
+  	<url-pattern>*.re</url-pattern>
+  </servlet-mapping>
 </web-app>

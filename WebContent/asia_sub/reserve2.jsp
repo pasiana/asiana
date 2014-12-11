@@ -1,10 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%
+		String lea_city = request.getParameter("lea");
+	%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>예매2</title>
+<title></title>
 <link type="text/css" rel="stylesheet" href="css/reserve2.css">
 <script src="js/jquery-1.11.1.js"></script>
 <style type="text/css">
