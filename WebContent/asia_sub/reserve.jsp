@@ -12,16 +12,21 @@
 <link rel="stylesheet" href="/resources/demos/style.css">
 <link type="text/css" rel="stylesheet" href="css/reserve.css">
 <script>
-	var lea_city = "";
-	var arr_city = "";
+	var lea_city = "김포";
+	var arr_city = "제주";
 	var res_sig_dou = "왕복";
+	var date = new Date();
+	var lea_time = date.getFullYear()+"/"+new String(date.getMonth()+1)+"/"+date.getDate();
+	var arr_time = date.getFullYear()+"/"+new String(date.getMonth()+1)+"/"+date.getDate();
 	$.datepicker.setDefaults({
 		dateFormat : 'yy-mm-dd'
 	});
 	$(function() {
+		$("#datepicker").val(lea_time);
 		$("#datepicker").datepicker();
 	});
 	$(function() {
+		$("#datepicker1").val(arr_time);
 		$("#datepicker1").datepicker();
 	});
 	
@@ -120,10 +125,16 @@
 	}
 	
 	function submit_form() {
-		var lea_time = $('#datepicker').val();
-		var arr_time = $('#datepicker1').val();
+		lea_time = $('#datepicker').val();
+		arr_time = $('#datepicker1').val();
 		var res_count = $('#adultCount option:selected').text().replace('명','');
-		location.href="./reserve2.re?lea_city="+lea_city+"&arr_city="+arr_city+"&res_sig_dou="+res_sig_dou+"&lea_time="+lea_time+"&arr_time="+arr_time+"&res_count="+res_count;
+		var url = "";
+		if(res_sig_dou == "왕복") {
+			url="./reserve2.re?lea_city="+lea_city+"&arr_city="+arr_city+"&res_sig_dou="+res_sig_dou+"&lea_time="+lea_time+"&arr_time="+arr_time+"&res_count="+res_count;
+		} else {
+			url="./reserve2.re?lea_city="+lea_city+"&arr_city="+arr_city+"&res_sig_dou="+res_sig_dou+"&lea_time="+lea_time+"&res_count="+res_count;
+		}
+		location.href=url;
 	}
 </script>
 <style type="text/css">
@@ -192,7 +203,7 @@
 						<div id="departureAirportBox" class="selectLocalBox">
 							<ul class="selectLocalInner" id="ul_Dep_Airport">
 								<li class="list"><a href="#none">광주</a></li>
-								<li class="list"><a href="#none">김포</a></li>
+								<li class="list"><a href="#none" style="background:url('img/bg_select.gif');">김포</a></li>
 								<li class="list"><a href="#none">대구</a></li>
 								<li class="list"><a href="#none">무안</a></li>
 								<li class="list"><a href="#none">부산</a></li>
@@ -223,7 +234,7 @@
 								<li class="list"><a href="#none">여수</a></li>
 								<li class="list"><a href="#none">울산</a></li>
 								<li class="list"><a href="#none">인천</a></li>
-								<li class="list"><a href="#none">제주</a></li>
+								<li class="list"><a href="#none" style="background:url('img/bg_select.gif');">제주</a></li>
 								<li class="list"><a href="#none">진주</a></li>
 								<li class="list"><a href="#none">청주</a></li>
 								<li class="list"><a href="#none">포항</a></li>
