@@ -23,7 +23,7 @@
 		              "7월", "8월", "9월", "10월", "11월", "12월" ],
 		yearSuffix: "년",
 		minDate: "-0d",
-		showMonthAfterYear: true,
+		showMonthAfterYear: true
 	});
 	$(function() {
 		// datepicker 첫번째
