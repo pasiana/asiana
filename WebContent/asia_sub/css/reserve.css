@@ -57,7 +57,8 @@ body {
 
 #skipct {
 	width: 956px;
-	height: 1100px;
+	height: 100%;
+	overflow: hidden;
 	margin: 0 auto;
 }
 
@@ -343,7 +344,8 @@ body {
 
 #skipct .tableStyle01 #CalendarBox {
 	width: 725px;
-	height: 200px;
+	height: 100%;
+	overflow: hidden;
 	position: relative;
 	z-index: 40;
 }
@@ -507,3 +509,17 @@ body {
 	width: 270px;
 	display: block;
 }
+.ui-datepicker {
+	width: 260px;
+	background: #ddebf7;
+	border: 0px solid #555;
+	color: #333;
+}
+div.ui-datepicker-header {
+	text-align: center;
+	background: #ddebf7;
+	color: #708af8;
+	border: 0px;
+}
+.ui-datepicker-week-end:first-child, .ui-datepicker-week-end:first-child a {color:red}
+.ui-datepicker-week-end:last-child, .ui-datepicker-week-end:last-child a {color:blue}

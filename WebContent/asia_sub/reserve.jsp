@@ -7,27 +7,39 @@
 <title>예매</title>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
 <script src="//code.jquery.com/jquery-1.11.1.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
-<link rel="stylesheet" href="/resources/demos/style.css">
 <link type="text/css" rel="stylesheet" href="css/reserve.css">
 <script>
 	var lea_city = "김포";
 	var arr_city = "제주";
 	var res_sig_dou = "왕복";
 	var date = new Date();
-	var lea_time = date.getFullYear()+"/"+new String(date.getMonth()+1)+"/"+date.getDate();
-	var arr_time = date.getFullYear()+"/"+new String(date.getMonth()+1)+"/"+date.getDate();
+	var lea_time = date.getFullYear()+"-"+new String(date.getMonth()+1)+"-"+date.getDate();
+	var arr_time = date.getFullYear()+"-"+new String(date.getMonth()+1)+"-"+date.getDate();
 	$.datepicker.setDefaults({
-		dateFormat : 'yy-mm-dd'
+		dateFormat : 'yy-mm-dd',
+		dayNamesMin: ["일","월","화","수","목","금","토"],
+		monthNames: [ "1월", "2월", "3월", "4월", "5월", "6월",
+		              "7월", "8월", "9월", "10월", "11월", "12월" ],
+		yearSuffix: "년",
+		minDate: "-0d",
+		showMonthAfterYear: true,
 	});
 	$(function() {
-		$("#datepicker").val(lea_time);
-		$("#datepicker").datepicker();
-	});
-	$(function() {
-		$("#datepicker1").val(arr_time);
-		$("#datepicker1").datepicker();
+		// datepicker 첫번째
+		$('#CalendarBox .takeOff .inp').val(lea_time);
+		$("#datepicker").datepicker({
+			onSelect: function(date){
+				$('#CalendarBox .takeOff .inp').val(date);
+			}
+		});
+		// datepicker 두번째
+		$('#CalendarBox .getIn .inp').val(lea_time);
+		$("#datepicker1").datepicker({
+			onSelect: function(date){
+				$('#CalendarBox .getIn .inp').val(date);
+			}
+		});
 	});
 	
 	$(document).ready(function(){
@@ -253,7 +265,8 @@
 							</p>
 
 							<p class="outp">
-								<input type="text" id="datepicker" class="inp">
+								<input type="text" class="inp">
+								<div id="datepicker"></div>
 							</p>
 
 
@@ -267,7 +280,8 @@
 							</p>
 
 							<p class="outp">
-								<input type="text" id="datepicker1" class="inp">
+								<input type="text" class="inp">
+								<div id="datepicker1"></div>
 							</p>
 						</div>
 						<!-- 오는날 -->
