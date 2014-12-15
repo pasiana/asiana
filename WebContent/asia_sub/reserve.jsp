@@ -136,9 +136,11 @@
 		});
 	}
 	
+	// 조회하기 버튼 클릭시 동작 함수
 	function submit_form() {
 		lea_time = $('#datepicker').val();
 		arr_time = $('#datepicker1').val();
+		// 탑승인원 파라미터값 저장
 		var res_count = $('#adultCount option:selected').text().replace('명','');
 		var url = "";
 		if(res_sig_dou == "왕복") {
