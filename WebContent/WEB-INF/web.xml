@@ -19,7 +19,7 @@
   
   <servlet>
   	<servlet-name>ReservationController</servlet-name>
-  	<servlet-class>com.cafe24.itwill3.ReservationController</servlet-class>
+  	<servlet-class>com.cafe24.itwill3.reservation.action.ReservationController</servlet-class>
   </servlet>
   
   <servlet-mapping>

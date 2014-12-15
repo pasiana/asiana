@@ -1,4 +1,4 @@
-package com.cafe24.itwill3;
+package com.cafe24.itwill3.reservation.action;
 
 public class ActionForward {
 	private boolean isRedirect = false;
