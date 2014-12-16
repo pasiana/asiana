@@ -1,0 +1,160 @@
+@CHARSET "UTF-8";
+* {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+	cursor: pointer;
+}
+
+li {
+	list-style: none;
+}
+
+body {
+	font-family: "맑은 고딕";
+	overflow-x: hidden;
+}
+
+.locationBox {
+	margin: 0 auto;
+	width: 1440px;
+	height: 30px;
+	background: url("../img/bg_location.jpg") no-repeat center bottom;
+}
+
+.location {
+	margin: 0 auto;
+	color: #333;
+	font-size: 11px;
+	width: 956px;
+	height: 25px;
+	border: 1px solid white;
+}
+
+.location ul {
+	margin-top: 7px;
+}
+
+.location ul li {
+	float: left;
+}
+
+.location ul li:nth-child(3) {
+	color: #999;
+}
+
+#containerBox {
+	width: 1440px;
+	height: 100%;
+	background: url("../img/bg_body1_1.jpg") repeat-x center -30px;
+	margin: 0 auto;
+}
+
+#skipct {
+	width: 956px;
+	height: 100%;
+	margin: 0 auto;
+
+}
+
+#skipct h3 {
+	font-size: 24px;
+	color: #010101;
+	font-weight: normal;
+	line-height: 28px;
+	width: 725px;
+	height: 28px;
+	margin: 20px 0 44px 10px;
+}
+
+#skipct .rv_stepBox {
+	width: 964px;
+	margin: 0 auto 10px auto;
+	font-size: 13px;
+}
+
+#skipct .rv_stepBox li {
+	float: left;
+	height: 30px;
+	line-height: 12px;
+	margin-left: -2px;
+	padding: 0 0 0 9px;
+}
+
+#skipct .rv_stepBox .step01_end {
+	color: #5d6067;
+	font-weight: normal;
+	background: url("../img/bg_rvStep01_end.gif") no-repeat 0 0;
+	width: 161px;
+	padding: 0 0 0 18px;
+	margin-left:1px; 
+}
+
+#skipct .rv_stepBox .step02_end {
+	color: #5d6067;
+	font-weight: normal;
+	background: url("../img/bg_rvStep02_end.gif") no-repeat 0 0;
+	width: 179px;
+	padding: 0 0 0 18px;
+	margin-left: -2px;
+}
+
+#skipct .rv_stepBox .step03_end {
+	color: #5d6067;
+	font-weight: normal;
+	background: url("../img/bg_rvStep03_end.gif") no-repeat 0 0;
+	width: 179px;
+	padding: 0 0 0 18px;
+	margin-left: -2px;
+}
+
+#skipct .rv_stepBox .step04_on {
+	color: #5d6067;
+	font-weight: bold;
+	background: url("../img/bg_rvStep04_on.gif") no-repeat 0 0;
+	width: 152px;
+	padding: 0 0 0 43px;
+}
+
+#skipct .rv_stepBox .step05_off {
+	color: #5d6067;
+	font-weight: normal;
+	background: url("../img/bg_rvStep05_off.gif") no-repeat 0 0;
+	width: 189px;
+	margin-left: -3px;
+}
+
+#skipct .helpOp {
+	width: 956px;
+	height: 22px;
+	text-align: right;
+	margin: 80px -231px 19px 0;
+}
+
+#skipct .helpOp .btnType06 {
+	margin-top: 10px;
+	width: 108px;
+	height: 22px;
+	background: url("../img/bg_btnLeft6.jpg") no-repeat 0 0;
+	display: inline-block;
+}
+
+#skipct .helpOp .btnType06 a {
+	padding-right: 41px;
+	background: url("../img/bg_btnRight6.jpg") no-repeat right 0;
+	padding: 0 35px 0 8px;
+	display: block;
+	height: 22px;
+	line-height: 22px;
+	color: #4c4c4c;
+	font-size: 11px;
+}
+.itineraryBoxPs,.fareInner {
+	width: 725px;
+	height: 100%;
+}
+

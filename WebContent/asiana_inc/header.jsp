@@ -202,7 +202,7 @@ var lang_select_a2 = "";
 					<form id="frm_search" name="frm_search" onkeyup="ajax_search(this.frm_txt.value)">
 						<fieldset>
 							<span class="frm_span">
-								<input type="text" name="frm_txt">
+								<input type="text" name="frm_txt" class="intxt">
 								<input type="image" src="../asiana_inc/img/head/btn_topsearch.png">
 							</span>
 						</fieldset>
