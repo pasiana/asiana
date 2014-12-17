@@ -161,7 +161,6 @@ body {
 
 .selectITbox3 {
 	width: 725px;
-	height: 112px;
 	background: url("../img/bg_selectItineraryTopD2.gif") no-repeat 0 0;
 	padding: 20px 0 0 0;
 	margin: 0 0 10px 0;
@@ -174,7 +173,79 @@ body {
 	background: #fff url("../img/bg_selectItineraryBottom.gif") no-repeat 0
 		bottom;
 }
+.selectITbox3 {
+	background: url("../img/bg_selectItineraryTop2.gif") no-repeat 0 0;
+	padding: 5px 0 0 0;
+	margin: 0 0 10px 0;
+}
 
+.selectITbox3 .selectITinner3 {
+	background: #fff url("../img/bg_selectItineraryBottom.gif") no-repeat 0
+		bottom;
+	padding: 0 0 16px 0;
+}
+
+.selectITinner3 li.liType01.totalIntro {
+	width: 287px;
+	padding-left: 20px;
+	background: none;
+}
+
+.selectITinner3 li.liType01 {
+	float: left;
+	font-size: 11px;
+	padding: 14px 0 0 0;
+	font-family: '돋움';
+}
+
+.selectITbox3 .selectITinner3 .sTitle {
+	color: #581cb4;
+}
+
+.selectITbox3 .selectITinner3 li.liType01.totalIntro .tBoxD {
+	margin: 9px 0 0 -1px;
+	line-height: 19px;
+}
+
+.selectITbox3 .selectITinner3 li.liType01.totalIntro .tBoxD .start,.selectITbox3 .selectITinner3 li.liType01.totalIntro .tBoxD .end
+	{
+	float: left;
+	min-width: 86px;
+	font-size: 12px;
+}
+
+.selectITbox3 .selectITinner3 li.liType01.totalIntro .tBoxD strong {
+	font-size: 16px;
+	font-family: '돋움';
+}
+
+.selectITbox3 .selectITinner3 li.liType01.totalIntro .tBoxD .end.oneWay
+	{
+	background: url("../img/bg_arrow5_1.gif") no-repeat 0 3px;
+}
+
+.selectITbox3 .selectITinner3 li.liType01.totalIntro .tBoxD .end {
+	padding: 0 0 0 33px;
+}
+
+.selectITbox3 .selectITinner3 li.liType01.selectStart {
+	width: 144px;
+	padding-left: 6px;
+}
+
+.selectITbox3 .selectITinner3 li.liType01 {
+	float: left;
+	background: url("../img/bg_line2.gif") no-repeat 0 0;
+	font-size: 11px;
+	font-family: '돋움';
+}
+
+.selectITbox3 .selectITinner3 .pType01 {
+	line-height: 18px;
+	margin: 6px 0 0 0;
+	font-size: 12px;
+	font-family: "굴림";
+}
 .notice_container {
 	width: 725px;
 	height: 173px;

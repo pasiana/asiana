@@ -7,236 +7,9 @@
 <title>예매4</title>
 <link type="text/css" rel="stylesheet" href="css/reserve4.css">
 <script src="js/jquery-1.11.1.js"></script>
+
 <style type="text/css">
-.selectITbox3 {
-	background: url("img/bg_selectItineraryTop2.gif") no-repeat 0 0;
-	padding: 5px 0 0 0;
-	margin: 0 0 10px 0;
-}
 
-.selectITbox3 .selectITinner3 {
-	background: #fff url("img/bg_selectItineraryBottom.gif") no-repeat 0
-		bottom;
-	padding: 0 0 16px 0;
-	height: 392px;
-}
-
-.selectITinner3 li.liType01.totalIntro {
-	width: 287px;
-	padding-left: 20px;
-	background: none;
-}
-
-.selectITinner3 li.liType01 {
-	float: left;
-	font-size: 11px;
-	padding: 14px 0 0 0;
-	font-family: '돋움';
-}
-
-.selectITbox3 .selectITinner3 .sTitle {
-	color: #581cb4;
-}
-
-.selectITbox3 .selectITinner3 li.liType01.totalIntro .tBoxD {
-	margin: 9px 0 0 -1px;
-	line-height: 19px;
-}
-
-.selectITbox3 .selectITinner3 li.liType01.totalIntro .tBoxD .start,.selectITbox3 .selectITinner3 li.liType01.totalIntro .tBoxD .end
-	{
-	float: left;
-	min-width: 86px;
-	font-size: 12px;
-}
-
-.selectITbox3 .selectITinner3 li.liType01.totalIntro .tBoxD strong {
-	font-size: 16px;
-	font-family: '돋움';
-}
-
-.selectITbox3 .selectITinner3 li.liType01.totalIntro .tBoxD .end.oneWay
-	{
-	background: url("img/bg_arrow5_1.gif") no-repeat 0 3px;
-}
-
-.selectITbox3 .selectITinner3 li.liType01.totalIntro .tBoxD .end {
-	padding: 0 0 0 33px;
-}
-
-.selectITbox3 .selectITinner3 li.liType01.selectStart {
-	width: 144px;
-	padding-left: 6px;
-}
-
-.selectITbox3 .selectITinner3 li.liType01 {
-	float: left;
-	background: url("img/bg_line2.gif") no-repeat 0 0;
-	font-size: 11px;
-	font-family: '돋움';
-}
-
-.selectITbox3 .selectITinner3 .pType01 {
-	line-height: 18px;
-	margin: 6px 0 0 0;
-	font-size: 12px;
-	font-family: "굴림";
-}
-
-.passengerFareBox {
-	padding: 10px 19px 0 19px;
-}
-
-.passengerFareBox .h4_type01 {
-	font-size: 13px;
-	color: #581cb4;
-	border-top: 1px solid #5c5f66;
-	border-bottom: 1px solid #5c5f66;
-	line-height: 32px;
-}
-
-.passengerFareBox .memberBox {
-	position: relative;
-	background: url("img/bg_tableBox2.gif") repeat-y 0 0;
-	padding: 0 0 0 51px;
-	border-bottom: 1px solid #adafb2;
-	width: 636px;
-	height: 193px;
-}
-
-.passengerFareBox .memberBox.DmemberBox .mName {
-	width: 182px;
-}
-
-.passengerFareBox .memberBox .mName {
-	float: left;
-	padding: 10px 0 0 20px;
-}
-
-.passengerFareBox .memberBox .mName .name strong {
-	font-size: 13px;
-}
-
-.passengerFareBox .memberBox .DtableType1_1 {
-	width: 434px;
-}
-
-table {
-	border-collapse: collapse;
-}
-
-thead {
-	display: table-header-group;
-	vertical-align: middle;
-	border-color: inherit;
-}
-
-tbody {
-	display: table-row-group;
-	vertical-align: middle;
-	border-color: inherit;
-}
-
-tfoot {
-	display: table-footer-group;
-	vertical-align: middle;
-	border-color: inherit;
-}
-
-tr {
-	display: table-row;
-	vertical-align: inherit;
-	border-color: inherit;
-}
-
-.passengerFareBox .memberBox .DtableType1_1 thead th {
-	color: #5c5f66;
-	font-size: 11px;
-	text-align: left;
-	padding: 7px 0 0 0;
-	line-height: 22px;
-	font-family: '돋움';
-}
-
-.passengerFareBox .memberBox .DtableType1_1 th,.passengerFareBox .memberBox .DtableType1_1 td
-	{
-	border-bottom: 1px solid #d9d9d9;
-}
-
-.passengerFareBox .memberBox .DtableType1_1 tbody th {
-	text-align: left;
-	font-weight: normal;
-}
-
-.passengerFareBox .memberBox .DtableType1_1 thead th.textRight {
-	text-align: right;
-}
-
-.passengerFareBox .memberBox .DtableType1_1 tbody th,.passengerFareBox .memberBox .DtableType1_1 tbody td
-	{
-	vertical-align: top;
-	padding: 6px 0;
-	line-height: 16px;
-}
-
-.passengerFareBox .memberBox .DtableType1_1 tbody td {
-	text-align: right;
-}
-
-.passengerFareBox .memberBox .DtableType1_1 tfoot td {
-	border-bottom: none;
-	padding: 10px 0 18px 0;
-}
-
-.passengerFareBox .memberBox .DtableType1_1 tfoot td .ttText {
-	text-align: left;
-	display: block;
-	width: 48%;
-	float: left;
-}
-
-.passengerFareBox .memberBox .DtableType1_1 tfoot td .ttPrice {
-	text-align: right;
-	display: block;
-	width: 48%;
-	float: right;
-	font-size: 14px;
-}
-.passengerFareBox .btnPrice {
-	text-align: right;
-	padding: 38px 0 0 0;
-	position: relative;
-}
-.passengerFareBox .btnPrice .btnType06 {
-	margin: 0 35px 0 0;
-}
-.passengerFareBox .btnPrice .text {
-	padding: 13px 16px 12px 0;
-}
-.passengerFareBox .btnPrice .totalP {
-	color: #5e14cc;
-	font-size: 16px;
-	font-weight: bold;
-	font-family: '돋움';
-}
-.passengerFareBox .btnPrice .totalP strong {
-	font-size: 24px;
-	font-family: Arial;
-	font-weight: bold;
-}
-.fareInner .fareMethodBox {
-	padding: 27px 0 0 0;
-}
-.fareInner .fareMethodBox h4.h4_type01 {
-	background: url("img/bl_hType01.gif") no-repeat 1px center;
-	color: #581CB4;
-	font-size: 14px;
-	height: 17px;
-	line-height: 17px;
-	margin: 0 0 16px;
-	padding: 0 0 0 27px;
-	text-align: left;
-}
 </style>
 </head>
 <body>
@@ -358,8 +131,80 @@ tr {
 						<!-- 결제  -->
 						<div class="fareMethodBox" >
 							<h4 class="h4_type01">결제방식을 선택하세요.</h4>
+							
+							<div class="fareMethodTable">
+								<div class="totalMethod">결제금액<br><strong class="money">49,700</strong> <strong class="unit">원</strong></div>
+								<div class="fareMethodText">
+											<ul class="noticeList">
+												<li>홈페이지를 통해 신용카드(체크카드 포함) 및 계좌이체를 통한 결제가 가능합니다. </li>
+												<li>국내 발행 카드 이용 시 안전한 신용카드 거래를 위해 신용카드 인증이 필요합니다. </li>
+												<li>신용카드 인증 시 발생한 오류는 반드시 해당 카드사로 문의하여 주시기 바랍니다. </li>
+												<li>인터넷 익스플로러에서만 계좌이체가 가능합니다.</li>
+												<li style="color:#581cb4;">해외발행 신용카드는 온라인 인증 서비스를 받은 Visa, Master 카드에 한해 영문사이트에서 구매 가능합니다.</li>
+											</ul>
+
+											<dl class="payment-select fareRule01" style="display: block; height: 20px;">
+												<dt><strong>결제방식</strong></dt>
+												<dd>
+													<ul class="btn-cList">
+														<li><a href="#none" id="btn-type-KV" val="KV" class="btn-type-1 on">신용카드</a></li>
+													</ul>
+												</dd>
+											</dl>
+
+											<!-- 신용카드 -->
+											<dl class="payment-type-KV fareRule02" style="display: block;">
+												<dt><strong>카드종류</strong></dt>
+												<dd>
+													<select id="cardClass_KV" name="cardClass_KV" style="border: 1px solid #9e9e9e;overflow: hidden;background-color: #fff;height:23px;width:180px">
+														<option value="">선택하세요</option>
+														<option value="016">KB국민카드</option>
+														<option value="026">BC카드(하나,농협BC 포함)</option>
+														<option value="026">우리카드</option>
+														<option value="031">삼성카드</option>
+														<option value="047">롯데카드</option>
+														<option value="027">현대카드</option>
+														<option value="029">신한(구 LG)카드</option>
+														<option value="011">제주카드</option>
+														<option value="018">NH(농협자체)Card</option>
+														<option value="008">외환카드</option>
+														<option value="022">씨티(한미)카드</option>
+														<option value="026">산은카드</option>
+														<option value="017">수협카드</option>
+														<option value="010">전북카드</option>
+														<option value="006">하나SK카드</option>
+														<option value="002">광주은행</option>
+													</select>
+												</dd>
+											</dl>
+											<dl class="payment-type-KV fareRule02" style="display: block;">
+												<dt><strong>할부선택</strong></dt>
+												<dd>
+													<select id="installmentType_KV" name="installmentType_KV" style="border: 1px solid #9e9e9e;overflow: hidden;background-color: #fff;height:23px;width:130px">
+														<option value="00">일시불</option>
+														<option value="02">2개월 할부</option>
+														<option value="03">3개월 할부</option>
+														<option value="04">4개월 할부</option>
+														<option value="05">5개월 할부</option>
+														<option value="06">6개월 할부</option>
+														<option value="07">7개월 할부</option>
+														<option value="08">8개월 할부</option>
+														<option value="09">9개월 할부</option>
+														<option value="10">10개월 할부</option>
+														<option value="11">11개월 할부</option>
+														<option value="12">12개월 할부</option>
+													</select>
+												</dd>
+											</dl>
+										</div>
+							</div>
 						</div>
 						<!-- 결제 끝 -->
+						
+						<ul class="btnBoxType01">
+							<li><span class="Sbtn_TType06_2"><a href="#">예매취소</a></span></li>
+							<li class="right"><span class="Bbtn_TType01_1"><a href="#">결제하기</a></span></li>
+						</ul>
 					</div>
 				</div>
 			</div>

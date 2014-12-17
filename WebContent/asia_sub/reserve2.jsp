@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title></title>
+<title>예매2</title>
 <link type="text/css" rel="stylesheet" href="css/reserve2.css">
 <script src="js/jquery-1.11.1.js"></script>
 <style type="text/css">
@@ -44,7 +44,13 @@
 			<div class="itineraryBoxPs fareBox">
 				<div class="fareInner">
 					<div class="selectITbox4">
-						<div class="selectITinner4"></div>
+						<div class="selectITinner4">
+							<div class="sLeft">
+								<span class="upsellStart"><strong>부산(PUS)</strong></span>
+								<span class="upsellEnd oneWay"><strong>제주(CJU)</strong></span>
+							    <span class="ppCnt">( <strong>탑승객 1명</strong>&nbsp;<span>:&nbsp;성인&nbsp;1명</span> )</span>
+							</div>
+						</div>
 					</div>
 
 					<!-- 가는항공편 -->
@@ -106,7 +112,7 @@
 					<!-- 가는항공편끝 -->
 					
 					<!-- 오는 항공편  -->
-					<div class="tableBox04">
+					<div class="tableBox04" style="display: none;">
 						<p class="comingAr">
 							
 						</p>
@@ -153,6 +159,7 @@
 					</div>
 					<!-- 오는 항공편 끝  -->
 					
+					<!-- 하단글  -->
 					<ul class="tableNotice">
 						<li>2014년 11월 24일 09:40 (한국시간) 기준, 유류할증료와 세금 및 제반요금 포함된 성인 1인 운임이며, 운임은 수시로 변경될 수 있습니다.</li>
 						<li>고객님의 예약 시간은 정기 스케쥴 변경, 정기 정비 작업 등으로 인하여 전 노선에 시간 변동 및
@@ -162,8 +169,19 @@
 						<li>예약 가능석은 실시간으로 변동되며, 탑승자 정보 입력 단계를 완료해야 좌석이 확약됩니다.</li>
 		   				<li>항공권 운임에 따라 운임 규정이 상이하므로 반드시 운임 규정을 확인하시고 구매하시기 바랍니다.</li>
 					</ul>
+					<!-- 하단글끝  -->
 					
+					<!-- 스케줄에서 선택후 운임정보나오기 -->
+					<!-- 스케줄에서 선택후 운임정보나오기 끝 -->
+					
+					<!-- 하단 버튼부분  -->
+					<ul class="btnBoxType01">
+						<li><span class="Sbtn_TType06_1"><a href="#">이전단계</a></span></li>
+						<li class="right"><span class="Bbtn_TType01_1"><a href="#">계속하기</a></span></li>
+					</ul>
+					<!-- 하단 버튼부분 끝  -->
 				</div>
+				<!-- 스케줄내용 끝 div  -->
 			</div>
 		</div>
 		<!-- skipct끝  -->

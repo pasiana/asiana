@@ -8,7 +8,6 @@
 <link type="text/css" rel="stylesheet" href="css/reserve3.css">
 <script src="js/jquery-1.11.1.js"></script>
 <style type="text/css">
-
 </style>
 </head>
 <body>
@@ -48,7 +47,34 @@
 						<div class="fareInner">
 							<!-- 선택한 공항 시간, 인원 박스 시작 -->
 							<div class="selectITbox3 domesticFlight">
-								<div class="selectITinner3"></div>
+								<div class="selectITinner3">
+									<ul style="height: 88px;">
+									<!-- 사람수, 공항 -->
+									<li class="liType01 totalIntro"><strong class="sTitle">총
+											인원 1명</strong>
+										<div class="tBoxD">
+											<p class="start">
+												<strong>김포</strong><br> 
+											</p>
+											<p class="end oneWay">
+												<strong>제주</strong><br> 
+											</p>
+										</div></li>
+									<!-- 사람수, 공항 끝-->
+
+									<!-- 가는날 정보 -->
+									<li class="liType01 selectStart"><strong class="sTitle">가는
+											날</strong>
+										<div class="pType01">
+											<strong>2014/12/17(수)<br>13:55
+											</strong><br>
+										</div></li>
+									<!-- 가는날 정보 끝 -->
+									
+									<!-- 오는날 정보  -->
+									<!-- 오는날 정보 끝  -->
+								</ul>
+								</div>
 							</div>
 							<!-- 선택한 공항 시간, 인원 박스 끝 -->
 
