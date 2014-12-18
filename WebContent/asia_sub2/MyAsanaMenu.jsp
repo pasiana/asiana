@@ -95,47 +95,17 @@ font-weight: bold;
 국내선
 </a>
 </li>
-<li>
-<a class="subMenu1 index2" href="#">
-국제선
-</a>
-</li>
-<!-- <li>
-<a class="subMenu1 index3" href="#">
-스케줄 조회
-</a>
-</li>
-<li>
-<a class="subMenu1 index4" href="#">
-운임조회
-</a>
-</li> -->
 </ul>
 </li>
 
 <li>
 <a class="menu top2" href="#">
-할인항공권
+스케줄 조회
 </a>
 <ul class="submenu sub2" style="padding: 15px 0 15px 19px; display: none;">
 <li>
 <a class="subMenu1 index1" href="#">
-국내선 할인항공권
-</a>
-</li>
-<li>
-<a class="subMenu1 index2" href="#">
-국제선 할이항공권
-</a>
-</li>
-<li>
-<a class="subMenu1 index3" href="#">
-국제선 오즈드림페어
-</a>
-</li>
-<li>
-<a class="subMenu1 index4" href="#">
-국제선 타임페어
+스케줄 조회
 </a>
 </li>
 </ul>
@@ -143,95 +113,16 @@ font-weight: bold;
 
 <li>
 <a class="menu top3" href="#">
-마일리지항공권 발급
-</a>
-<ul class="submenu sub3" style="padding: 15px 0 15px 19px; display: none;">
-<li>
-<a class="subMenu1 index1" href="#">
-국내선 마일리지항공권
-</a>
-</li>
-<li>
-<a class="subMenu1 index2" href="#">
-국제선 마일리지항공권
-</a>
-</li>
-<li>
-<a class="subMenu1 index3" href="#">
-스타얼라이언스 마일리지항공권
-</a>
-</li>
-<li>
-<a class="subMenu1 index4" href="#">
-마일리지항공권 잔여석 조회
-</a>
-</li>
-
-</ul>
-</li>
-
-<li>
-<a class="menu top4" href="#">
-스케줄 조회
-</a>
-<ul class="submenu sub4" style="padding: 15px 0 15px 19px; display: none;">
-<li>
-<a class="subMenu1 index1" href="#">
-스케줄 조회
-</a>
-</li>
-</ul>
-</li>
-
-<li>
-<a class="menu top5" href="#">
 운임조회
 </a>
-<ul class="submenu sub5" style="padding: 15px 0 15px 19px; display: none;">
+<ul class="submenu sub3" style="padding: 15px 0 15px 19px; display: none;">
 <li>
 <a class="subMenu1 index1" href="#">
 국내선 운임조회
 </a>
 </li>
-<li>
-<a class="subMenu1 index2" href="#">
-국제선 운임조회
-</a>
-</li>
 </ul>
 </li>
-
-<li>
-<a class="menu top6" href="#">
-체크인/탑승권 발급
-</a>
-<!-- <ul class="submenu sub6" style="padding: 15px 0 15px 19px; display: none;">
-</ul> -->
-</li>
-
-<li>
-<a class="menu top7" href="#">
-항공기 출도착 안내
-</a>
-<ul class="submenu sub7" style="padding: 15px 0 15px 19px; display: none;">
-<!-- <li>
-<a class="subMenu1 index1" href="#">
-이벤트 참여 내역
-</a>
-</li> -->
-<li>
-<a class="subMenu1 index2" href="#">
-스크랩 보관함
-</a>
-</li>
-</ul>
-</li>
-<li>
-<a class ="menu top8" href="#">
-취항 노선
-</a>
-</li>
-
 
 
 </ul>

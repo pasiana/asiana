@@ -11,9 +11,7 @@ public class SubController extends HttpServlet {
 	private void doProcess(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException{
 		ActionForward forward = null;
-		
 		String command = request.getRequestURI().substring(request.getContextPath().length());
-		System.out.println(command);
 		
 		if(command.equals("/asia_sub/aircraft.su")) {
 			forward = new ActionForward();

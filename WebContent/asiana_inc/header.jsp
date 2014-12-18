@@ -232,32 +232,11 @@ var lang_select_a2 = "";
 													<a href="#">국내선</a>
 												</li>
 												<li>
-													<a href="#">국제선</a>
-												</li>
-												<li>
 													<a href="#">예약조회</a>
 												</li>
 											</ul>
 										</li>
 									</ul>
-									<ul>
-										<li>
-											<a href="#">
-												<span>할인항공권</span>
-											</a>
-										</li>
-									</ul>
-									<ul>
-										<li>
-											<a href="#">
-												<span>마일리지항공권 발급</span>
-											</a>
-										</li>
-									</ul>
-									
-								</div>
-								<!-- 항공권 예매 div 우측 -->
-								<div>
 									<ul>
 										<li>
 											<a href="#">
@@ -269,27 +248,6 @@ var lang_select_a2 = "";
 										<li>
 											<a href="#">
 												<span>운임 조회</span>
-											</a>
-										</li>
-									</ul>
-									<ul>
-										<li>
-											<a href="#">
-												<span>체크인/탑승권 발급</span>
-											</a>
-										</li>
-									</ul>
-									<ul>
-										<li>
-											<a href="#">
-												<span>항공기 출도착 안내</span>
-											</a>
-										</li>
-									</ul>
-									<ul>
-										<li>
-											<a href="#">
-												<span>취항 노선</span>
 											</a>
 										</li>
 									</ul>
@@ -305,13 +263,6 @@ var lang_select_a2 = "";
 								<ul>
 									<li>
 										<a href="#">
-											<span>아시아나클럽 홈</span>
-										</a>
-									</li>
-								</ul>
-								<ul>
-									<li>
-										<a href="#">
 											<span>아시아나클럽 소개</span>
 										</a>
 									</li>
@@ -319,49 +270,7 @@ var lang_select_a2 = "";
 								<ul>
 									<li>
 										<a href="#">
-											<span>아시아나 마일리지 적립</span>
-										</a>
-									</li>
-								</ul>
-								<ul>
-									<li>
-										<a href="#">
-											<span>아시아나 마일리지 사용</span>
-										</a>
-									</li>
-								</ul>
-								<ul>
-									<li>
-										<a href="#">
-											<span>스타얼라이언스/제휴항공사</span>
-										</a>
-									</li>
-								</ul>
-								<ul>
-									<li>
-										<a href="#">
-											<span>마일리지 적립 제휴사</span>
-										</a>
-									</li>
-								</ul>
-								<ul>
-									<li>
-										<a href="#">
-											<span>마일리지 사용 제휴사</span>
-										</a>
-									</li>
-								</ul>
-								<ul>
-									<li>
-										<a href="#">
-											<span>할인 제휴사</span>
-										</a>
-									</li>
-								</ul>
-								<ul>
-									<li>
-										<a href="#">
-											<span>뉴스/이벤트/뉴스레터</span>
+											<span>뉴스/이벤트</span>
 										</a>
 									</li>
 								</ul>
@@ -424,97 +333,11 @@ var lang_select_a2 = "";
 								</ul>
 							</div>
 						</li>
-						<!-- 여행상품/정보 list -->
 						<li>
 							<a href="#" id="nav_sub_3">
-								<img src="../asiana_inc/img/head/nav04_off.png">
-							</a>
-							<div class="nav_sub">
-								<ul>
-									<li>
-										<a href="#">
-											<span>여행상품/정보 홈</span>
-										</a>
-									</li>
-								</ul>
-								<ul>
-									<li>
-										<a href="#">
-											<span>해외여행상품</span>
-										</a>
-									</li>
-								</ul>
-								<ul>
-									<li>
-										<a href="#">
-											<span>국내여행상품</span>
-										</a>
-									</li>
-								</ul>
-								<ul>
-									<li>
-										<a href="#">
-											<span>호텔/리조트</span>
-										</a>
-									</li>
-								</ul>
-								<ul>
-									<li>
-										<a href="#">
-											<span>렌터카</span>
-										</a>
-									</li>
-								</ul>
-								<ul>
-									<li>
-										<a href="#">
-											<span>스마트 여행 계획</span>
-										</a>
-									</li>
-								</ul>
-								<ul>
-									<li>
-										<a href="#">
-											<span>취항지 여행정보</span>
-										</a>
-									</li>
-								</ul>
-								<ul>
-									<li>
-										<a href="#">
-											<span>여행 매거진</span>
-										</a>
-									</li>
-								</ul>
-								<ul>
-									<li>
-										<a href="#">
-											<span>여행 갤러리</span>
-										</a>
-									</li>
-								</ul>
-								<ul>
-									<li>
-										<a href="#">
-											<span>여행 부가정보</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</li>
-						<!-- 이벤트/혜택 list -->
-						<li>
-							<a href="#" id="nav_sub_4">
 								<img src="../asiana_inc/img/head/nav05_off.png">
 							</a>
 							<div class="nav_sub">
-								<ul>
-									<li>
-										<a href="#">
-											<span>이벤트/혜택 홈</span>
-										</a>
-									</li>
-								</ul>
 								<ul>
 									<li>
 										<a href="#">
@@ -532,35 +355,7 @@ var lang_select_a2 = "";
 								<ul>
 									<li>
 										<a href="#">
-											<span>아시아나 라이크</span>
-										</a>
-									</li>
-								</ul>
-								<ul>
-									<li>
-										<a href="#">
-											<span>당첨자 발표</span>
-										</a>
-									</li>
-								</ul>
-								<ul>
-									<li>
-										<a href="#">
 											<span>매직보딩패스</span>
-										</a>
-									</li>
-								</ul>
-								<ul>
-									<li>
-										<a href="#">
-											<span>신용카드 혜택</span>
-										</a>
-									</li>
-								</ul>
-								<ul>
-									<li>
-										<a href="#">
-											<span>아시아나 항공교실</span>
 										</a>
 									</li>
 								</ul>
