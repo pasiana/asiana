@@ -173,6 +173,31 @@ body {
 	padding: 0 14px 16px 23px;
 	background: url("../img/bg_selectItineraryBottom.gif") no-repeat 0 bottom;
 }
+.selectITbox4 .selectITinner4 .sLeft {
+	float: left;
+	width: 575px;
+}
+.selectITbox4 .selectITinner4 .sLeft .upsellStart {
+	font-size: 16px;
+	height: 20px;
+	display: inline-block;
+	font-family: '돋움';
+}
+.selectITbox4 .selectITinner4 .sLeft .upsellEnd.oneWay {
+	background: url("../img/bg_arrowSE2.gif") no-repeat 10px center;
+}
+.selectITbox4 .selectITinner4 .sLeft .upsellEnd {
+	font-size: 16px;
+	padding: 0 0 0 49px;
+	height: 20px;
+	display: inline-block;
+}
+.selectITbox4 .selectITinner4 .sLeft .ppCnt {
+	color: #5e14cc;
+	font-size: 11px;
+	padding: 0 0 0 16px;
+	font-family: '돋움';
+}
 
 .tableBox04 {
 	width: 725px;
@@ -297,7 +322,7 @@ body {
 .itineraryBoxPs.fareBox .tableNotice {
 	width:725px;
 	height:114px;
-	margin: -20px 0 25px 0;
+	margin: 10px 0 25px 0;
 }
 
 .itineraryBoxPs.fareBox .tableNotice li {
@@ -310,4 +335,51 @@ body {
 
 .itineraryBoxPs.fareBox .tableNotice li.c_5e14cc {
 	color: #5e14cc;
+}
+
+.btnBoxType01{
+	height:30px;
+	margin-bottom: 20px;
+}
+.btnBoxType01 li {
+	width: 48%;
+	float: left;
+}
+.btnBoxType01 li.right {
+	float: right;
+	text-align: right;
+}
+.Sbtn_TType06_1 {
+	background: url("../img/Sbtn_TTypeL06_1.gif") no-repeat 0 0;
+	display: inline-block;
+}
+
+.Sbtn_TType06_1 a {
+	background: url("../img/Sbtn_TTypeR06_1.gif") no-repeat right 0;
+	padding: 0 11px 0 27px;
+	display: block;
+	height: 25px;
+	line-height: 25px;
+	color: #666;
+	font-weight: bold;
+}
+.btnBoxType01 li.right {
+	float: right;
+	text-align: right;
+}
+
+.Bbtn_TType01_1 {
+	background: url("../img/Bbtn_TTypeL01_1.gif") no-repeat 0 0;
+	display: inline-block;
+}
+
+.Bbtn_TType01_1 a {
+	background: url("../img/Bbtn_TTypeR01_1.gif") no-repeat right 0;
+	padding: 0 41px 0 19px;
+	display: block;
+	height: 35px;
+	line-height: 35px;
+	color: #fff;
+	font-size: 13px;
+	font-weight: bold;
 }

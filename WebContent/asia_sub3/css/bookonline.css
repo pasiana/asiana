@@ -1,0 +1,87 @@
+@CHARSET "UTF-8";
+* {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+	cursor: pointer;
+}
+
+li {
+	list-style: none;
+}
+
+body {
+	font-family: "맑은 고딕";
+	overflow-x: hidden;
+}
+
+.locationBox {
+	margin: 0 auto;
+	width: 1440px;
+	height: 30px;
+	background: url("../img/bg_location.jpg") no-repeat center bottom;
+}
+
+.location {
+	margin: 0 auto;
+	color: #333;
+	font-size: 11px;
+	width: 956px;
+	height: 25px;
+	border: 1px solid white;
+}
+
+.location ul {
+	margin-top: 7px;
+}
+
+.location ul li {
+	float: left;
+	font-size: 11px;
+}
+
+.location ul li:nth-child(4) {
+	color: #999;
+}
+
+#containerBox {
+	width: 1440px;
+	background: url("../img/bg_body1_1.jpg") repeat-x center 0;
+	margin: 0 auto;
+}
+
+#containerBox #container {
+	width: 956px;
+	margin: 0 auto;
+	position: relative;
+}
+
+#containerBox #container #containerBody {
+	width: 711px;
+	margin: 0 0 0 195px;
+	padding: 27px 0 100px 50px;
+	min-height: 780px;
+}
+
+#containerBox #container #containerBody h3.h3_type01 {
+	font-size: 24px;
+	color: #010101;
+	font-weight: normal;
+	margin: 0 0 44px 0;
+	line-height: 28px;
+}
+.common-boxRelationService {
+	margin-top: 30px;
+	width: 710px;
+	height: 125px;
+	width: 710px;
+}
+
+.common-boxRelationService .common-innerRelationService {
+	float: right;
+	width: 238px;
+}
