@@ -375,92 +375,50 @@ var lang_select_a2 = "";
 							<div class="nav_sub">
 								<ul>
 									<li>
-										<a href="#">
-											<span>서비스 안내 홈</span>
-										</a>
-									</li>
-								</ul>
-								<ul>
-									<li>
-										<a href="#">
+										<a href="./suite.su">
 											<span>클래스별 서비스</span>
 										</a>
 									</li>
 								</ul>
 								<ul>
 									<li>
-										<a href="#">
+										<a href="./ticket.su">
 											<span>항공권 예매</span>
 										</a>
 									</li>
 								</ul>
 								<ul>
 									<li>
-										<a href="#">
-											<span>사전 좌석 예약</span>
-										</a>
-									</li>
-								</ul>
-								<ul>
-									<li>
-										<a href="#">
-											<span>인터넷/모바일 탑승권</span>
-										</a>
-									</li>
-								</ul>
-								<ul>
-									<li>
-										<a href="#">
+										<a href="./check.su">
 											<span>공항에서</span>
 										</a>
 									</li>
 								</ul>
 								<ul>
 									<li>
-										<a href="#">
+										<a href="./bag.su">
 											<span>수하물/유실물</span>
 										</a>
 									</li>
 								</ul>
 								<ul>
 									<li>
-										<a href="#">
+										<a href="./meals.su">
 											<span>기내에서</span>
 										</a>
 									</li>
 								</ul>
 								<ul>
 									<li>
-										<a href="#">
-											<span>특별서비스</span>
-										</a>
-									</li>
-								</ul>
-								<ul>
-									<li>
-										<a href="#">
+										<a href="./aircraft.su">
 											<span>항공기 안내</span>
 										</a>
 									</li>
 								</ul>
 								<ul>
 									<li>
-										<a href="#">
+										<a href="./mobile.su">
 											<span>모바일 서비스</span>
-										</a>
-									</li>
-								</ul>
-								<ul>
-									<li>
-										<a href="#">
-											<span>유료 부가 서비스</span>
-										</a>
-									</li>
-								</ul>
-								<ul>
-									<li>
-										<a href="#">
-											<span>양식 다운로드</span>
 										</a>
 									</li>
 								</ul>

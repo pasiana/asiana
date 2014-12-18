@@ -21,9 +21,26 @@
   	<servlet-name>ReservationController</servlet-name>
   	<servlet-class>com.cafe24.itwill3.reservation.action.ReservationController</servlet-class>
   </servlet>
-  
   <servlet-mapping>
   	<servlet-name>ReservationController</servlet-name>
   	<url-pattern>*.re</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>SubController</servlet-name>
+  	<servlet-class>com.cafe24.itwill3.sub.action.SubController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>SubController</servlet-name>
+  	<url-pattern>*.su</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>MemberFrontController</servlet-name>
+  	<servlet-class>com.cafe24.itwill3.Member.action.MemberFrontController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>MemberFrontController</servlet-name>
+  	<url-pattern>*.me</url-pattern>
   </servlet-mapping>
 </web-app>
