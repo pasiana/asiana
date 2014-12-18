@@ -93,51 +93,51 @@ a {
 			style="margin: 10px 0 0 0; padding-bottom: 10px; background: #fff;">
 			<h2
 				style="background: url('http://flyasiana.com/CW/images/bg/bg_h2.png') no-repeat 0 0; width: 171px; height: 60px; padding: 21px 0 0 19px;">
-				<a href="First_Suite.jsp"> <img src="http://flyasiana.com/CW/images/nav/nav03_h3.png">
+				<a href="./suite.su"> <img src="http://flyasiana.com/CW/images/nav/nav03_h3.png">
 				</a>
 			</h2>
 
 			<ul
 				style="background: url('https://flyasiana.com/CW/images/bg/bg_lnbBottom.png') no-repeat 0 bottom; padding: 0 1px 4px 1px; width: 188px;">
-				<li><a class="menu top1" href="First_Suite.jsp"> 클래스별 서비스 </a>
+				<li><a class="menu top1" href="./suite.su"> 클래스별 서비스 </a>
 					<ul class="submenu sub1 "
 						style="padding: 15px 0 15px 19px; display:none;">
-						<li><a class="subMenu1 index1 First_Suite" href="First_Suite.jsp"> 퍼스트 스위트 </a></li>
-						<li><a class="subMenu1 index2 First" href="First.jsp"> 퍼스트 </a></li>
+						<li><a class="subMenu1 index1 First_Suite" href="./suite.su"> 퍼스트 스위트 </a></li>
+						<li><a class="subMenu1 index2 First" href="./first.su"> 퍼스트 </a></li>
 					</ul></li>
 
 				<li><a class="menu top2" href="TicketInformation.jsp"> 항공권 예매 </a>
 					<ul class="submenu sub2"
 						style="padding: 15px 0 15px 19px; display: none;">
-						<li><a class="subMenu1 index1 TicketInformation" href="TicketInformation.jsp"> 항공권 안내 </a></li>
-						<li><a class="subMenu1 index2 BookOnLine" href="BookOnLine.jsp"> 인터넷 예매 </a></li>
-						<li><a class="subMenu1 index4 BookingAirport" href="BookingAirport.jsp"> 공항 예매 </a></li>
+						<li><a class="subMenu1 index1 TicketInformation" href="./ticket.su"> 항공권 안내 </a></li>
+						<li><a class="subMenu1 index2 BookOnLine" href="./bookOn.su"> 인터넷 예매 </a></li>
+						<li><a class="subMenu1 index4 BookingAirport" href="./booking.su"> 공항 예매 </a></li>
 					</ul></li>
 
 				<li><a class="menu top5" href="Check_In.jsp"> 공항에서 </a>
 					<ul class="submenu sub5"
 						style="padding: 15px 0 15px 19px; display: none;">
-						<li><a class="subMenu1 index1 Check_In" href="Check_In.jsp">
+						<li><a class="subMenu1 index1 Check_In" href="./check.su">
 								공항 탑승수속 절차 </a></li>
-						<li><a class="subMenu1 index7 Entry_Procedures" href="Entry_Procedures.jsp"> 입국 절차 </a></li>
+						<li><a class="subMenu1 index7 Entry_Procedures" href="./entry.su"> 입국 절차 </a></li>
 					</ul></li>
 
-				<li><a class="menu top6" href="Baggage.jsp"> 수하물/유실물 </a>
+				<li><a class="menu top6" href="./bag.su"> 수하물/유실물 </a>
 					<ul class="submenu sub6"
 						style="padding: 15px 0 15px 19px; display: none;">
-						<li><a class="subMenu1 index1 Baggage" href="Baggage.jsp"> 수하물 준비 </a></li>
+						<li><a class="subMenu1 index1 Baggage" href="./bag.su"> 수하물 준비 </a></li>
 					</ul></li>
 
-				<li><a class="menu top7" href="Meals.jsp"> 기내에서 </a>
+				<li><a class="menu top7" href="./meals.su"> 기내에서 </a>
 					<ul class="submenu sub7"
 						style="padding: 15px 0 15px 19px; display: none;">
-						<li><a class="subMenu1 index1 Meals" href="Meals.jsp"> 기내식 / 음료 </a></li>
-						<li><a class="subMenu1 index8 Electronics_Instructional" href="Electronics_Instructional.jsp"> 휴대용 전자기기 사용안내 </a></li>
+						<li><a class="subMenu1 index1 Meals" href="./meals.su"> 기내식 / 음료 </a></li>
+						<li><a class="subMenu1 index8 Electronics_Instructional" href="./elec.su"> 휴대용 전자기기 사용안내 </a></li>
 					</ul></li>
 					
-					<li><a class="menu top9" href="Aircraft_Information.jsp"> 항공기 안내 </a></li>
+					<li><a class="menu top9" href="./aircraft.su"> 항공기 안내 </a></li>
 					
-					<li><a class="menu top10" href="Mobile_Services.jsp"> 모바일 서비스 </a></li>
+					<li><a class="menu top10" href="./mobile.su"> 모바일 서비스 </a></li>
 			</ul>
 		</aside>
 	</div>
