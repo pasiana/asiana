@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>인터넷예매</title>
-<link type="text/css" rel="stylesheet" href="css/bookonline.css">
+<link type="text/css" rel="stylesheet" href="css/newsear.css">
 <link rel="stylesheet"
 	href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
@@ -13,23 +13,34 @@
 <link rel="stylesheet" href="/resources/demos/style.css">
 <link rel ="shortcut icon" href="images/logo/favicon.ico">
 <script type="text/javascript">
-$(document).ready(function() {
-			$('.top2').addClass("menuchange");
-			$('.top2').parent().children('ul').css('display', 'block');
-});
+var date = new Date();
+var lea_time = date.getFullYear()+"-"+new String(date.getMonth()+1)+"-"+date.getDate();
+var arr_time = date.getFullYear()+"-"+new String(date.getMonth()+1)+"-"+(date.getDate()+3);
 $(function() {
-	$('#datepicker').datepicker();
-});
-
-$.datepicker.setDefaults({
-	dateFormat : 'yy-mm-dd'
-});
-
-$(function() {
+	$('.top2').addClass("menuchange");
+	$('.top2').parent().children('ul').css('display', 'block');
+	$('#datepicker').val(lea_time);
+	$('#datepicker1').val(arr_time);
+	$('#datepicker').datepicker({
+		onSelect: function(date){
+			$('#datepicker').val(date);
+		}
+	});
+	$('#datepicker1').datepicker({
+		onSelect: function(date){
+			$('#datepicker1').val(date);
+		}
+	});
 	$("#tabs").tabs();
 });
-$(function() {
-	$('#datepicker1').datepicker();
+$.datepicker.setDefaults({
+	dateFormat : 'yy-mm-dd',
+	dayNamesMin: ["일","월","화","수","목","금","토"],
+	monthNames: [ "1월", "2월", "3월", "4월", "5월", "6월",
+	              "7월", "8월", "9월", "10월", "11월", "12월" ],
+	yearSuffix: "년",
+	minDate: "-0d",
+	showMonthAfterYear: true
 });
 
 function click_search(){
@@ -233,7 +244,7 @@ width:180px;
 					<li><a href="#none">HOME</a> <span>&gt;</span></li>
 					<li><a href="#none">서비스 안내</a> <span>&gt;</span></li>
 					<li><a href="#none">항공권 예매</a> <span>&gt;</span></li>
-					<li>인터넷 예매</li>
+					<li>스케줄 조회</li>
 				</ul>
 			</div>
 		</div>
@@ -262,7 +273,6 @@ width:180px;
 				<ul>
 
 					<li><a href="#tabs-1">국내선</a></li>
-					<li><a href="#tabs-2">국제선</a></li>
 
 				</ul>
 
@@ -416,10 +426,7 @@ style="padding: 4px 0 0 0; display: inline-block; *display: inline; *zoom: 1;">�
 							</td>
 						</tr>
 					</table>
-					<div id="tabs-2">
-						<h1>국제선은 없습니다</h1>
-
-					</div>
+					
 				</div>
 
 

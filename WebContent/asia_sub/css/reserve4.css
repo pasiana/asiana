@@ -1,0 +1,528 @@
+@CHARSET "UTF-8";
+* {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+	cursor: pointer;
+}
+
+li {
+	list-style: none;
+}
+
+body {
+	font-family: "맑은 고딕";
+	overflow-x: hidden;
+}
+
+.locationBox {
+	margin: 0 auto;
+	width: 1440px;
+	height: 30px;
+	background: url("../img/bg_location.jpg") no-repeat center bottom;
+}
+
+.location {
+	margin: 0 auto;
+	color: #333;
+	font-size: 11px;
+	width: 956px;
+	height: 25px;
+	border: 1px solid white;
+}
+
+.location ul {
+	margin-top: 7px;
+}
+
+.location ul li {
+	float: left;
+}
+
+.location ul li:nth-child(3) {
+	color: #999;
+}
+
+#containerBox {
+	width: 1440px;
+	height: 100%;
+	background: url("../img/bg_body1_1.jpg") repeat-x center -30px;
+	margin: 0 auto;
+}
+
+#skipct {
+	width: 956px;
+	height: 100%;
+	margin: 0 auto;
+
+}
+
+#skipct h3 {
+	font-size: 24px;
+	color: #010101;
+	font-weight: normal;
+	line-height: 28px;
+	width: 725px;
+	height: 28px;
+	margin: 20px 0 44px 10px;
+}
+
+#skipct .rv_stepBox {
+	width: 964px;
+	margin: 0 auto 10px auto;
+	font-size: 13px;
+}
+
+#skipct .rv_stepBox li {
+	float: left;
+	height: 30px;
+	line-height: 12px;
+	margin-left: -2px;
+	padding: 0 0 0 9px;
+}
+
+#skipct .rv_stepBox .step01_end {
+	color: #5d6067;
+	font-weight: normal;
+	background: url("../img/bg_rvStep01_end.gif") no-repeat 0 0;
+	width: 161px;
+	padding: 0 0 0 18px;
+	margin-left:1px; 
+}
+
+#skipct .rv_stepBox .step02_end {
+	color: #5d6067;
+	font-weight: normal;
+	background: url("../img/bg_rvStep02_end.gif") no-repeat 0 0;
+	width: 179px;
+	padding: 0 0 0 18px;
+	margin-left: -2px;
+}
+
+#skipct .rv_stepBox .step03_end {
+	color: #5d6067;
+	font-weight: normal;
+	background: url("../img/bg_rvStep03_end.gif") no-repeat 0 0;
+	width: 179px;
+	padding: 0 0 0 18px;
+	margin-left: -2px;
+}
+
+#skipct .rv_stepBox .step04_on {
+	color: #5d6067;
+	font-weight: bold;
+	background: url("../img/bg_rvStep04_on.gif") no-repeat 0 0;
+	width: 152px;
+	padding: 0 0 0 43px;
+}
+
+#skipct .rv_stepBox .step05_off {
+	color: #5d6067;
+	font-weight: normal;
+	background: url("../img/bg_rvStep05_off.gif") no-repeat 0 0;
+	width: 189px;
+	margin-left: -3px;
+}
+
+#skipct .helpOp {
+	width: 956px;
+	height: 22px;
+	text-align: right;
+	margin: 80px -231px 19px 0;
+}
+
+#skipct .helpOp .btnType06 {
+	margin-top: 10px;
+	width: 108px;
+	height: 22px;
+	background: url("../img/bg_btnLeft6.jpg") no-repeat 0 0;
+	display: inline-block;
+}
+
+#skipct .helpOp .btnType06 a {
+	padding-right: 41px;
+	background: url("../img/bg_btnRight6.jpg") no-repeat right 0;
+	padding: 0 35px 0 8px;
+	display: block;
+	height: 22px;
+	line-height: 22px;
+	color: #4c4c4c;
+	font-size: 11px;
+}
+.itineraryBoxPs,.fareInner {
+	width: 725px;
+	height: 100%;
+}
+
+
+.selectITbox3 {
+	background: url("../img/bg_selectItineraryTop2.gif") no-repeat 0 0;
+	padding: 5px 0 0 0;
+	margin: 0 0 10px 0;
+}
+
+.selectITbox3 .selectITinner3 {
+	background: #fff url("../img/bg_selectItineraryBottom.gif") no-repeat 0
+		bottom;
+	padding: 0 0 16px 0;
+	height: 392px;
+}
+
+.selectITinner3 li.liType01.totalIntro {
+	width: 287px;
+	padding-left: 20px;
+	background: none;
+}
+
+.selectITinner3 li.liType01 {
+	float: left;
+	font-size: 11px;
+	padding: 14px 0 0 0;
+	font-family: '돋움';
+}
+
+.selectITbox3 .selectITinner3 .sTitle {
+	color: #581cb4;
+}
+
+.selectITbox3 .selectITinner3 li.liType01.totalIntro .tBoxD {
+	margin: 9px 0 0 -1px;
+	line-height: 19px;
+}
+
+.selectITbox3 .selectITinner3 li.liType01.totalIntro .tBoxD .start,.selectITbox3 .selectITinner3 li.liType01.totalIntro .tBoxD .end
+	{
+	float: left;
+	min-width: 86px;
+	font-size: 12px;
+}
+
+.selectITbox3 .selectITinner3 li.liType01.totalIntro .tBoxD strong {
+	font-size: 16px;
+	font-family: '돋움';
+}
+
+.selectITbox3 .selectITinner3 li.liType01.totalIntro .tBoxD .end.oneWay
+	{
+	background: url("../img/bg_arrow5_1.gif") no-repeat 0 3px;
+}
+
+.selectITbox3 .selectITinner3 li.liType01.totalIntro .tBoxD .end {
+	padding: 0 0 0 33px;
+}
+
+.selectITbox3 .selectITinner3 li.liType01.selectStart {
+	width: 144px;
+	padding-left: 6px;
+}
+
+.selectITbox3 .selectITinner3 li.liType01 {
+	float: left;
+	background: url("../img/bg_line2.gif") no-repeat 0 0;
+	font-size: 11px;
+	font-family: '돋움';
+}
+
+.selectITbox3 .selectITinner3 .pType01 {
+	line-height: 18px;
+	margin: 6px 0 0 0;
+	font-size: 12px;
+	font-family: "굴림";
+}
+
+.passengerFareBox {
+	padding: 10px 19px 0 19px;
+}
+
+.passengerFareBox .h4_type01 {
+	font-size: 13px;
+	color: #581cb4;
+	border-top: 1px solid #5c5f66;
+	border-bottom: 1px solid #5c5f66;
+	line-height: 32px;
+}
+
+.passengerFareBox .memberBox {
+	position: relative;
+	background: url("../img/bg_tableBox2.gif") repeat-y 0 0;
+	padding: 0 0 0 51px;
+	border-bottom: 1px solid #adafb2;
+	width: 636px;
+	height: 193px;
+}
+
+.passengerFareBox .memberBox.DmemberBox .mName {
+	width: 182px;
+}
+
+.passengerFareBox .memberBox .mName {
+	float: left;
+	padding: 10px 0 0 20px;
+}
+
+.passengerFareBox .memberBox .mName .name strong {
+	font-size: 13px;
+}
+
+.passengerFareBox .memberBox .DtableType1_1 {
+	width: 434px;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+thead {
+	display: table-header-group;
+	vertical-align: middle;
+	border-color: inherit;
+}
+
+tbody {
+	display: table-row-group;
+	vertical-align: middle;
+	border-color: inherit;
+}
+
+tfoot {
+	display: table-footer-group;
+	vertical-align: middle;
+	border-color: inherit;
+}
+
+tr {
+	display: table-row;
+	vertical-align: inherit;
+	border-color: inherit;
+}
+
+.passengerFareBox .memberBox .DtableType1_1 thead th {
+	color: #5c5f66;
+	font-size: 11px;
+	text-align: left;
+	padding: 7px 0 0 0;
+	line-height: 22px;
+	font-family: '돋움';
+}
+
+.passengerFareBox .memberBox .DtableType1_1 th,.passengerFareBox .memberBox .DtableType1_1 td
+	{
+	border-bottom: 1px solid #d9d9d9;
+}
+
+.passengerFareBox .memberBox .DtableType1_1 tbody th {
+	text-align: left;
+	font-weight: normal;
+}
+
+.passengerFareBox .memberBox .DtableType1_1 thead th.textRight {
+	text-align: right;
+}
+
+.passengerFareBox .memberBox .DtableType1_1 tbody th,.passengerFareBox .memberBox .DtableType1_1 tbody td
+	{
+	vertical-align: top;
+	padding: 6px 0;
+	line-height: 16px;
+}
+
+.passengerFareBox .memberBox .DtableType1_1 tbody td {
+	text-align: right;
+}
+
+.passengerFareBox .memberBox .DtableType1_1 tfoot td {
+	border-bottom: none;
+	padding: 10px 0 18px 0;
+}
+
+.passengerFareBox .memberBox .DtableType1_1 tfoot td .ttText {
+	text-align: left;
+	display: block;
+	width: 48%;
+	float: left;
+}
+
+.passengerFareBox .memberBox .DtableType1_1 tfoot td .ttPrice {
+	text-align: right;
+	display: block;
+	width: 48%;
+	float: right;
+	font-size: 14px;
+}
+.passengerFareBox .btnPrice {
+	text-align: right;
+	padding: 38px 0 0 0;
+	position: relative;
+}
+.passengerFareBox .btnPrice .btnType06 {
+	margin: 0 35px 0 0;
+}
+.passengerFareBox .btnPrice .text {
+	padding: 13px 16px 12px 0;
+}
+.passengerFareBox .btnPrice .totalP {
+	color: #5e14cc;
+	font-size: 16px;
+	font-weight: bold;
+	font-family: '돋움';
+}
+.passengerFareBox .btnPrice .totalP strong {
+	font-size: 24px;
+	font-family: Arial;
+	font-weight: bold;
+}
+.fareInner .fareMethodBox {
+	padding: 27px 0 0 0;
+}
+.fareInner .fareMethodBox h4.h4_type01 {
+	background: url("../img/bl_hType01.gif") no-repeat 1px center;
+	color: #581CB4;
+	font-size: 14px;
+	height: 17px;
+	line-height: 17px;
+	margin: 0 0 16px;
+	padding: 0 0 0 27px;
+	text-align: left;
+}
+.fareInner .fareMethodBox .fareMethodTable {
+	border-top: 1px solid #333;
+	border-bottom: 1px solid #adafb2;
+	position: relative;
+	background: url("../img/bg_yellow.gif") repeat-y 0 0;
+	padding: 0 0 13px 150px;
+	margin: 0 0 30px 0;
+	width: 575px;
+	height: 350px;
+}
+.fareInner .fareMethodBox .fareMethodTable .totalMethod {
+	color: #581cb4;
+	position: absolute;
+	top: 13px;
+	left: 11px;
+	line-height: 24px;
+}
+.fareInner .fareMethodBox .fareMethodTable .totalMethod .money {
+	font-size: 20px;
+	font-family: Arial;
+	font-weight: bold;
+}
+.fareInner .fareMethodBox .fareMethodTable .totalMethod .unit {
+	font-size: 11px;
+	margin: 0 11px 0 0;
+	font-family: '돋움';
+}
+
+.fareInner .fareMethodBox .fareMethodTable .fareMethodText {
+	padding: 19px 0 0 20px;
+}
+.fareInner .fareMethodBox .fareMethodTable .fareMethodText .noticeList {
+	margin: 0 0 34px 2px;
+}
+.noticeList li {
+	background: url("../img/bl_ck.gif") no-repeat -1px 5px;
+	font-size: 11px;
+	line-height: 18px;
+	padding: 0 0 0 14px;
+	font-family: '돋움';
+}
+.fareInner .fareMethodBox .fareMethodTable .fareMethodText .fareRule01 {
+	padding: 10px 0;
+	width: 555px;
+}
+.fareInner .fareMethodBox .fareMethodTable .fareMethodText .fareRule01 dt {
+	width: 70px;
+}
+.fareInner .fareMethodBox .fareMethodTable .fareMethodText .fareRule01 dt, .fareInner .fareMethodBox .fareMethodTable .fareMethodText .fareRule01 dd {
+	float: left;
+}
+.fareInner .fareMethodBox .fareMethodTable .fareMethodText .fareRule01 dt strong {
+	display: block;
+}
+.fareInner .fareMethodBox .fareMethodTable .fareMethodText .fareRule01 dd {
+	width: 440px;
+}
+.fareInner .fareMethodBox .fareMethodTable .fareMethodText .fareRule01 dd .btn-cList {
+	margin: -4px 0 0 0;
+}
+.fareInner .fareMethodBox .fareMethodTable .fareMethodText .fareRule01 dd * {
+	vertical-align: middle;
+}
+.fareInner .fareMethodBox .fareMethodTable .fareMethodText .fareRule01 dd .btn-cList li {
+	float: left;
+}
+.fareInner .fareMethodBox .fareMethodTable .fareMethodText .fareRule01 dd .btn-cList .btn-type-1.on {
+	background: url('../img/bg-c1-on.gif') no-repeat 0 0;
+	width: 110px;
+}
+.fareInner .fareMethodBox .fareMethodTable .fareMethodText .fareRule01 dd .btn-cList .btn-type-1{
+	line-height: 24px;
+	height: 24px;
+	display: inline-block;
+	text-align: center;
+}
+.fareInner .fareMethodBox .fareMethodTable .fareMethodText .fareRule01 dd .btn-cList .btn-type-1.on{
+	color: #fff;
+	font-weight: bold;
+}
+.fareInner .fareMethodBox .fareMethodTable .fareMethodText .fareRule02 {
+	width: 270px;
+	float: left;
+	margin: 0 0 5px 0;
+}
+.fareInner .fareMethodBox .fareMethodTable .fareMethodText .fareRule02 dt {
+	width: 70px;
+}
+.fareInner .fareMethodBox .fareMethodTable .fareMethodText .fareRule02 dt strong {
+	display: block;
+	padding: 4px 0 0 0;
+}
+.fareInner .fareMethodBox .fareMethodTable .fareMethodText .fareRule02 dd {
+	width: 166px;
+	padding: 0 30px 0 0;
+}
+.fareInner .fareMethodBox .fareMethodTable .fareMethodText .fareRule02 dt, .fareInner .fareMethodBox .fareMethodTable .fareMethodText .fareRule02 dd {
+	float: left;
+}
+.btnBoxType01 li {
+	width: 48%;
+	float: left;
+}
+.Sbtn_TType06_2 {
+	background: url("../img/Sbtn_TTypeL06_2.gif") no-repeat 0 0;
+	display: inline-block;
+}
+.Sbtn_TType06_2 a {
+	background: url("../img/Sbtn_TTypeR06_2.gif") no-repeat right 0;
+	padding: 0 11px 0 27px;
+	display: block;
+	height: 25px;
+	line-height: 25px;
+	color: #666;
+	font-weight: bold;
+}
+.btnBoxType01 {
+	height: 35px;
+	margin-bottom: 20px;
+}
+.btnBoxType01 li.right {
+	float: right;
+	text-align: right;
+}
+.Bbtn_TType01_1 {
+	background: url("../img/Bbtn_TTypeL01_1.gif") no-repeat 0 0;
+	display: inline-block;
+}
+.Bbtn_TType01_1 a {
+	background: url("../img/Bbtn_TTypeR01_1.gif") no-repeat right 0;
+	padding: 0 41px 0 19px;
+	display: block;
+	height: 35px;
+	line-height: 35px;
+	color: #fff;
+	font-size: 13px;
+	font-weight: bold;
+}

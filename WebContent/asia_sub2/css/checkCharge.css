@@ -1,0 +1,221 @@
+@CHARSET "UTF-8";
+* {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+	cursor: pointer;
+}
+
+li {
+	list-style: none;
+}
+
+body {
+	font-family: "맑은 고딕";
+	overflow-x: hidden;
+}
+
+.locationBox {
+	margin: 0 auto;
+	width: 1440px;
+	height: 30px;
+	background: url("../img/bg_location.jpg") no-repeat center bottom;
+}
+
+.location {
+	margin: 0 auto;
+	color: #333;
+	font-size: 11px;
+	width: 956px;
+	height: 25px;
+	border: 1px solid white;
+}
+
+.location ul {
+	margin-top: 7px;
+}
+
+.location ul li {
+	float: left;
+	font-size: 11px;
+}
+
+.location ul li:nth-child(4) {
+	color: #999;
+}
+
+#containerBox {
+	width: 1440px;
+	background: url("../img/bg_body1_1.jpg") repeat-x center 0;
+	margin: 0 auto;
+}
+
+#containerBox #container {
+	width: 956px;
+	margin: 0 auto;
+	position: relative;
+}
+
+#containerBox #container #containerBody {
+	width: 711px;
+	margin: 0 0 0 195px;
+	padding: 27px 0 100px 50px;
+	min-height: 780px;
+}
+
+#containerBox #container #containerBody h3.h3_type01 {
+	font-size: 24px;
+	color: #010101;
+	font-weight: normal;
+	margin: 0 0 44px 0;
+	line-height: 28px;
+}
+.common-boxRelationService {
+	margin-top: 30px;
+	width: 710px;
+	height: 125px;
+	width: 710px;
+}
+
+.common-boxRelationService .common-innerRelationService {
+	float: right;
+	width: 238px;
+}
+.h4_type03 {
+	font-size: 16px;
+	line-height: 20px;
+	margin-bottom: 12px;
+}
+.ag-reservation .notice li {
+	line-height: 20px;
+	background: url('../img/bl_blue3.gif') no-repeat 0px 8px;
+	padding: 0 0 0 9px;
+	font-size: 12px;
+	color: #333;
+}
+.ag-reservation .box-fareCheck .box-topType-1 {
+	background: url('../img/bg_boxTop_1.jpg') no-repeat 0 0;
+	padding: 14px 0 0 0;
+	margin: 35px 0 41px 0
+}
+.ag-reservation .box-fareCheck .box-topType-1 .box-bottomType-1 {
+	background: url('../img/bg_boxBottom_1.jpg') no-repeat 0 bottom;
+	padding: 0 0 25px 29px;
+}
+.ag-reservation .box-fareCheck .box-topType-1 .box-bottomType-1 .start, .ag-reservation .box-fareCheck .box-topType-1 .box-bottomType-1 .end {
+	width: 264px;
+	float: left;
+	margin-right: 10px;
+}
+.ag-reservation .box-fareCheck .box-topType-1 .box-bottomType-1 .title {
+	font-size: 13px;
+	font-weight: bold;
+	line-height: 23px;
+	margin-bottom: 4px;
+}
+.ag-reservation .box-fareCheck .box-topType-1 .box-bottomType-1 .selectBox {
+	position: relative;
+	z-index: 91;
+}
+.selectStyle {
+	position: relative;
+	z-index: 1;
+	height: 30px;
+	border-left: 1px solid #999;
+	background: #fff url("../img/bg_select_x.gif") repeat-x 0 bottom;
+	border: 1px solid #999;
+}
+.selectStyle span {
+	overflow: hidden;
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 30px;
+}
+.selectStyle span input[type="text"] {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	background-color: transparent;
+	background: url("../img/arr_select.gif") no-repeat right 50%;
+	height: 30px;
+	border: none;
+	font-size: 12px;
+	color: #333;
+	text-indent: -1500px;
+	z-index: -1;
+	color: transparent;
+}
+.selectStyle select {
+	height: 20px;
+	background: transparent;
+	font-size: 12px;
+	width: 115%;
+	border: none;
+	padding: 4px 0 0 0;
+}
+.selectStyle * {
+	vertical-align: top;
+}
+.ag-reservation .box-fareCheck .box-topType-1 .box-bottomType-1 .Sbtn_TType04_3 {
+	margin-top: 27px;
+	background: url("../img/Sbtn_TTypeL04_3.gif") no-repeat 0 0;
+	display: inline-block;
+}
+.Sbtn_TType04_3 a {
+	background: url("../img/Sbtn_TTypeR04_3.gif") no-repeat right 0;
+	padding: 0 15px 0 35px;
+	display: block;
+	height: 25px;
+	line-height: 25px;
+	font-weight: bold;
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}
+.common-box-3 {
+	border-top: 1px solid #5c5f66;
+	border-bottom: 1px solid #adafb2;
+}
+.common-table-3 {
+	width: 100%;
+}
+table {
+	border-collapse: collapse;
+}
+caption, legend, #accessibility, .hidden {
+	font-size: 0;
+	line-height: 0;
+	text-indent: -5000px;
+}
+.common-table-3 thead th {
+	color: #5c5f66 !important;
+	font-size: 11px !important;
+	line-height: 16px;
+	border-bottom: 1px solid #adafb2;
+	text-align: left !important;
+	padding: 9px 0 9px 9px;
+	vertical-align: top;
+	background: #f8f8f8;
+	border-right: 1px solid #dfdfdf;
+}
+.common-table-3 thead th.last-child, .common-table-3 tbody td.last-child {
+	border-right: none;
+}
+.common-table-3 tbody th, .common-table-3 tbody td {
+	border-bottom: 1px solid #e4e4e4;
+	border-right: 1px solid #e4e4e4;
+	line-height: 20px;
+	padding: 7px 0 8px 10px;
+	vertical-align: top;
+	text-align: right;
+	padding-right: 10px;
+}
+.common-table-3 tbody td.last-child {
+	border-right: none;
+}

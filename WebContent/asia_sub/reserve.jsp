@@ -26,23 +26,6 @@
 		showMonthAfterYear: true
 	});
 	$(function() {
-		// datepicker 첫번째
-		$('#CalendarBox .takeOff .inp').val(lea_time);
-		$("#datepicker").datepicker({
-			onSelect: function(date){
-				$('#CalendarBox .takeOff .inp').val(date);
-			}
-		});
-		// datepicker 두번째
-		$('#CalendarBox .getIn .inp').val(lea_time);
-		$("#datepicker1").datepicker({
-			onSelect: function(date){
-				$('#CalendarBox .getIn .inp').val(date);
-			}
-		});
-	});
-	
-	$(document).ready(function(){
 		//편도 클릭시
 		$('.btn-type-2').click(function(){
 			$('.vuseh').hide();
@@ -116,7 +99,23 @@
 			// 도시 리스트중 선택 된 리스트외의 백그라운드 원상복귀
 			$('.list a').not(this).css('background','none');
 		});
+		
+		// datepicker 첫번째
+		$('#CalendarBox .takeOff .inp').val(lea_time);
+		$("#datepicker").datepicker({
+			onSelect: function(date){
+				$('#CalendarBox .takeOff .inp').val(date);
+			}
+		});
+		// datepicker 두번째
+		$('#CalendarBox .getIn .inp').val(lea_time);
+		$("#datepicker1").datepicker({
+			onSelect: function(date){
+				$('#CalendarBox .getIn .inp').val(date);
+			}
+		});
 	});
+	
 	// 선택된 도시의 인덱스값을 인자값으로 받아 도착도시 UI 변경함수 
 	function select_city(city_idx) {
 		$('.getIn .list a').each(function(idx){
@@ -136,9 +135,11 @@
 		});
 	}
 	
+	// 조회하기 버튼 클릭시 동작 함수
 	function submit_form() {
 		lea_time = $('#datepicker').val();
 		arr_time = $('#datepicker1').val();
+		// 탑승인원 파라미터값 저장
 		var res_count = $('#adultCount option:selected').text().replace('명','');
 		var url = "";
 		if(res_sig_dou == "왕복") {
