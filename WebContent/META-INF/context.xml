@@ -6,5 +6,5 @@
 			  username="asiana"
 			  password="asiana"
 			  driverClassName="com.mysql.jdbc.Driver"
-			  url="jdbc:mysql://localhost:3306/asiana" />
+			  url="jdbc:mysql://localhost:3306/itwill3" />
 </Context>
