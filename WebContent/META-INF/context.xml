@@ -6,5 +6,5 @@
 			  username="itwill3"
 			  password="itwillbs8030909"
 			  driverClassName="com.mysql.jdbc.Driver"
-			  url="jdbc:mysql://1.252.62.40:3306/itwill3" />
+			  url="jdbc:mysql://uj64-010.cafe24.com:3306/itwill3" />
 </Context>
