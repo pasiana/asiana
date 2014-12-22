@@ -15,10 +15,10 @@
 	var arr_city = "제주";
 	var res_sig_dou = "왕복";
 	var date = new Date();
-	var lea_time = date.getFullYear() + "-" + new String(date.getMonth() + 1)
-			+ "-" + date.getDate();
-	var arr_time = date.getFullYear() + "-" + new String(date.getMonth() + 1)
-			+ "-" + date.getDate();
+	var lea_time = date.getFullYear() + "/" + new String(date.getMonth() + 1)
+			+ "/" + date.getDate();
+	var arr_time = date.getFullYear() + "/" + new String(date.getMonth() + 1)
+			+ "/" + date.getDate();
 	$.datepicker.setDefaults({
 		dateFormat : 'yy-mm-dd',
 		dayNamesMin : [ "일", "월", "화", "수", "목", "금", "토" ],
@@ -183,8 +183,11 @@
 	}
 
 	function submit_form() {
-		lea_time = $('#datepicker').val();
-		arr_time = $('#datepicker1').val();
+		/* lea_time = $('#datepicker').val(); */
+		lea_time=lea_time.replace(lea_time.split("/")[0]+"/","");
+		/* arr_time = $('#datepicker1').val(); */
+		arr_time=arr_time.replace(arr_time.split("/")[0]+"/","");
+		
 		var res_count = $('#adultCount option:selected').text()
 				.replace('명', '');
 		var url = "";

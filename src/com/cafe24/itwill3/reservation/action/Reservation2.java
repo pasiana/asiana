@@ -27,10 +27,17 @@ public class Reservation2 implements Action {
 		ReservationDAO reservationDAO = new ReservationDAO();
 		
 		List<ReservationBean> relist = null;
+		List<ReservationBean> leaday = null;
 		
 		relist=reservationDAO.leave(lea_city, arr_city);
+		leaday=reservationDAO.leaDay(lea_city, arr_city);
 		
 		request.setAttribute("relist", relist);
+		request.setAttribute("lea_city", lea_city);
+		request.setAttribute("arr_city", arr_city);
+		request.setAttribute("lea_time", lea_time);
+		request.setAttribute("res_count", res_count);
+		request.setAttribute("leaday", leaday);
 		
 		ActionForward forward = new ActionForward();
 		forward.setPath("./reserve2.jsp");

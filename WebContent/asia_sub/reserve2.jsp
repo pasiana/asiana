@@ -20,12 +20,23 @@
 	});
 </script>
 <style type="text/css">
-
+.tableBox04 .dayListBox ul li:nth-child(1){
+	background:url('https://flyasiana.com/images/bg/bg_stTitle_on.gif') no-repeat 0 0;
+}
+.tableBox04 .dayListBox ul li:nth-child(1) .day{
+	color: #fff;
+}
 </style>
 </head>
 <body>
 	<%
 		List<ReservationBean> relist = (List)request.getAttribute("relist");
+		String lea_city = (String)request.getAttribute("lea_city");
+		String arr_city = (String)request.getAttribute("arr_city");
+		String lea_time = (String)request.getAttribute("lea_time");
+		int res_count = ((Integer) request.getAttribute("res_count")).intValue();
+		List<ReservationBean> leaday =(List)request.getAttribute("leaday");
+		
 	%>
 	<header>
 		<jsp:include page="../asiana_inc/header.jsp" />
@@ -62,9 +73,9 @@
 						<div class="selectITbox4">
 							<div class="selectITinner4">
 								<div class="sLeft">
-									<span class="upsellStart"><strong>부산(PUS)</strong></span> <span
-										class="upsellEnd oneWay"><strong>제주(CJU)</strong></span> <span
-										class="ppCnt">( <strong>탑승객 1명</strong>&nbsp;<span>:&nbsp;성인&nbsp;1명</span>
+									<span class="upsellStart"><strong><%=lea_city %></strong></span> <span
+										class="upsellEnd oneWay"><strong><%=arr_city %></strong></span> <span
+										class="ppCnt">( <strong>탑승객 <%=res_count %>명</strong>&nbsp;<span>:&nbsp;성인&nbsp;<%=res_count %>명</span>
 										)
 									</span>
 								</div>
@@ -83,25 +94,30 @@
 							</p>
 
 							<p class="startAr">
-								<strong>가는 항공편</strong> 김포(GMP) → 제주(CJU) <span class="day">2014/12/20/토
+								<strong>가는 항공편</strong> <%=lea_city %> → <%=arr_city %> <span class="day"><%=lea_time %>
 									출발</span>
 							</p>
-
+							
 							<div class="dayListBox">
 								<div class="btnPre hoverA" id="preDepartureSearch">
 									<a href="#"><img src="img/btn_preDay.gif" alt="가는 항공편 다음일"></a>
 								</div>
-
+								
 								<ul>
+								<%
+									for(int i=0; i<leaday.size(); i++){
+									ReservationBean reservationBean = leaday.get(i);
+								%>
 									<li class="btnDay" id="chagneDateSearch">
 										<a href="#">
-											<strong class="day">12/19/금</strong> <span class="price"><strong>87,700</strong>
+											<strong class="day"><%=reservationBean.getLeaDay() %></strong> <span class="price"><strong>87,700</strong>
 											<span class="sm">원</span><br>부터</span>
 										</a>
 									</li>
-									<li class="btnDay" id="chagneDateSearch">
+									<%} %>
+									<!-- <li class="btnDay" id="chagneDateSearch">
 										<a href="#">
-											<strong class="day">12/20/토</strong> <span class="price"><strong>87,700</strong>
+											<strong class="day">01/01/목</strong> <span class="price"><strong>87,700</strong>
 											<span class="sm">원</span><br>부터</span>
 										</a>
 									</li>
@@ -113,8 +129,8 @@
 									</li>
 									<li class="btnDay" id="chagneDateSearch"><a href="#"></a>
 									</li>
-									<li class="btnDay" id="chagneDateSearch"><a href="#"></a>
-									</li>
+									<li class="btnDay"  id="chagneDateSearch"><a href="#"></a>
+									</li> -->
 								</ul>
 
 								<div class="btnNext hoverA" id="nextDepartureSearch">
@@ -141,30 +157,38 @@
 										
 										<tbody>
 											<%
-												for(int i=0; i<relist.size(); i++){
-													ReservationBean reservationBean = relist.get(i);
+											for(int i=0; i<leaday.size(); i++){
+												ReservationBean reservationBean = leaday.get(i);
+												if(reservationBean.getLeaDay().equals("01/01/목")){
+													for(i=0; i<relist.size(); i++){
+														ReservationBean rBean = relist.get(i);
+														if(rBean.getLeaDay().equals("01/01/목")){
 											%>
 											<tr>
 												<td rowspan="1"><span class="box"><span
-														class="text-type-1"><%=reservationBean.getFlightNum() %> </span></span></td>
-												<td rowspan="1"><span class="box"><strong><%=reservationBean.getLeaTime() %></strong></span></td>
-												<td rowspan="1"><span class="box"><strong><%=reservationBean.getArrTime() %></strong></span></td>
+														class="text-type-1"><%=rBean.getFlightNum() %> </span></span></td>
+												<td rowspan="1"><span class="box"><strong><%=rBean.getLeaTime() %></strong></span></td>
+												<td rowspan="1"><span class="box"><strong><%=rBean.getArrTime() %></strong></span></td>
 												<td rowspan="1"><span class="box"><a
-														class="bl_go" href="#none" id="searchFlightInfo"><%=reservationBean.getFlyModel() %></a></span></td>
+														class="bl_go" href="#none" id="searchFlightInfo"><%=rBean.getFlyModel() %></a></span></td>
 
 												<td class="hover_td"><span class="box"><span
 														class="day">-적립가능</span></span></td>
 												<td class="hover_td"><span class="box"> <span
-														class="price"> <strong><%=reservationBean.getCharge() %></strong> 원<br>
+														class="price"> <strong><%=rBean.getCharge() %></strong> 원<br>
 													</span>
 												</span></td>
-												<td class="hover_td"><span class="box"><strong><%=reservationBean.getSeats() %></strong>석</span>
+												<td class="hover_td"><span class="box"><strong><%=rBean.getSeats() %></strong>석</span>
 												</td>
 												<td class="last-td last-child hover_td"><span
 													class="Sbtn_TType07_3"><a href="#none"
 														id="ra_depAvail0">선택</a></span></td>
 											</tr>
-											<%} %>
+											<%			}
+													} 
+												}
+											}
+											%>
 										</tbody>
 									</table>
 								</div>
