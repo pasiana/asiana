@@ -37,11 +37,15 @@ public class ReservationDAO {
 				pstmt.setString(1, lea_city);
 				pstmt.setString(2, arr_city);
 				rs = pstmt.executeQuery();
-			
+				String citykey = "";
+				while(rs.next()) {
+					citykey += rs.getString("city_key")+",";
+				}
+				
 				sql = "SELECT * FROM leave_data WHERE lc_key = ? and ac_key = ?";
 				pstmt = conn.prepareStatement(sql);
-				pstmt.setString(1, city[0]);
-				pstmt.setString(2, city[1]);
+				pstmt.setString(1, citykey.split(",")[0]);
+				pstmt.setString(2, citykey.split(",")[1]);
 				rs = pstmt.executeQuery();
 				while(rs.next()) {
 					ReservationBean rBean = new ReservationBean();
