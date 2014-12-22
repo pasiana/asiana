@@ -1,14 +1,19 @@
 package com.cafe24.itwill3.reservation.action;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.cafe24.itwill3.reservation.db.ReservationBean;
+import com.cafe24.itwill3.reservation.db.ReservationDAO;
 
 public class Reservation2 implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
-		System.out.println("예약 2번쨰 페이지");
+		System.out.println("예약 2번째 페이지");
 		
 		String res_sig_dou = request.getParameter("res_sig_dou");
 		String lea_city = request.getParameter("lea_city");
@@ -19,6 +24,18 @@ public class Reservation2 implements Action {
 			String arr_time = request.getParameter("arr_time");
 		}
 		
-		return null;
+		ReservationDAO reservationDAO = new ReservationDAO();
+		
+		List<ReservationBean> relist = null;
+		
+		relist=reservationDAO.leave(lea_city, arr_city);
+		
+		request.setAttribute("relist", relist);
+		
+		ActionForward forward = new ActionForward();
+		forward.setPath("./reserve2.jsp");
+		forward.setRedirect(false);
+		
+		return forward;
 	}
 }

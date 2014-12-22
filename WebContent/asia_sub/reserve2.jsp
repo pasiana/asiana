@@ -1,3 +1,5 @@
+<%@page import="com.cafe24.itwill3.reservation.db.ReservationBean"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -11,9 +13,10 @@
 	$(document).ready(function(){
 		$('.btnDay').click(function() {
 			$('.btnDay').css("background","url('img/bg_stTitle.gif') no-repeat 0 0");
+			$('.btnDay .day').css("color","#333");
 			$(this).css("background","url('https://flyasiana.com/images/bg/bg_stTitle_on.gif') no-repeat 0 0");
+			$(this).find('.day').css("color","#fff");
 		});
-		
 	});
 </script>
 <style type="text/css">
@@ -21,6 +24,9 @@
 </style>
 </head>
 <body>
+	<%
+		List<ReservationBean> relist = (List)request.getAttribute("relist");
+	%>
 	<header>
 		<jsp:include page="../asiana_inc/header.jsp" />
 	</header>
@@ -132,67 +138,33 @@
 												<th scope="col" class="last-th"><strong>선택</strong></th>
 											</tr>
 										</thead>
+										
 										<tbody>
+											<%
+												for(int i=0; i<relist.size(); i++){
+													ReservationBean reservationBean = relist.get(i);
+											%>
 											<tr>
 												<td rowspan="1"><span class="box"><span
-														class="text-type-1">OZ8901 </span></span></td>
-												<td rowspan="1"><span class="box"><strong>06:25</strong></span></td>
-												<td rowspan="1"><span class="box"><strong>07:30</strong></span></td>
+														class="text-type-1"><%=reservationBean.getFlightNum() %> </span></span></td>
+												<td rowspan="1"><span class="box"><strong><%=reservationBean.getLeaTime() %></strong></span></td>
+												<td rowspan="1"><span class="box"><strong><%=reservationBean.getArrTime() %></strong></span></td>
 												<td rowspan="1"><span class="box"><a
-														class="bl_go" href="#none" id="searchFlightInfo">A321</a></span></td>
+														class="bl_go" href="#none" id="searchFlightInfo"><%=reservationBean.getFlyModel() %></a></span></td>
 
 												<td class="hover_td"><span class="box"><span
 														class="day">-적립가능</span></span></td>
 												<td class="hover_td"><span class="box"> <span
-														class="price"> <strong>119,800</strong> 원<br>
+														class="price"> <strong><%=reservationBean.getCharge() %></strong> 원<br>
 													</span>
 												</span></td>
-												<td class="hover_td"><span class="box"><strong>9</strong>석</span>
+												<td class="hover_td"><span class="box"><strong><%=reservationBean.getSeats() %></strong>석</span>
 												</td>
 												<td class="last-td last-child hover_td"><span
 													class="Sbtn_TType07_3"><a href="#none"
 														id="ra_depAvail0">선택</a></span></td>
 											</tr>
-										</tbody>
-									</table>
-								</div>
-
-								<div class="inner-table inner-table2"
-									style="overflow-x: hidden; max-height: 640px;">
-									<table class="tableType03 mT0" id="tbDepartureFlightList">
-										<thead>
-											<tr>
-												<th scope="col"><strong>편명</strong></th>
-												<th scope="col"><strong>출발</strong></th>
-												<th scope="col"><strong>도착</strong></th>
-												<th scope="col"><strong>기종</strong></th>
-												<th scope="col"><strong>마일리지 적립</strong></th>
-												<th scope="col"><strong>총액운임</strong></th>
-												<th scope="col"><strong>좌석</strong></th>
-												<th scope="col" class="last-th"><strong>선택</strong></th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td rowspan="1"><span class="box"><span
-														class="text-type-1">OZ8901 </span></span></td>
-												<td rowspan="1"><span class="box"><strong>06:25</strong></span></td>
-												<td rowspan="1"><span class="box"><strong>07:30</strong></span></td>
-												<td rowspan="1"><span class="box"><a
-														class="bl_go" href="#none" id="searchFlightInfo">A321</a></span></td>
-
-												<td class="hover_td"><span class="box"><span
-														class="day">-적립가능</span></span></td>
-												<td class="hover_td"><span class="box"> <span
-														class="price"> <strong>119,800</strong> 원<br>
-													</span>
-												</span></td>
-												<td class="hover_td"><span class="box"><strong>9</strong>석</span>
-												</td>
-												<td class="last-td last-child hover_td"><span
-													class="Sbtn_TType07_3"><a href="#none"
-														id="ra_depAvail0">선택</a></span></td>
-											</tr>
+											<%} %>
 										</tbody>
 									</table>
 								</div>
