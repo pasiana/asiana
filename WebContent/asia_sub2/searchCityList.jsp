@@ -4,9 +4,9 @@
     pageEncoding="UTF-8"%>
 <%
 	ArrayList list = (ArrayList)request.getAttribute("list");
-
 	for(int i=0; i<list.size(); i++) {
 		ChargeBean chargeBean = (ChargeBean)list.get(i);
+		System.out.println(chargeBean.getArrCity());
 		out.println(chargeBean.getArrCity());
 	}
 %>
