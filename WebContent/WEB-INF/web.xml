@@ -43,4 +43,13 @@
   	<servlet-name>MemberFrontController</servlet-name>
   	<url-pattern>*.me</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>ChargeController</servlet-name>
+  	<servlet-class>com.cafe24.itwill3.charge.action.ChargeController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ChargeController</servlet-name>
+  	<url-pattern>*.ch</url-pattern>
+  </servlet-mapping>
 </web-app>

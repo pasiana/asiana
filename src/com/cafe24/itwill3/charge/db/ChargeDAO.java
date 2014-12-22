@@ -1,45 +1,49 @@
-package com.cafe24.itwill3.reservation.db;
+package com.cafe24.itwill3.charge.db;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-
+import java.util.ArrayList;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
-public class ReservationDAO {
+
+public class ChargeDAO {
+	Connection conn = null;
 	Context initCtx = null;
 	DataSource ds = null;
-	Connection conn = null;
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
 	String sql = "";
-	
 	private Connection dbConn() throws Exception {
 		initCtx = new InitialContext();
-		ds =(DataSource)initCtx.lookup("java:comp/env/itwill3");
+		ds = (DataSource)initCtx.lookup("java:comp/env/itwill3");
 		conn = ds.getConnection();
 		return conn;
 	}
-
-	public void getCityKey(String lea_city, String arr_city) {
+	public ArrayList<ChargeBean> searchCity(String lea_city) {
+		ArrayList<ChargeBean> list = new ArrayList<ChargeBean>();
 		try {
 			conn = dbConn();
-			sql = "SELECT city_key FROM city WHERE lea_city = ? or arr_city = ?";
+			sql = "SELECT arr_city FROM charge WHERE lea_city = ?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, lea_city);
-			pstmt.setString(2, arr_city);
 			rs = pstmt.executeQuery();
-			String citykey = "";
 			while(rs.next()) {
-				citykey += rs.getString("city_key")+",";
+				ChargeBean chargeBean = new ChargeBean();
+				chargeBean.setArrCity(rs.getString("arr_city"));
+				list.add(chargeBean);
 			}
-			System.out.println(citykey);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			
+			if(rs!=null)try{rs.close();}catch(Exception e){}
+			if(pstmt!=null)try{pstmt.close();}catch(Exception e){}
+			if(conn!=null)try{conn.close();}catch(Exception e){}
 		}
+		return list;
 	}
+	
+	
 }

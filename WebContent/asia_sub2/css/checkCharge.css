@@ -219,3 +219,70 @@ caption, legend, #accessibility, .hidden {
 .common-table-3 tbody td.last-child {
 	border-right: none;
 }
+.common-notice.no-title {
+	border-top: none;
+	padding-top: 6px;
+	margin-top: 0;
+}
+.common-notice {
+	border-top: 1px solid #ab8dd9;
+	padding: 10px 0 14px 0;
+	margin: 9px 0 0 0;
+}
+.common-notice.no-title ul {
+	margin-left: -1px;
+}
+.common-notice ul {
+	clear: both;
+}
+.common-notice.no-title ul li {
+	padding-left: 15px;
+}
+.common-notice ul li {
+	padding: 0 0 0 21px;
+	line-height: 20px;
+	color: #333;
+	font-size: 11px;
+	background: url("../img/bl_ck.gif") no-repeat 0 5px;
+}
+.plan-btnType-3 a {
+	color: #000;
+	font-size: 11px;
+	font-weight: bold;
+	text-decoration: underline;
+	background: url('../img/blJ_blue1.gif') no-repeat right bottom;
+	padding-right: 15px;
+	display: inline-block;
+	margin: -2px 0 0 0;
+	line-height: 14px;
+}
+.common-boxRelationService .common-innerRelationService {
+	float: right;
+	border: 1px solid #999;
+	width: 238px;
+}
+.common-boxRelationService .common-innerRelationService .title {
+	background: url('../img/bg_servieceTop.jpg') repeat-x 0 0;
+	border-bottom: 1px solid #999;
+	font-size: 11px;
+	font-weight: bold;
+	padding: 10px 0 10px 14px;
+}
+.common-boxRelationService .common-innerRelationService .title span {
+	background: url('../img/bl_service.jpg') no-repeat 0 0;
+	padding-left: 19px;
+	display: block;
+}
+.common-boxRelationService .common-innerRelationService .list-ul {
+	background: url('../img/bg_servieceBottom.jpg') repeat-x 0 0;
+	padding: 8px 14px 21px 14px;
+}
+.common-boxRelationService .common-innerRelationService .list-ul li a {
+	background: url('../img/bl_arrow13.gif') no-repeat right 5px;
+	color: #333;
+	font-size: 11px;
+	line-height: 18px;
+	padding: 0 16px 0 0;
+	text-decoration: underline;
+	display: inline-block;
+}
