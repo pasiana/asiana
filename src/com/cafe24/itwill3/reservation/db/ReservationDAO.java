@@ -3,6 +3,7 @@ package com.cafe24.itwill3.reservation.db;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -23,7 +24,8 @@ public class ReservationDAO {
 		return conn;
 	}
 
-	public void getCityKey(String lea_city, String arr_city) {
+	public ArrayList<ReservationBean> getCityKey(String lea_city, String arr_city, String key) {
+		ArrayList<ReservationBean> list = new ArrayList<ReservationBean>();
 		try {
 			conn = dbConn();
 			sql = "SELECT city_key FROM city WHERE city_kor_n = ? or city_kor_n = ?";
@@ -35,7 +37,11 @@ public class ReservationDAO {
 			while(rs.next()) {
 				citykey += rs.getString("city_key")+",";
 			}
-			getReservation(citykey.split(",")[0],citykey.split(",")[1]);
+			if(key.equals("sin")) {
+				list = getReservation(citykey.split(",")[0],citykey.split(",")[1]);
+			} else {
+				list = getReReservation(citykey.split(",")[0],citykey.split(",")[1]);
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -43,15 +49,31 @@ public class ReservationDAO {
 			if(pstmt!=null)try{pstmt.close();}catch(Exception e){}
 			if(conn!=null)try{conn.close();}catch(Exception e){}
 		}
+		return list;
 	}
 
-	public void getReservation(String lcKey, String arKey) {
+	public ArrayList<ReservationBean> getReReservation(String acKey, String lcKey) {
+		ArrayList<ReservationBean> list = new ArrayList<ReservationBean>();
 		try {
 			conn = dbConn();
-			sql = "SELECT * FROM leave_data WHERE lc_key = ? and ar_key = ?";
+			sql = "SELECT * FROM arrive_data WHERE ac_key = ? and lc_key = ?";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, lcKey);
-			pstmt.setString(2, arKey);
+			pstmt.setString(1, acKey);
+			pstmt.setString(2, lcKey);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				ReservationBean reservationBean = new ReservationBean();
+				reservationBean.setLcKey(rs.getString("lc_key"));
+				reservationBean.setArKey(rs.getString("ac_key"));
+				reservationBean.setLeaDay(rs.getString("lea_day"));
+				reservationBean.setFlightNum(rs.getString("flight_num"));
+				reservationBean.setLeaTime(rs.getString("lea_time"));
+				reservationBean.setArrTime(rs.getString("arr_time"));
+				reservationBean.setFlyModel(rs.getString("fly_model"));
+				reservationBean.setCharge(rs.getInt("charge"));
+				reservationBean.setSeats(rs.getInt("seats"));
+				list.add(reservationBean);
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -59,5 +81,38 @@ public class ReservationDAO {
 			if(pstmt!=null)try{pstmt.close();}catch(Exception e){}
 			if(conn!=null)try{conn.close();}catch(Exception e){}
 		}
+		return list;
+	}
+
+	public ArrayList<ReservationBean> getReservation(String lcKey, String acKey) {
+		ArrayList<ReservationBean> list = new ArrayList<ReservationBean>();
+		try {
+			conn = dbConn();
+			sql = "SELECT * FROM leave_data WHERE lc_key = ? and ac_key = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, lcKey);
+			pstmt.setString(2, acKey);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				ReservationBean reservationBean = new ReservationBean();
+				reservationBean.setLcKey(rs.getString("lc_key"));
+				reservationBean.setArKey(rs.getString("ac_key"));
+				reservationBean.setLeaDay(rs.getString("lea_day"));
+				reservationBean.setFlightNum(rs.getString("flight_num"));
+				reservationBean.setLeaTime(rs.getString("lea_time"));
+				reservationBean.setArrTime(rs.getString("arr_time"));
+				reservationBean.setFlyModel(rs.getString("fly_model"));
+				reservationBean.setCharge(rs.getInt("charge"));
+				reservationBean.setSeats(rs.getInt("seats"));
+				list.add(reservationBean);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if(rs!=null)try{rs.close();}catch(Exception e){}
+			if(pstmt!=null)try{pstmt.close();}catch(Exception e){}
+			if(conn!=null)try{conn.close();}catch(Exception e){}
+		}
+		return list;
 	}
 }

@@ -1,3 +1,9 @@
+<%@page import="java.lang.reflect.Array"%>
+<%@page import="java.util.HashMap"%>
+<%@page import="java.util.Map"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.cafe24.itwill3.reservation.db.ReservationBean"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -11,6 +17,25 @@
 </style>
 </head>
 <body>
+	<%
+		List<ReservationBean> relist = (List)request.getAttribute("relist");
+		ReservationBean reservationBean;
+		ArrayList<ReservationBean> list = new ArrayList<ReservationBean>();
+		Map<String, ArrayList> map = new HashMap<String, ArrayList>();
+		for(int i=0; i<relist.size(); i++){
+			reservationBean = relist.get(i);
+			if(reservationBean.getLeaDay().equals("12/31/수")) {
+				list.add(reservationBean);
+				map.put("re31",list);
+			}
+			if(reservationBean.getLeaDay().equals("01/01/목")) {
+				list.add(reservationBean);
+				map.put("re01",list);
+			}
+			
+		}
+	%>
+	
 	<header>
 		<jsp:include page="../asiana_inc/header.jsp" />
 	</header>
@@ -68,33 +93,15 @@
 						<p class="startAr">
 							
 						</p>
-						
 						<div class="dayListBox">
 							<div class="btnPre hoverA" id="preDepartureSearch">
 								<a href="#"><img src="img/btn_preDay.gif" alt="가는 항공편 다음일"></a>
 							</div>
-							
 							<ul>
 								<li class="btnDay" id="chagneDateSearch">
-									<a href="#"></a>
-								</li>
-								<li class="btnDay" id="chagneDateSearch">
-									<a href="#"></a>
-								</li>
-								<li class="btnDay" id="chagneDateSearch">
-									<a href="#"></a>
-								</li>
-								<li class="btnDay" id="chagneDateSearch">
-									<a href="#"></a>
-								</li>
-								<li class="btnDay" id="chagneDateSearch">
-									<a href="#"></a>
-								</li>
-								<li class="btnDay" id="chagneDateSearch">
-									<a href="#"></a>
-								</li>
-								<li class="btnDay" id="chagneDateSearch">
-									<a href="#"></a>
+									<a href="#">
+										<%list = map.get("re31");%><%=list.get(0).getLeaDay() %>
+									</a>
 								</li>
 							</ul>
 							
@@ -104,8 +111,51 @@
 						</div>
 						
 						<div class="tableTypeBox01">
-							<div class="inner-table" style="overflow-x: hidden;max-height:640px;">
+								<div class="inner-table"
+									style="overflow-x: hidden; max-height: 640px;">
+									<table class="tableType03 mT0" id="tbDepartureFlightList">
+										<thead>
+											<tr>
+												<th scope="col"><strong>편명</strong></th>
+												<th scope="col"><strong>출발</strong></th>
+												<th scope="col"><strong>도착</strong></th>
+												<th scope="col"><strong>기종</strong></th>
+												<th scope="col"><strong>마일리지 적립</strong></th>
+												<th scope="col"><strong>총액운임</strong></th>
+												<th scope="col"><strong>좌석</strong></th>
+												<th scope="col" class="last-th"><strong>선택</strong></th>
+											</tr>
+										</thead>
+										
+										<tbody>
+											<% 
+												for(int i=0;i<list.size(); i++)  {
+													ReservationBean rBean = list.get(i);
+											%>
+											<tr>
+												<td rowspan="1"><span class="box"><span
+														class="text-type-1"><%=rBean.getFlightNum() %></span></span></td>
+												<td rowspan="1"><span class="box"><strong></strong></span></td>
+												<td rowspan="1"><span class="box"><strong></strong></span></td>
+												<td rowspan="1"><span class="box"><a
+														class="bl_go" href="#none" id="searchFlightInfo"></a></span></td>
 								
+												<td class="hover_td"><span class="box"><span
+														class="day">-적립가능</span></span></td>
+												<td class="hover_td"><span class="box"> <span
+														class="price"> <strong></strong> 원<br>
+													</span>
+												</span></td>
+												<td class="hover_td"><span class="box"><strong></strong>석</span>
+												</td>
+												<td class="last-td last-child hover_td"><span
+													class="Sbtn_TType07_3"><a href="#none"
+														id="ra_depAvail0">선택</a></span></td>
+											
+											</tr>
+											<%} %>
+										</tbody>
+									</table>
 							</div>
 						</div>
 					</div>
@@ -114,7 +164,8 @@
 					<!-- 오는 항공편  -->
 					<div class="tableBox04" style="display: none;">
 						<p class="comingAr">
-							
+								<strong>오는 항공편</strong> 제주(CJU) → 김포(GMP) <span class="day">2014/12/20/토
+									출발</span>
 						</p>
 						
 						<div class="dayListBox">
