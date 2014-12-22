@@ -12,11 +12,10 @@ public class Reservation2 implements Action {
 	public ActionForward execute(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		System.out.println("예약 2번쨰 페이지");
+		request.setCharacterEncoding("utf8");
 		
 		String lea_city = request.getParameter("lea_city");
 		String arr_city = request.getParameter("arr_city");
-		String lea_time = request.getParameter("lea_time");
-		int res_count = Integer.parseInt(request.getParameter("res_count"));
 		
 		ReservationDAO rDao = new ReservationDAO();
 		rDao.getCityKey(lea_city, arr_city);

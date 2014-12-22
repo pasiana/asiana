@@ -26,7 +26,7 @@ public class ReservationDAO {
 	public void getCityKey(String lea_city, String arr_city) {
 		try {
 			conn = dbConn();
-			sql = "SELECT city_key FROM city WHERE lea_city = ? or arr_city = ?";
+			sql = "SELECT city_key FROM city WHERE city_kor_n = ? or city_kor_n = ?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, lea_city);
 			pstmt.setString(2, arr_city);
@@ -35,11 +35,29 @@ public class ReservationDAO {
 			while(rs.next()) {
 				citykey += rs.getString("city_key")+",";
 			}
-			System.out.println(citykey);
+			getReservation(citykey.split(",")[0],citykey.split(",")[1]);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			
+			if(rs!=null)try{rs.close();}catch(Exception e){}
+			if(pstmt!=null)try{pstmt.close();}catch(Exception e){}
+			if(conn!=null)try{conn.close();}catch(Exception e){}
+		}
+	}
+
+	public void getReservation(String lcKey, String arKey) {
+		try {
+			conn = dbConn();
+			sql = "SELECT * FROM leave_data WHERE lc_key = ? and ar_key = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, lcKey);
+			pstmt.setString(2, arKey);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if(rs!=null)try{rs.close();}catch(Exception e){}
+			if(pstmt!=null)try{pstmt.close();}catch(Exception e){}
+			if(conn!=null)try{conn.close();}catch(Exception e){}
 		}
 	}
 }

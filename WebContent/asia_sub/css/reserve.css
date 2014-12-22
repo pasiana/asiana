@@ -441,7 +441,8 @@ body {
 
 .btnBoxType01 {
 	width: 725px;
-	height: 50px;
+	height: 100%;
+	overflow: hidden;
 }
 
 #skipct .btnBoxType01 li {

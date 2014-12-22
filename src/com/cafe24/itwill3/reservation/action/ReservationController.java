@@ -17,7 +17,7 @@ public class ReservationController extends HttpServlet {
 		String command = request.getRequestURI().substring(request.getContextPath().length());
 		ActionForward forward=null;
 		Action action=null;
-		if(command.equals("/reserve2.re")) {
+		if(command.equals("/asia_sub/reserve2.re")) {
 			action = new Reservation2();
 			try {
 				forward = action.execute(request, response);
