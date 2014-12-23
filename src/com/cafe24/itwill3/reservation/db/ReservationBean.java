@@ -6,12 +6,19 @@ public class ReservationBean {
 	private String lcKey;
 	private String acKey;
 	private String leaDay;
+	private String arrDay;
 	private String flightNum;
 	private String leaTime;
 	private String arrTime;
 	private String flyModel;
 	private int charge;
 	private int seats;
+	public String getArrDay() {
+		return arrDay;
+	}
+	public void setArrDay(String arrDay) {
+		this.arrDay = arrDay;
+	}
 	public String getLcKey() {
 		return lcKey;
 	}

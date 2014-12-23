@@ -20,7 +20,7 @@
 	var arr_time = date.getFullYear() + "/" + new String(date.getMonth() + 1)
 			+ "/" + date.getDate();
 	$.datepicker.setDefaults({
-		dateFormat : 'yy-mm-dd',
+		dateFormat : 'yy/mm/dd',
 		dayNamesMin : [ "일", "월", "화", "수", "목", "금", "토" ],
 		monthNames : [ "1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월",
 				"10월", "11월", "12월" ],
@@ -183,9 +183,9 @@
 	}
 
 	function submit_form() {
-		/* lea_time = $('#datepicker').val(); */
+		lea_time = $('#datepicker').val();
 		lea_time=lea_time.replace(lea_time.split("/")[0]+"/","");
-		/* arr_time = $('#datepicker1').val(); */
+		arr_time = $('#datepicker1').val();
 		arr_time=arr_time.replace(arr_time.split("/")[0]+"/","");
 		
 		var res_count = $('#adultCount option:selected').text()

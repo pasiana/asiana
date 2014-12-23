@@ -108,4 +108,88 @@ public class ReservationDAO {
 		}
 		return leaDaylist;
 	}
+	
+	//왕복
+	public List<ReservationBean> arrive(String lea_city, String arr_city) {
+		
+		List<ReservationBean> arrlist = new ArrayList<ReservationBean>();
+		
+		try {
+				conn = dbConn();
+				sql = "SELECT city_key FROM City WHERE city_kor_n = ? or city_kor_n = ?";
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, lea_city);
+				pstmt.setString(2, arr_city);
+				rs = pstmt.executeQuery();
+				String citykey = "";
+				while(rs.next()) {
+					citykey += rs.getString("city_key")+",";
+				}
+				
+				sql = "SELECT * FROM arrive_data WHERE lc_key = ? and ac_key = ? ";
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, citykey.split(",")[1]);
+				pstmt.setString(2, citykey.split(",")[0]);
+				rs = pstmt.executeQuery();
+				while(rs.next()) {
+					ReservationBean rBean = new ReservationBean();
+					rBean.setLcKey(rs.getString("lc_key"));
+					rBean.setAcKey(rs.getString("ac_key"));
+					rBean.setArrDay(rs.getString("arr_day"));
+					rBean.setFlightNum(rs.getString("flight_num"));
+					rBean.setLeaTime(rs.getString("lea_time"));
+					rBean.setArrTime(rs.getString("arr_time"));
+					rBean.setFlyModel(rs.getString("fly_model"));
+					rBean.setCharge(rs.getInt("charge"));
+					rBean.setSeats(rs.getInt("seats"));
+					
+					arrlist.add(rBean);
+				}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if(rs!=null) try{rs.close();}catch(SQLException ex){}
+			if(pstmt!=null) try{pstmt.close();}catch(SQLException ex){}
+			if(conn!=null) try{conn.close();}catch(SQLException ex){}
+		}
+		return arrlist;
+	}
+	
+	public List<ReservationBean> arrDay(String lea_city, String arr_city){
+		
+		List<ReservationBean> arrDaylist = new ArrayList<ReservationBean>();
+		
+		try {
+			conn = dbConn();
+			sql = "SELECT city_key FROM City WHERE city_kor_n = ? or city_kor_n = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, lea_city);
+			pstmt.setString(2, arr_city);
+			rs = pstmt.executeQuery();
+			String citykey = "";
+			while(rs.next()) {
+				citykey += rs.getString("city_key")+",";
+			}
+			sql = "SELECT * FROM arrive_data WHERE lc_key = ? and ac_key = ? group by arr_day";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, citykey.split(",")[1]);
+			pstmt.setString(2, citykey.split(",")[0]);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				ReservationBean rBean = new ReservationBean();
+				rBean.setLcKey(rs.getString("lc_key"));
+				rBean.setAcKey(rs.getString("ac_key"));
+				rBean.setArrDay(rs.getString("arr_day"));
+				
+				arrDaylist.add(rBean);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if(rs!=null) try{rs.close();}catch(SQLException ex){}
+			if(pstmt!=null) try{pstmt.close();}catch(SQLException ex){}
+			if(conn!=null) try{conn.close();}catch(SQLException ex){}
+		}
+		return arrDaylist;
+	}
 }
