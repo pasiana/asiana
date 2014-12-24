@@ -4,6 +4,21 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+	<%
+		//편도
+		List<ReservationBean> relist = (List)request.getAttribute("relist");
+		String lea_city = (String)request.getAttribute("lea_city");
+		String arr_city = (String)request.getAttribute("arr_city");
+		String lea_time = (String)request.getAttribute("lea_time");
+		String res_sig_dou = (String)request.getAttribute("res_sig_dou");
+		int res_count = ((Integer) request.getAttribute("res_count")).intValue();
+		List<ReservationBean> leaday =(List)request.getAttribute("leaday");
+		
+		//왕복
+		String arr_time =(String)request.getAttribute("arr_time");
+		List<ReservationBean> arrlist=(List)request.getAttribute("arrlist");
+		List<ReservationBean> arrday = (List)request.getAttribute("arrday");
+	%>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>예매2</title>
@@ -11,6 +26,7 @@
 <script src="js/jquery-1.11.1.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
+		//편도 li버튼
 		$('.btnDay').click(function() {
 			$('.btnDay').css("background","url('img/bg_stTitle.gif') no-repeat 0 0");
 			$('.btnDay .day').css("color","#333");
@@ -23,6 +39,7 @@
 			$('.all_table>tbody').eq(day_click_index).show();
 		});
 		
+		//왕복 li버튼
 		$('.btnDay1').click(function() {
 			$('.btnDay1').css("background","url('img/bg_stTitle.gif') no-repeat 0 0");
 			$('.btnDay1 .day').css("color","#333");
@@ -33,10 +50,29 @@
 			var day_click_index = $(this).index();
 			$('.all_table1>tbody').hide();
 			$('.all_table1>tbody').eq(day_click_index).show();
+			
 		});
 		
+		//편도 선택버튼 눌럿을때
+		$('.last-td').click(function(){
+			$('.last-td').css("background","none");
+			$(this).css("background","#FAF4C0");
+			
+		});
+		
+		//왕복 선택버튼 눌럿을때
+		$('.arr_last-td').click(function(){
+			$('.arr_last-td').css("background","none");
+			$(this).css("background","#FAF4C0");
+		});
 	});
 	
+	function btns(chk)
+	{  
+	    var row = chk.parentElement.parentElement.parentElement;
+	    var txtCell = row.cells[0].innerText+row.cells[1].innerText+row.cells[2].innerText+row.cells[3].innerText+row.cells[5].innerText+row.cells[7].innerText;
+	    alert(txtCell);
+	}
 </script>
 <style type="text/css">
 .tableBox04 .dayListBox ul li:nth-child(1){
@@ -57,21 +93,6 @@
 </style>
 </head>
 <body>
-	<%
-		//편도
-		List<ReservationBean> relist = (List)request.getAttribute("relist");
-		String lea_city = (String)request.getAttribute("lea_city");
-		String arr_city = (String)request.getAttribute("arr_city");
-		String lea_time = (String)request.getAttribute("lea_time");
-		String res_sig_dou = (String)request.getAttribute("res_sig_dou");
-		int res_count = ((Integer) request.getAttribute("res_count")).intValue();
-		List<ReservationBean> leaday =(List)request.getAttribute("leaday");
-		
-		//왕복
-		String arr_time =(String)request.getAttribute("arr_time");
-		List<ReservationBean> arrlist=(List)request.getAttribute("arrlist");
-		List<ReservationBean> arrday = (List)request.getAttribute("arrday");
-	%>
 	<header>
 		<jsp:include page="../asiana_inc/header.jsp" />
 	</header>
@@ -142,7 +163,7 @@
 								%>
 									<li class="btnDay" id="chagneDateSearch">
 										<a href="#">
-											<strong class="day"><%=reservationBean.getLeaDay() %></strong> <span class="price"><strong>87,700</strong>
+											<strong class="day leaday"><%=reservationBean.getLeaDay() %></strong> <span class="price"><strong>87,700</strong>
 											<span class="sm">원</span><br>부터</span>
 										</a>
 									</li>
@@ -200,9 +221,12 @@
 												</span></td>
 												<td class="hover_td"><span class="box"><strong><%=rBean.getSeats() %></strong>석</span>
 												</td>
+												<td style="display: none;">
+												<span class="box"><strong><%=rBean.getLeaDay() %></strong></span>
+												</td>
 												<td class="last-td last-child hover_td"><span
 													class="Sbtn_TType07_3"><a href="#none"
-														id="ra_depAvail0">선택</a></span></td>
+														id="ra_depAvail0" onclick="btns(this)">선택</a></span></td>
 											</tr>
 											<%			}
 													} 
@@ -520,7 +544,7 @@
 												</span></td>
 												<td class="hover_td"><span class="box"><strong><%=rBean.getSeats() %></strong>석</span>
 												</td>
-												<td class="last-td last-child hover_td"><span
+												<td class="last-child hover_td arr_last-td"><span
 													class="Sbtn_TType07_3"><a href="#none"
 														id="ra_depAvail0">선택</a></span></td>
 											</tr>
@@ -566,7 +590,7 @@
 												</span></td>
 												<td class="hover_td"><span class="box"><strong><%=rBean.getSeats() %></strong>석</span>
 												</td>
-												<td class="last-td last-child hover_td"><span
+												<td class="last-child hover_td arr_last-td"><span
 													class="Sbtn_TType07_3"><a href="#none"
 														id="ra_depAvail0">선택</a></span></td>
 											</tr>
@@ -602,7 +626,7 @@
 												</span></td>
 												<td class="hover_td"><span class="box"><strong><%=rBean.getSeats() %></strong>석</span>
 												</td>
-												<td class="last-td last-child hover_td"><span
+												<td class="last-child hover_td arr_last-td"><span
 													class="Sbtn_TType07_3"><a href="#none"
 														id="ra_depAvail0">선택</a></span></td>
 											</tr>
@@ -638,7 +662,7 @@
 												</span></td>
 												<td class="hover_td"><span class="box"><strong><%=rBean.getSeats() %></strong>석</span>
 												</td>
-												<td class="last-td last-child hover_td"><span
+												<td class="last-child hover_td arr_last-td"><span
 													class="Sbtn_TType07_3"><a href="#none"
 														id="ra_depAvail0">선택</a></span></td>
 											</tr>
@@ -674,7 +698,7 @@
 												</span></td>
 												<td class="hover_td"><span class="box"><strong><%=rBean.getSeats() %></strong>석</span>
 												</td>
-												<td class="last-td last-child hover_td"><span
+												<td class="last-child hover_td arr_last-td"><span
 													class="Sbtn_TType07_3"><a href="#none"
 														id="ra_depAvail0">선택</a></span></td>
 											</tr>
@@ -710,7 +734,7 @@
 												</span></td>
 												<td class="hover_td"><span class="box"><strong><%=rBean.getSeats() %></strong>석</span>
 												</td>
-												<td class="last-td last-child hover_td"><span
+												<td class="last-child hover_td arr_last-td"><span
 													class="Sbtn_TType07_3"><a href="#none"
 														id="ra_depAvail0">선택</a></span></td>
 											</tr>
@@ -746,7 +770,7 @@
 												</span></td>
 												<td class="hover_td"><span class="box"><strong><%=rBean.getSeats() %></strong>석</span>
 												</td>
-												<td class="last-td last-child hover_td"><span
+												<td class="last-child hover_td arr_last-td"><span
 													class="Sbtn_TType07_3"><a href="#none"
 														id="ra_depAvail0">선택</a></span></td>
 											</tr>
