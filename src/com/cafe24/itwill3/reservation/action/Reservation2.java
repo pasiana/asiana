@@ -51,7 +51,7 @@ public class Reservation2 implements Action {
 		request.setAttribute("arrday", arrday);
 		
 		ActionForward forward = new ActionForward();
-		forward.setPath("./reserve2.jsp");
+		forward.setPath("./asia_sub/reserve2.jsp");
 		forward.setRedirect(false);
 		
 		return forward;

@@ -22,13 +22,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>예매2</title>
-<link type="text/css" rel="stylesheet" href="css/reserve2.css">
+<link type="text/css" rel="stylesheet" href="./asia_sub/css/reserve2.css">
 <script src="js/jquery-1.11.1.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
 		//편도 li버튼
 		$('.btnDay').click(function() {
-			$('.btnDay').css("background","url('img/bg_stTitle.gif') no-repeat 0 0");
+			$('.btnDay').css("background","url('./asia_sub/img/bg_stTitle.gif') no-repeat 0 0");
 			$('.btnDay .day').css("color","#333");
 			$(this).css("background","url('https://flyasiana.com/images/bg/bg_stTitle_on.gif') no-repeat 0 0");
 			$(this).find('.day').css("color","#fff");
@@ -41,7 +41,7 @@
 		
 		//왕복 li버튼
 		$('.btnDay1').click(function() {
-			$('.btnDay1').css("background","url('img/bg_stTitle.gif') no-repeat 0 0");
+			$('.btnDay1').css("background","url('./asia_sub/img/bg_stTitle.gif') no-repeat 0 0");
 			$('.btnDay1 .day').css("color","#333");
 			$(this).css("background","url('https://flyasiana.com/images/bg/bg_stTitle_on.gif') no-repeat 0 0");
 			$(this).find('.day').css("color","#fff");

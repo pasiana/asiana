@@ -9,7 +9,7 @@
 	href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
 <script src="//code.jquery.com/jquery-1.11.1.js"></script>
 <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
-<link type="text/css" rel="stylesheet" href="css/reserve.css">
+<link type="text/css" rel="stylesheet" href="./asia_sub/css/reserve.css">
 <script>
 	var lea_city = "김포";
 	var arr_city = "제주";
@@ -56,20 +56,20 @@
 
 											$('.btn-type-2 span')
 													.css('background',
-															'url("img/bg_typeL_2_on.gif") no-repeat left 0');
+															'url("./asia_sub/img/bg_typeL_2_on.gif") no-repeat left 0');
 											$('.btn-type-2 a')
 													.css('background',
-															'url("img/bg_typeR_1_on.gif") no-repeat right 0')
+															'url("./asia_sub/img/bg_typeR_1_on.gif") no-repeat right 0')
 													.css('color', '#fff').css(
 															'padding',
 															'0 20px 0 36px');
 
 											$('.btn-type-1 span')
 													.css('background',
-															'url("img/bg_typeL_off.gif") no-repeat left 0');
+															'url("./asia_sub/img/bg_typeL_off.gif") no-repeat left 0');
 											$('.btn-type-1 a')
 													.css('background',
-															'url("img/bg_typeR_off.gif") no-repeat right 0')
+															'url("./asia_sub/img/bg_typeR_off.gif") no-repeat right 0')
 													.css('color', '#333').css(
 															'padding',
 															'0 29px 0 26px');
@@ -84,20 +84,20 @@
 
 											$('.btn-type-1 span')
 													.css('background',
-															'url("img/bg_typeL_1_on.gif") no-repeat left 0');
+															'url("./asia_sub/img/bg_typeL_1_on.gif") no-repeat left 0');
 											$('.btn-type-1 a')
 													.css('background',
-															'url("img/bg_typeR_1_on.gif") no-repeat right 0')
+															'url("./asia_sub/img/bg_typeR_1_on.gif") no-repeat right 0')
 													.css('color', '#fff').css(
 															'padding',
 															'0 20px 0 36px');
 
 											$('.btn-type-2 span')
 													.css('background',
-															'url("img/bg_typeL_off.gif") no-repeat left 0');
+															'url("./asia_sub/img/bg_typeL_off.gif") no-repeat left 0');
 											$('.btn-type-2 a')
 													.css('background',
-															'url("img/bg_typeR_off.gif") no-repeat right 0')
+															'url("./asia_sub/img/bg_typeR_off.gif") no-repeat right 0')
 													.css('color', '#333').css(
 															'padding',
 															'0 29px 0 26px');
@@ -109,7 +109,7 @@
 								function() {
 									// 선택된 도시 백그라운드 변경
 									$(this).css('background',
-											'url(img/bg_select.gif)');
+											'url(./asia_sub/img/bg_select.gif)');
 									// 선택된 도시의 글자값 변수에 저장
 									var city = $(this).text();
 									lea_city = city;
@@ -173,7 +173,7 @@
 									function() {
 										arr_city = $(this).text();
 										$(this).css('background',
-												'url(img/bg_select.gif)');
+												'url(./asia_sub/img/bg_select.gif)');
 										$('.getIn .list a').not(this).css(
 												'background', 'none');
 									});
@@ -287,7 +287,7 @@ fieldset{
 								<ul class="selectLocalInner" id="ul_Dep_Airport">
 									<li class="list"><a href="#none">광주</a></li>
 									<li class="list"><a href="#none"
-										style="background: url('img/bg_select.gif');">김포</a></li>
+										style="background: url('./asia_sub/img/bg_select.gif');">김포</a></li>
 									<li class="list"><a href="#none">대구</a></li>
 									<li class="list"><a href="#none">무안</a></li>
 									<li class="list"><a href="#none">부산</a></li>
@@ -319,7 +319,7 @@ fieldset{
 									<li class="list"><a href="#none">울산</a></li>
 									<li class="list"><a href="#none">인천</a></li>
 									<li class="list"><a href="#none"
-										style="background: url('img/bg_select.gif');">제주</a></li>
+										style="background: url('./asia_sub/img/bg_select.gif');">제주</a></li>
 									<li class="list"><a href="#none">진주</a></li>
 									<li class="list"><a href="#none">청주</a></li>
 									<li class="list"><a href="#none">포항</a></li>

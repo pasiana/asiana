@@ -246,7 +246,7 @@ String member_id=(String)session.getAttribute("member_id");
 											</a>
 											<ul class="airline_ul">
 												<li>
-													<a href="#">국내선</a>
+													<a href="./reserve.re">국내선</a>
 												</li>
 												<li>
 													<a href="#">예약조회</a>

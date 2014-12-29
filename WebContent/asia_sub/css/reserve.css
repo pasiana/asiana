@@ -24,7 +24,7 @@ body {
 	margin: 0 auto;
 	width: 1440px;
 	height: 30px;
-	background: url("./asia_sub/img/bg_location.jpg") no-repeat center bottom;
+	background: url("../img/bg_location.jpg") no-repeat center bottom;
 }
 
 .location {
@@ -50,7 +50,7 @@ body {
 
 #containerBox {
 	width: 1440px;
-	background: url("./asia_sub/img/bg_body1_1.jpg") repeat-x center -30px;
+	background: url("../img/bg_body1_1.jpg") repeat-x center -30px;
 	margin: 0 auto;
 }
 
@@ -86,7 +86,7 @@ body {
 #skipct .rv_stepBox .step01_on {
 	color: #5d6067;
 	font-weight: bold;
-	background: url("./asia_sub/img/bg_rvStep01_on.gif") no-repeat 0 0;
+	background: url("../img/bg_rvStep01_on.gif") no-repeat 0 0;
 	width: 146px;
 	padding: 0 0 0 34px;
 	margin-left: -1px;
@@ -95,28 +95,28 @@ body {
 #skipct .rv_stepBox .step02_off {
 	color: #5d6067;
 	font-weight: normal;
-	background: url("./asia_sub/img/bg_rvStep02_off.gif") no-repeat 0 0;
+	background: url("../img/bg_rvStep02_off.gif") no-repeat 0 0;
 	width: 188px;
 }
 
 #skipct .rv_stepBox .step03_off {
 	color: #5d6067;
 	font-weight: normal;
-	background: url("./asia_sub/img/bg_rvStep03_off.gif") no-repeat 0 0;
+	background: url("../img/bg_rvStep03_off.gif") no-repeat 0 0;
 	width: 188px;
 }
 
 #skipct .rv_stepBox .step04_off {
 	color: #5d6067;
 	font-weight: normal;
-	background: url("./asia_sub/img/bg_rvStep04_off.gif") no-repeat 0 0;
+	background: url("../img/bg_rvStep04_off.gif") no-repeat 0 0;
 	width: 188px;
 }
 
 #skipct .rv_stepBox .step05_off {
 	color: #5d6067;
 	font-weight: normal;
-	background: url("./asia_sub/img/bg_rvStep05_off.gif") no-repeat 0 0;
+	background: url("../img/bg_rvStep05_off.gif") no-repeat 0 0;
 	width: 188px;
 	margin-left: -7px;
 }
@@ -132,14 +132,14 @@ body {
 	margin-top: 10px;
 	width: 108px;
 	height: 22px;
-	background: url("./asia_sub/img/bg_btnLeft6.jpg") no-repeat 0 0;
+	background: url("../img/bg_btnLeft6.jpg") no-repeat 0 0;
 	display: inline-block;
 	width: 108px;
 }
 
 #skipct .helpOp .btnType06 a {
 	padding-right: 41px;
-	background: url("./asia_sub/img/bg_btnRight6.jpg") no-repeat right 0;
+	background: url("../img/bg_btnRight6.jpg") no-repeat right 0;
 	padding: 0 35px 0 8px;
 	display: block;
 	height: 22px;
@@ -155,7 +155,7 @@ body {
 }
 
 #skipct .h4_type01 h4 {
-	background: url("./asia_sub/img/bl_hType01.gif") no-repeat 0 0;
+	background: url("../img/bl_hType01.gif") no-repeat 0 0;
 	height: 17px;
 	overflow: hidden;
 	font-weight: bold;
@@ -171,7 +171,7 @@ body {
 	width: 725px;
 	height: 56px;
 	margin: 0 auto;
-	background: url("./asia_sub/img/bg_noticeTop.gif") no-repeat 0 0;
+	background: url("../img/bg_noticeTop.gif") no-repeat 0 0;
 	padding: 9px 0 0 0;
 }
 
@@ -179,7 +179,7 @@ body {
 	margin: 0 0 100px 0;
 	width: 725px;
 	padding: 0 0 14px 0;
-	background: url("./asia_sub/img/bg_noticeBottom.gif") no-repeat 0 bottom;
+	background: url("../img/bg_noticeBottom.gif") no-repeat 0 bottom;
 }
 
 #skipct .notice_container .notice_Inner.innerType01 .notice li {
@@ -189,7 +189,7 @@ body {
 }
 
 #skipct .notice_Inner .notice li {
-	background: url("./asia_sub/img/bl_notice.gif") no-repeat 14px 4.5px;
+	background: url("../img/bl_notice.gif") no-repeat 14px 4.5px;
 }
 
 #skipct .tableStyle01 {
@@ -202,7 +202,7 @@ body {
 #skipct .tableStyle01 .list-choice {
 	width: 715px;
 	height: 36px;
-	background: url('./asia_sub/img/bg_selectCk.gif') repeat-x 0 0;
+	background: url('../img/bg_selectCk.gif') repeat-x 0 0;
 	padding: 11px 0 0 10px;
 }
 
@@ -213,11 +213,11 @@ body {
 
 #skipct .tableStyle01 .list-choice li span {
 	display: inline-block;
-	background: url('./asia_sub/img/bg_typeL_off.gif') no-repeat left 0;
+	background: url('../img/bg_typeL_off.gif') no-repeat left 0;
 }
 
 #skipct .tableStyle01 .list-choice li span a {
-	background: url('./asia_sub/img/bg_typeR_off.gif') no-repeat right 0;
+	background: url('../img/bg_typeR_off.gif') no-repeat right 0;
 	display: block;
 	height: 26px;
 	line-height: 23px;
@@ -229,11 +229,11 @@ body {
 
 #skipct .tableStyle01 .list-choice li.btn-type-1.on span {
 	display: inline-block;
-	background: url('./asia_sub/img/bg_typeL_1_on.gif') no-repeat left 0;
+	background: url('../img/bg_typeL_1_on.gif') no-repeat left 0;
 }
 
 #skipct .tableStyle01 .list-choice li.btn-type-1.on span a {
-	background: url('./asia_sub/img/bg_typeR_1_on.gif') no-repeat right 0;
+	background: url('../img/bg_typeR_1_on.gif') no-repeat right 0;
 	display: block;
 	height: 26px;
 	line-height: 23px;
@@ -266,7 +266,7 @@ body {
 }
 
 #skipct .tableStyle01 .boxType01 .takeOff .selectLocalBox {
-	background: url("./asia_sub/img/bg_selectBoxTop.gif") no-repeat 0 0;
+	background: url("../img/bg_selectBoxTop.gif") no-repeat 0 0;
 	padding: 10px 0 0 0;
 	width: 270px;
 }
@@ -274,7 +274,7 @@ body {
 #skipct .tableStyle01 .boxType01 .takeOff .selectLocalInner {
 	width: 262px;
 	height: 87px;
-	background: url("./asia_sub/img/bg_selectBoxBottom.gif") no-repeat 0 bottom;
+	background: url("../img/bg_selectBoxBottom.gif") no-repeat 0 bottom;
 	padding: 0 0 7px 8px;
 }
 
@@ -306,7 +306,7 @@ body {
 }
 
 #skipct .tableStyle01 .boxType01 .getIn .selectLocalBox {
-	background: url("./asia_sub/img/bg_selectBoxTop.gif") no-repeat 0 0;
+	background: url("../img/bg_selectBoxTop.gif") no-repeat 0 0;
 	padding: 10px 0 0 0;
 	width: 270px;
 }
@@ -314,7 +314,7 @@ body {
 #skipct .tableStyle01 .boxType01 .getIn .selectLocalInner {
 	width: 262px;
 	height: 87px;
-	background: url("./asia_sub/img/bg_selectBoxBottom.gif") no-repeat 0 bottom;
+	background: url("../img/bg_selectBoxBottom.gif") no-repeat 0 bottom;
 	padding: 0 0 7px 8px;
 }
 
@@ -369,7 +369,7 @@ body {
 	position: relative;
 	z-index: 1;
 	border-left: 1px solid #999;
-	background: #fff url("./asia_sub/img/bg_select_x.gif") repeat-x 0 bottom;
+	background: #fff url("../img/bg_select_x.gif") repeat-x 0 bottom;
 	border: 1px solid #999;
 	position: relative;
 }
@@ -387,7 +387,7 @@ body {
 	left: 0px;
 	width: 100%;
 	background-color: transparent;
-	background: url("./asia_sub/img/arr_select.gif") no-repeat right 50%;
+	background: url("../img/arr_select.gif") no-repeat right 50%;
 	border: none;
 	font-size: 12px;
 	text-indent: -1500px;
@@ -417,7 +417,7 @@ body {
 }
 
 #skipct .SnoticeList li {
-	background: url("./asia_sub/img/bl_ck.gif") no-repeat -1px 5px;
+	background: url("../img/bl_ck.gif") no-repeat -1px 5px;
 	color: #5e14cc;
 	font-size: 11px;
 	line-height: 18px;
@@ -433,7 +433,7 @@ body {
 	color: #000;
 	font-size: 11px;
 	font-weight: bold;
-	background: url('./asia_sub/img/blJ_blue1.gif') no-repeat right bottom;
+	background: url('../img/blJ_blue1.gif') no-repeat right bottom;
 	padding-right: 15px;
 	display: inline-block;
 	line-height: 14px;
@@ -452,12 +452,12 @@ body {
 #skipct .Sbtn_TType06_1 {
 	width: 91px;
 	height: 25px;
-	background: url("./asia_sub/img/Sbtn_TTypeL06_1.gif") no-repeat 0 0;
+	background: url("../img/Sbtn_TTypeL06_1.gif") no-repeat 0 0;
 	display: inline-block;
 }
 
 #skipct .Sbtn_TType06_1 a {
-	background: url("./asia_sub/img/Sbtn_TTypeR06_1.gif") no-repeat right 0;
+	background: url("../img/Sbtn_TTypeR06_1.gif") no-repeat right 0;
 	padding: 0 11px 0 27px;
 	display: block;
 	height: 25px;
@@ -475,13 +475,13 @@ body {
 #skipct .Bbtn_TType01_1 {
 	width: 113px;
 	height: 35px;
-	background: url("./asia_sub/img/Bbtn_TTypeL01_1.gif") no-repeat 0 0;
+	background: url("../img/Bbtn_TTypeL01_1.gif") no-repeat 0 0;
 	display: inline-block;
-	background: url("./asia_sub/img/Bbtn_TTypeL01_1.gif") no-repeat 0 0;
+	background: url("../img/Bbtn_TTypeL01_1.gif") no-repeat 0 0;
 }
 
 #skipct .Bbtn_TType01_1 a {
-	background: url("./asia_sub/img/Bbtn_TTypeR01_1.gif") no-repeat right 0;
+	background: url("../img/Bbtn_TTypeR01_1.gif") no-repeat right 0;
 	padding: 0 41px 0 19px;
 	display: block;
 	height: 35px;
@@ -494,13 +494,13 @@ body {
 .inp {
 	width: 262px;
 	height: 20px;
-	background: url("./asia_sub/img/bg_selectBoxBottom.gif") no-repeat 0 bottom;
+	background: url("../img/bg_selectBoxBottom.gif") no-repeat 0 bottom;
 	padding: 0 0 7px 8px;
 	border: none;
 }
 
 .outp {
-	background: url("./asia_sub/img/bg_selectBoxTop.gif") no-repeat 0 0;
+	background: url("../img/bg_selectBoxTop.gif") no-repeat 0 0;
 	padding: 10px 0 0 0;
 	width: 270px;
 	display: block;

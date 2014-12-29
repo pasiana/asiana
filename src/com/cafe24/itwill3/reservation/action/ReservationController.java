@@ -17,12 +17,13 @@ public class ReservationController extends HttpServlet {
 		String command = request.getRequestURI().substring(request.getContextPath().length());
 		ActionForward forward=null;
 		Action action=null;
-		if(command.equals("/asia_sub/reserve.re")) {
+		System.out.println(command);
+		if(command.equals("/reserve.re")) {
 			forward = new ActionForward();
-			forward.setPath("./reserve.jsp");
+			forward.setPath("./asia_sub/reserve.jsp");
 			forward.setRedirect(false);
 		}
-		else if(command.equals("/asia_sub/reserve2.re")) {
+		else if(command.equals("/reserve2.re")) {
 			action = new Reservation2();
 			try {
 				forward = action.execute(request, response);
