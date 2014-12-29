@@ -17,7 +17,7 @@ public class SearchCity implements Action {
 		ArrayList<ChargeBean> list = chargeDAO.searchCity(lea_city);
 		request.setAttribute("list", list);
 		ActionForward forward = new ActionForward();
-		forward.setPath("./asia_sub2/searchCityList.jsp");
+		forward.setPath("./searchCityList.jsp");
 		forward.setRedirect(false);
 		return forward;
 	}

@@ -8,17 +8,13 @@
 <link type="text/css" rel="stylesheet" href="css/checkCharge.css">
 <script src="js/jquery-1.11.1.js"></script>
 <script type="text/javascript">
-	function fncSearch() {
-		
-	}
-	function fncChange(depart) {
-		$.post('./searchCity.ch',{lea_city:depart},function(result){
-			$('#keyArrivalAirport').append("<option>"+result+"</option>");
+	function fncSearch(city) {
+		$.post('./searchCity.ch',{lea_city:city},function(result){
+			$('#keyArrivalAirport').append(result);
 		});
 	}
 </script>
 <style type="text/css">
-
 </style>
 </head>
 <body>
@@ -38,7 +34,7 @@
 			</div>
 		</div>
 	
-		<div id="containerBox" class="ag-reservation">
+		<div id="containerBox">
 			<div id="container">
 				<!-- 사이드 메뉴 -->
 				<jsp:include page="MyAsanaMenu.jsp" />
@@ -48,7 +44,7 @@
 					<section id="containerBody">
 						<h3 class="h3_type01">국내선 운임조회</h3>
 						<div class="box-fareCheck">
-							<h4 class="h4_type03">노선별 일반운임 조회</h4>
+							<h4 class="h4_type03">노선별 일반운임 조회</H4>
 							<ul class="notice">
 								<li>서울/부산 노선은 에어부산 공동운항편이며, 부산/제주 노선은 에어부산 공동운항편과 아시아나항공
 									단독운항편이 있습니다.</li>
@@ -56,7 +52,7 @@
 									이용가능합니다.</LI>
 								<LI>하단 운임은 성인 1인은 통상 편도 운임이며, 인터넷 할인이 적용된 운임은 예매 단계에서 확인하실
 									수 있습니다.</LI>
-							</ul>
+							</UL>
 							<!-- box-topType-1 -->
 
 							<FORM name="frmDomesticFare" id="frmDomesticFare" method="post">
@@ -69,12 +65,12 @@
 											<DIV class="selectBox">
 												<DIV class="selectStyle" style="width: 100%; height: 23px;">
 													<SPAN class="span-select">
-														<INPUT tabindex="-1" title="출발지" id="hiddenKeyD" type="text" readonly="readonly" value="서울(김포) (김포공항-국내선)" style="height: 23px; line-height: 23px;">
-														<SELECT	name="keyDepartureAirport" title="출발지 선택" id="keyDepartureAirport" onchange="fncChange(this.options[this.selectedIndex].text);">
+														<INPUT tabindex="-1" title="출발지" id="hiddenKeyD" type="text" readonly="readonly" value="서울(김포) (김포공항-국내선)">
+														<SELECT	name="keyDepartureAirport" title="출발지 선택" id="keyDepartureAirport" onchange="fncSearch(this.options[this.selectedIndex].text);">
 															<OPTION value="">선택하세요</OPTION>
 															<OPTION value="KWJ">광주</OPTION>
 															<OPTION selected="selected" value="GMP">김포</OPTION>
-															<OPTION value="PUS">김해</OPTION>
+															<OPTION value="PUS">부산</OPTION>
 															<OPTION value="TAE">대구</OPTION>
 															<OPTION value="MWX">무안</OPTION>
 															<OPTION value="HIN">진주</OPTION>
@@ -118,6 +114,7 @@
 										<COL width="*">
 										<COL width="*">
 										<COL width="*">
+										<COL width="*">
 									</COLGROUP>
 									<THEAD>
 										<TR>
@@ -129,9 +126,10 @@
 									</THEAD>
 									<TBODY>
 										<TR>
+											<TH scope="row">기본운임</TH>
 											<TD style="text-align: right; padding-right: 10px;"></TD>
-											<TD style="text-align: right; padding-right: 10px;">8,800원</TD>
-											<TD style="text-align: right; padding-right: 10px;">4,000원</TD>
+											<TD style="text-align: right; padding-right: 10px;"></TD>
+											<TD style="text-align: right; padding-right: 10px;"></TD>
 											<TD class="last-child"
 												style="text-align: right; padding-right: 10px;"></TD>
 										</TR>
@@ -153,8 +151,7 @@
 										<SPAN>관련서비스</SPAN>
 									</P>
 									<UL class="list-ul">
-										<LI style="margin-bottom: 2px"><A
-											href="http://flyasiana.com/CW/kr/common/pageContent.do?pageId=PC_0403">초과수하물
+										<LI><A href="http://flyasiana.com/CW/kr/common/pageContent.do?pageId=PC_0403">초과수하물
 												요금표</A></LI>
 									</UL>
 								</DIV>
