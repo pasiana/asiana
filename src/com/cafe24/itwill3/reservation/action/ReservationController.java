@@ -29,6 +29,20 @@ public class ReservationController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+		}else if(command.equals("/asia_sub/reserve3.re")) {
+			action = new Reservation3();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}else if(command.equals("/asia_sub/reserve4.re")) {
+			action = new Reservation4();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 		//이동
 		if(forward!=null){

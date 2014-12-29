@@ -2,12 +2,84 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html >
 <html>
+<%
+	String lea_city = (String)request.getAttribute("lea_city");
+	String arr_city = (String)request.getAttribute("arr_city");
+	String lea_time = (String)request.getAttribute("lea_time");
+	String res_sig_dou = (String)request.getAttribute("res_sig_dou");
+	int res_count = ((Integer) request.getAttribute("res_count")).intValue();
+	String lea_day = (String)request.getAttribute("lea_day");
+	int charge = ((Integer)request.getAttribute("charge")).intValue();
+	
+	//왕복
+	String arr_time = (String)request.getAttribute("arr_time");
+	String arr_day = (String)request.getAttribute("arr_day");
+ 	String arr_charge =(String)request.getAttribute("arr_charge");
+ 	String lea_charge =(String)request.getAttribute("lea_charge");
+	
+%>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>예매3</title>
 <link type="text/css" rel="stylesheet" href="css/reserve3.css">
 <script src="js/jquery-1.11.1.js"></script>
+<script type="text/javascript">
+	function back(){
+		history.back();
+	}
+	
+	var lea_city = "<%=lea_city %>";
+	var arr_city = "<%=arr_city %>";
+	var res_sig_dou = "<%=res_sig_dou %>";
+	var lea_time = "<%=lea_time %>";
+	var arr_time = "<%=arr_time %>";
+	var res_count = "<%=res_count%>";
+	var lea_day = "<%=lea_day%>";
+	var arr_day = "<%=arr_day%>";
+	var charge = "<%=charge%>";
+	var lea_charge ="<%=lea_charge%>";
+	var arr_charge ="<%=arr_charge%>";
+	
+	function submit_form3() {
+		var url = "";
+		if (res_sig_dou == "왕복") {
+			url = "./reserve4.re?lea_city=" + lea_city + "&arr_city="
+			+ arr_city + "&res_sig_dou=" + res_sig_dou + "&lea_time="
+			+ lea_time + "&arr_time=" + arr_time + "&res_count=" + res_count + "&lea_day=" + lea_day +"&arr_day="+ arr_day + "&charge=" + charge
+			+ "&lea_charge=" + lea_charge +"&arr_charge=" + arr_charge;
+		} else {
+			url = "./reserve4.re?lea_city=" + lea_city + "&arr_city="
+			+ arr_city + "&res_sig_dou=" + res_sig_dou + "&lea_time="
+			+ lea_time + "&res_count=" + res_count + "&lea_day=" + lea_day + "&charge=" + charge;
+		}
+		location.href = url;
+	}
+</script>
 <style type="text/css">
+.intxt {
+	background: none;
+	border: none;
+	border-radius: 0;
+	vertical-align: middle;
+	width: 113px;
+	height: 21px;
+	line-height: 19px;
+	font-size: 11px;
+	color: #fff;
+	margin-top: -13px;
+	padding: 0 0 0 5px;
+}
+fieldset{
+	border: none;
+}
+<% if(res_sig_dou.equals("왕복")){
+	%>
+	.selectITbox3 .selectITinner3 li.liType01.totalIntro .tBoxD .end.oneWay {
+		background: url("https://flyasiana.com/images/bg/bg_arrow5.gif") no-repeat 0 3px;
+		padding: 0 0 0 33px;
+	}
+	<%												
+}%>
 </style>
 </head>
 <body>
@@ -51,13 +123,13 @@
 									<ul style="height: 88px;">
 									<!-- 사람수, 공항 -->
 									<li class="liType01 totalIntro"><strong class="sTitle">총
-											인원 1명</strong>
+											인원 <%=res_count %>명</strong>
 										<div class="tBoxD">
 											<p class="start">
-												<strong>김포</strong><br> 
+												<strong><%=lea_city %></strong><br> 
 											</p>
 											<p class="end oneWay">
-												<strong>제주</strong><br> 
+												<strong><%=arr_city %></strong><br> 
 											</p>
 										</div></li>
 									<!-- 사람수, 공항 끝-->
@@ -66,13 +138,21 @@
 									<li class="liType01 selectStart"><strong class="sTitle">가는
 											날</strong>
 										<div class="pType01">
-											<strong>2014/12/17(수)<br>13:55
+											<strong>2015/<%=lea_day %><br><%=lea_time %>
 											</strong><br>
 										</div></li>
 									<!-- 가는날 정보 끝 -->
 									
+									<% if(res_sig_dou.equals("왕복")){ %>
 									<!-- 오는날 정보  -->
+									<li class="liType01 selectStart"><strong class="sTitle">오는
+											날</strong>
+										<div class="pType01">
+											<strong>2015/<%=arr_day %><br><%=arr_time %>
+											</strong><br>
+										</div></li>
 									<!-- 오는날 정보 끝  -->
+									<% }%>
 								</ul>
 								</div>
 							</div>
@@ -190,9 +270,9 @@
 
 							<!-- 하단 버튼부분  -->
 							<ul class="btnBoxType01">
-								<li><span class="Sbtn_TType06_1"><a href="#">이전단계</a></span></li>
+								<li><span class="Sbtn_TType06_1"><a href="#" onclick="back();">이전단계</a></span></li>
 								<li class="right"><span class="Bbtn_TType01_1">
-								<a href="#">계속하기</a></span></li>
+								<a href="#" onclick="submit_form3();">계속하기</a></span></li>
 							</ul>
 							<!-- 하단 버튼부분 끝  -->
 						</div>
