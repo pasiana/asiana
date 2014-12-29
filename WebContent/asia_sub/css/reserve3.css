@@ -51,16 +51,15 @@ body {
 #containerBox {
 	width: 1440px;
 	height: 100%;
-	background: url("../img/bg_body1_1.jpg") repeat-x center -30px;
+	background: url("../img/bg_body1_1.jpg") repeat-x center -10px;
 	margin: 0 auto;
 }
 
 #skipct {
 	width: 956px;
 	height: 100%;
+	overflow: hidden;
 	margin: 0 auto;
-	padding: 29px 40px 90px 0;
-	min-height: 650px;
 }
 
 #skipct h3 {
@@ -222,9 +221,6 @@ body {
 .selectITbox3 .selectITinner3 li.liType01.totalIntro .tBoxD .end.oneWay
 	{
 	background: url("../img/bg_arrow5_1.gif") no-repeat 0 3px;
-}
-
-.selectITbox3 .selectITinner3 li.liType01.totalIntro .tBoxD .end {
 	padding: 0 0 0 33px;
 }
 
@@ -388,6 +384,10 @@ body {
 	line-height: 18px;
 	padding: 0 0 0 14px;
 	font-family: '돋움';
+}
+.btnBoxType01 {
+	height: 30px;
+	margin-bottom: 20px;
 }
 
 .btnBoxType01 li {
