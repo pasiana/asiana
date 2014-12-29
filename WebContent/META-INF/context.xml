@@ -3,8 +3,8 @@
 	<Resource auth="Container"
 			  name="itwill3"
 			  type="javax.sql.DataSource"
-			  username="itwill3"
-			  password="itwillbs8030909"
+			  username="asiana"
+			  password="asiana"
 			  driverClassName="com.mysql.jdbc.Driver"
-			  url="jdbc:mysql://itwill3.cafe24.com:3306/itwill3" />
+			  url="jdbc:mysql://localhost:3306/itwill3" />
 </Context>

@@ -92,8 +92,207 @@ body {
 }
 #containerBody .box-fareCheck .notice li {
 	line-height: 20px;
-	background: url('img/bl_blue3.gif') no-repeat 0px 8px;
+	background: url('../img/bl_blue3.gif') no-repeat 0px 8px;
 	padding: 0 0 0 9px;
 	font-size: 12px;
 	color: #333;
 }
+caption, legend, #accessibility, .hidden {
+font-size: 0;
+line-height: 0;
+text-indent: -5000px;
+}
+
+.Sbtn_TType04_3 {
+background: url("../img/Sbtn_TTypeL04_3.gif") no-repeat 0 0;
+display: inline-block;
+}
+
+.Sbtn_TType04_3 a {
+background: url("../img/Sbtn_TTypeR04_3.gif") no-repeat right 0;
+padding: 0 15px 0 35px;
+display: block;
+height: 25px;
+line-height: 25px;
+font-weight: bold;
+}
+
+.common-notice.no-title {
+border-top: none;
+padding-top: 6px;
+margin-top: 0;
+}
+
+.common-notice.no-title ul {
+margin-left: -1px;
+}
+
+.common-notice.no-title ul li {
+padding-left: 15px;
+}
+
+.common-notice ul li {
+padding: 0 0 0 21px;
+line-height: 20px;
+color: #333;
+font-family: '돋움';
+font-size: 11px;
+background: url("../img/bl_ck.gif") no-repeat 0 5px;
+}
+
+.plan-btnType-3 a {
+color: #000;
+font-size: 11px;
+font-family: "돋움";
+font-weight: bold;
+text-decoration: underline;
+background: url('../img/blJ_blue1.gif') no-repeat right bottom;
+padding-right: 15px;
+display: inline-block;
+margin: -2px 0 0 0;
+line-height: 14px;
+}
+
+.common-boxRelationService .common-innerRelationService .title {
+background: url('../img/bg_servieceTop.jpg') repeat-x 0 0;
+border-bottom: 1px solid #999;
+font-size: 11px;
+font-family: "돋움";
+font-weight: bold;
+padding: 10px 0 10px 14px;
+}
+
+.common-boxRelationService .common-innerRelationService .title span {
+background: url('../img/bl_service.jpg') no-repeat 0 0;
+padding-left: 19px;
+display: block;
+}
+
+.common-boxRelationService .common-innerRelationService .list-ul {
+background: url('../img/bg_servieceBottom.jpg') repeat-x 0 0;
+padding: 8px 14px 21px 14px;
+}
+
+.common-boxRelationService .common-innerRelationService .list-ul li {
+margin-bottom: 2px;
+}
+
+.common-boxRelationService .common-innerRelationService .list-ul li a {
+background: url('../img/bl_arrow13.gif') no-repeat right 5px;
+color: #333;
+font-size: 11px;
+font-family: "돋움";
+line-height: 18px;
+padding: 0 16px 0 0;
+text-decoration: underline;
+display: inline-block;
+}
+
+.selectStyle{position:relative;z-index:1;height:30px;border-left:1px solid #999;*zoom:1;background:#fff url("../img/bg_select_x.gif") repeat-x 0 bottom;border:1px solid #999;}
+.selectStyle:after{display:block;content:"";clear:both;}
+.selectStyle *{vertical-align:top;}
+.selectStyle select{height:20px;background:transparent;font-size:12px;*filter:alpha(opacity=0);*opacity:0;width:115%;border:none;padding:4px 0 0 0;}
+.selectStyle span{overflow:hidden;display:block;position:relative;width:100%;height:30px;}
+.selectStyle span input[type="text"]{position:absolute;top:0px;left:0px;width:100%;background-color:transparent;background:url("../img/arr_select.gif") no-repeat right 50%;height:30px;border:none;font-size:12px;color:#333;text-indent:-1500px;*text-indent:5px;z-index:-1;color:transparent;*color:#333;}
+
+
+.ag-reservation .box-fareCheck{}
+.ag-reservation .box-fareCheck .box-topType-1{background:url('../img/bg_boxTop_1.jpg') no-repeat 0 0;padding:14px 0 0 0;margin:35px 0 41px 0;}
+.ag-reservation .box-fareCheck .box-topType-1 .box-bottomType-1{background:url('../img/bg_boxBottom_1.jpg') no-repeat 0 bottom;padding:0 0 25px 29px;*zoom:1;}
+.ag-reservation .box-fareCheck .box-topType-1 .box-bottomType-1:after{content:"";display:block;clear:both;}
+.ag-reservation .box-fareCheck .box-topType-1 .box-bottomType-1 .title{font-size:13px;font-weight:bold;line-height:23px;margin-bottom:4px;}
+.ag-reservation .box-fareCheck .box-topType-1 .box-bottomType-1 .start,
+.ag-reservation .box-fareCheck .box-topType-1 .box-bottomType-1 .end{width:264px;float:left;margin-right:10px;}
+.ag-reservation .box-fareCheck .box-topType-1 .box-bottomType-1 .Sbtn_TType04_3{margin-top:27px;}
+.ag-reservation .box-fareCheck .box-topType-1 .box-bottomType-1 .selectBox{position:relative;z-index:91;}
+.ag-reservation .box-fareCheck .box-topType-1 .box-bottomType-1 .selectBox .selectAr{position:absolute;top:0;left:0;width:221px;z-index:100;display:none;}
+.ag-reservation .box-fareCheck .box-topType-1 .box-bottomType-1 .selectBox .selectAr .selectArIn .inputBox{background:#fff;line-height:21px;}
+.ag-reservation .box-fareCheck .box-topType-1 .box-bottomType-1 .selectBox .selectAr .selectArIn ul li{background:url("../img/bl_select.gif") no-repeat 6px 8px;padding:0 6px 0 14px;line-height:20px;display:block;}
+.ag-reservation .box-fareCheck .box-topType-1 .box-bottomType-1 .selectBox .selectAr .selectArIn ul li a{color:#333;display:block; font-size:12px;}
+.ag-reservation .box-fareCheck .box-topType-1 .box-bottomType-1 .selectBox .selectAr .selectArIn ul li:hover,
+.ag-reservation .box-fareCheck .box-topType-1 .box-bottomType-1 .selectBox .selectAr .selectArIn ul li.focus{background:#e8e8f7 url("../img/bl_select.gif") no-repeat 6px 8px;}
+.ag-reservation .box-fareCheck .box-topType-1 .box-bottomType-1 .selectBox .selectAr .selectArIn ul li:hover a,
+.ag-reservation .box-fareCheck .box-topType-1 .box-bottomType-1 .selectBox .selectAr .selectArIn ul li.focus a{font-weight:bold;}
+.ag-reservation .box-fareCheck .box-topType-1 .box-bottomType-1 .selectBox .selectAr .selectArIn .inputBox .inputInner{border:2px solid #201cb4; padding:0 8px 0 8px;width:244px; background:url("../img/bg_arrow.gif") no-repeat right -3px #ffffff;}
+.ag-reservation .box-fareCheck .box-topType-1 .box-bottomType-1 .selectBox .selectAr .selectArIn .inputBox input{width:100%;color:#201cb4;border:0;line-height:21px;height:21px;}
+.ag-reservation .box-fareCheck .box-topType-1 .box-bottomType-1 .selectBox .selectAr .selectArIn ul{padding:11px 0 15px 0; overflow:auto; height:88px; background:#fff;width:262px;border:1px solid #312cce;margin:5px 0 0 0; overflow-x:hidden;}
+.ag-reservation .box-fareCheck .list-localIntro{*zoom:1;margin:0 0 39px 0;}
+.ag-reservation .box-fareCheck .list-localIntro:after{content:"";display:block;clear:both;}
+.ag-reservation .box-fareCheck .list-localIntro li{float:left;background:url('../img/bg_localIntro.jpg') no-repeat 0 0;width:321px;height:50px;font-weight:bold;margin:0 10px 10px 0;padding:12px 15px 0 14px;}
+.ag-reservation .box-fareCheck .list-localIntro li .text{color:#010101;float:left;width:45%;line-height:18px;}
+.ag-reservation .box-fareCheck .list-localIntro li .price{float:right;width:55%;color:#333;text-align:right;padding:12px 0 0 0;}
+.ag-reservation .box-fareCheck .list-localIntro li .price strong{color:#581cb4;font-size:20px;font-family:Arial;}
+.ag-reservation .box-fareCheck .list-localIntro-2{*zoom:1;margin:0 0 39px 0;}
+.ag-reservation .box-fareCheck .list-localIntro-2:after{content:"";display:block;clear:both;}
+.ag-reservation .box-fareCheck .list-localIntro-2 li.li-type-1{float:left;background:url('../img/bg_localIntro.jpg') no-repeat 0 0;width:321px;height:50px;font-weight:bold;margin:0 10px 10px 0;padding:12px 15px 0 14px;}
+.ag-reservation .box-fareCheck .list-localIntro-2 li.li-type-1 .text{color:#010101;float:left;width:45%;line-height:18px;}
+.ag-reservation .box-fareCheck .list-localIntro-2 li.li-type-1 .text .etc{display:block;color:#581cb4;font-size:11px;font-family:"돋움";font-weight:normal;}
+.ag-reservation .box-fareCheck .list-localIntro-2 li.li-type-1 .price{float:right;width:55%;color:#581cb4;text-align:right;padding:12px 0 0 0;}
+.ag-reservation .box-fareCheck .list-localIntro-2 li.li-type-1 .price strong{color:#581cb4;font-size:24px;font-family:Arial;font-weight:normal;}
+.ag-reservation .box-fareCheck .list-localIntro-2 li.li-type-1 .btnType06{background:url("../img/bgJ_btnLeft6_2.jpg") no-repeat 0 0;}
+.ag-reservation .box-fareCheck .list-localIntro-2 li.li-type-1 .btnType06 a{color:#333;font-weight:normal;background:url("../img/bgJ_btnRight6_2.jpg") no-repeat right 0;}
+.ag-reservation .box-fareCheck .list-localIntro-2 li.li-type-1 .box-viewTop{background:url('../img/bg_viewTop.png') no-repeat 0 0;position:absolute;top:110px;left:50%;margin:0 0 0 -230px;width:460px;z-index:9100;padding:4px 0;display:none;}
+.ag-reservation .box-fareCheck .list-localIntro-2 li.li-type-1 .box-viewTop .top-title{height:30px; border-bottom:1px solid #d3d2f0; padding:8px 8px 8px 8px; margin-bottom:25px;margin:0 2px;}
+.ag-reservation .box-fareCheck .list-localIntro-2 li.li-type-1 .box-viewTop .top-title .title{background:#e8e8f7; overflow:hidden; line-height:21px; height:22px; overflow:hidden;}
+.ag-reservation .box-fareCheck .list-localIntro-2 li.li-type-1 .box-viewTop .top-title .title h4{font-size:13px;float:left; padding-left:9px; color:#201cb4; font-weight:bold;}
+.ag-reservation .box-fareCheck .list-localIntro-2 li.li-type-1 .box-viewTop .box-viewBottom{background:url('../img/bg_viewBottom.png') no-repeat 0 bottom;width:420px;padding:28px 20px;}
+.ag-reservation .box-fareCheck .list-localIntro-2 li.li-type-1 .box-viewTop .box-viewBottom .title{color:#000;font-size:16px;font-family:"돋움";margin-bottom:3px;}
+.ag-reservation .box-fareCheck .list-localIntro-2 li.li-type-1 .box-viewTop .box-viewBottom .title-2{color:#581cb4;font-size:12px;font-family:"굴림";line-height:20px;font-weight:normal;margin:0 0 11px 0;}
+.ag-reservation .box-fareCheck .list-localIntro-2 li.li-type-1 .box-viewTop .box-viewBottom .box-table{border-top:1px solid #5c5f66;}
+.ag-reservation .box-fareCheck .list-localIntro-2 li.li-type-1 .box-viewTop .box-viewBottom .table-type-1{width:100%;}
+.ag-reservation .box-fareCheck .list-localIntro-2 li.li-type-1 .box-viewTop .box-viewBottom .table-type-1 th{color:#5c5f66;text-align:left;vertical-align:top;border-right:1px solid #dfdfdf;border-bottom:1px solid #dfdfdf;background:#f8f8f8;padding:10px 0 12px 9px;font-size:11px;font-family:"돋움";line-height:16px;}
+.ag-reservation .box-fareCheck .list-localIntro-2 li.li-type-1 .box-viewTop .box-viewBottom .table-type-1 td{line-height:22px;border-bottom:1px solid #dfdfdf;padding:6px 12px;}
+.ag-reservation .box-fareCheck .list-localIntro-2 li.li-type-1 .box-viewTop .box-viewBottom .table-type-1 td .text-type-1{color:#581cb4;}
+.ag-reservation .box-fareCheck .list-localIntro-2 li.li-type-1 .box-viewTop .box-viewBottom .common-notice{font-weight:normal;border-top:none;margin:3px 0 0;margin:3px 0 17px;}
+.ag-reservation .box-fareCheck .list-localIntro-2 li.li-type-1 .box-viewTop .box-viewBottom .common-notice ul{margin-left:0;}
+.ag-reservation .box-fareCheck .list-localIntro-2 li.li-type-1 .box-viewTop .box-viewBottom .common-notice ul li{padding:0 0 0 14px;background:url("/CW/images/bl/bl_ck.gif") no-repeat 0 5px;}
+.ag-reservation .box-fareCheck .list-localIntro-2 li.li-type-1 .box-viewTop .btn-close{position:absolute;top:17px;right:14px;}
+.ag-reservation .box-fareCheck .reInfoBox{margin:0 0 51px 0;}
+.ag-reservation .box-fareCheck .reInfoBox h4.h4_Type01{background:url("../img/bg_h5Type_2.gif") no-repeat 0 0;height:30px;line-height:30px;font-size:13px;color:#fff;padding:0 0 0 14px;}
+.ag-reservation .box-fareCheck .reInfoBox .reInfoBoxUl{*zoom:1;}
+.ag-reservation .box-fareCheck .reInfoBox .reInfoBoxUl:after{content:"";display:block;clear:both;}
+.ag-reservation .box-fareCheck .reInfoBox .reInfoBoxUl li.stLi{position:relative;}
+.ag-reservation .box-fareCheck .reInfoBox .reInfoBoxUl li.stLi p.stP{line-height:34px;height:34px;padding:0 0 0 29px;background:url("/CW/images/bl/bl_arrow5.gif") no-repeat 8px 11px;border-bottom:1px dotted #8a60ca;font-size:11px;font-family:'돋움';}
+.ag-reservation .box-fareCheck .reInfoBox .reInfoBoxUl li.stLi p.stP strong{font-size:12px;font-family:"굴림";}
+.ag-reservation .box-fareCheck .reInfoBox .reInfoBoxUl li.stLi p.stP .btnType11{position:absolute;top:6px;right:10px;}
+.ag-reservation .box-fareCheck .reInfoBox .reInfoBoxUl li.stLi .airGap{padding:0 29px 0 29px;}
+.ag-reservation .box-fareCheck .reInfoBox .reInfoBoxUl li.stLi .airGap.mB30{padding-bottom:30px;}
+.ag-reservation .box-fareCheck .reInfoBox .reInfoBoxUl li.stLi .airGap .tableType3_1{width:100%;margin:0 0 30px 0;}
+.ag-reservation .box-fareCheck .reInfoBox .reInfoBoxUl li.stLi .airGap .tableType3_1 th{color:#5c5f66;font-size:11px;font-family:'돋움';background:#f7f7f7;border:1px solid #b3b3b3;vertical-align:top;text-align:left;padding:7px 0 0 8px;}
+.ag-reservation .box-fareCheck .reInfoBox .reInfoBoxUl li.stLi .airGap .tableType3_1 td{padding:0 0 0 19px;}
+.ag-reservation .box-fareCheck .reInfoBox .reInfoBoxUl li.stLi .airGap .tableType3_1 td .localSet{padding:0 0 8px 0;}
+.ag-reservation .box-fareCheck .reInfoBox .reInfoBoxUl li.stLi .airGap .tableType3_1 td .localSet .local{font-size:16px;font-family:'돋움';}
+.ag-reservation .box-fareCheck .reInfoBox .reInfoBoxUl li.stLi .airGap .tableType3_1 td .localSet .subLocal{font-size:11px;color:#581cb4;font-weight:bold;font-family:'돋움';}
+.ag-reservation .box-fareCheck .reInfoBox .reInfoBoxUl li.stLi .airGap .tableType3_1 td ul{padding:0 0 19px 0;}
+.ag-reservation .box-fareCheck .reInfoBox .reInfoBoxUl li.stLi .airGap .tableType3_1 td ul li{color:#333;line-height:20px;}
+.ag-reservation .box-fareCheck .reInfoBox .reInfoBoxUl li.stLi .airGap .tableType3_1 td ul li .btnType16,
+.ag-reservation .box-fareCheck .reInfoBox .reInfoBoxUl li.stLi .airGap .tableType3_1 td ul li .btnType07{margin:4px 0 0 0;}
+.ag-reservation .box-fareCheck .reInfoBox .reInfoBoxUl li.stLi .airGap .tableType3_1 td ul li ul{padding:0;}
+.ag-reservation .box-fareCheck .reInfoBox .reInfoBoxUl li.stLi .airGap .tableType3_1 td ul li ul li{padding:0 0 0 11px;}
+.ag-reservation .box-fareCheck .reInfoBox .reInfoBoxUl li.stLi .stBox{position:relative;display:none;border:1px solid #581cb4;margin:-35px 0 0 0;padding:9px 0 0 0;background:#fff;}
+.ag-reservation .box-fareCheck .reInfoBox .reInfoBoxUl li.stLi .stBox .reCloseBtn{position:absolute;top:10px;right:10px;}
+.ag-reservation .box-fareCheck .reInfoBox .reInfoBoxUl li.stLi .stBox .subTile{padding:0 0 0 28px;background:url("/CW/images/bl/bl_arrow6.gif") no-repeat 7px 0;margin:0 0 19px 0;color:#581cb4;font-size:11px;font-family:'돋움';}
+:root .ag-reservation .box-fareCheck .reInfoBox .reInfoBoxUl li.stLi .stBox .subTile{background:url("/CW/images/bl/bl_arrow6.gif") no-repeat 7px 2px;}
+.ag-reservation .box-fareCheck .reInfoBox .reInfoBoxUl li.stLi .stBox .subTile strong{color:#581cb4;font-size:12px;display:block;margin:1px 0 0 0;}
+:root .ag-reservation .box-fareCheck .reInfoBox .reInfoBoxUl li.stLi .stBox .subTile strong{margin:-1px 0 0 0;}
+.ag-reservation .box-fareCheck .reInfoBox .reInfoBoxUl li.stLi .stBox .list-type-1{}
+.ag-reservation .box-fareCheck .reInfoBox .reInfoBoxUl li.stLi .stBox .list-type-1 li{color:#333;line-height:22px;}
+.ag-reservation .box-fareCheck .reInfoBox .reInfoBoxUl li.stLi .stBox .list-type-1 li a.linkBtn{color:#4c4c4c;font-size:11px;font-family:"돋움";}
+.ag-reservation .box-fareCheck .reInfoBox .reInfoBoxUl li.stLi .stBox .list-type-1 li a.linkBtn *{vertical-align:middle;}
+.ag-reservation .box-fareCheck .reInfoBox .reInfoBoxUl li.stLi .stBox .list-type-1 li a.linkBtn span{font-weight:bold;position:relative;top:-1px;}
+.ag-reservation .box-fareCheck .box-cpTop{background:url('../img/bg_cpTop.jpg') no-repeat 0 0;margin:24px 0 0 0;padding:19px 0 0 0;}
+.ag-reservation .box-fareCheck .box-cpTop .box-cpBottom{background:url('../img/bg_cpBottom.jpg') no-repeat 0 bottom;*zoom:1;padding:0 21px 17px 21px;margin:0 0 50px 0;}
+.ag-reservation .box-fareCheck .box-cpTop .box-cpBottom:after{content:"";display:block;clear:both;}
+.ag-reservation .box-fareCheck .box-cpTop .box-cpBottom .text{float:left;width:215px;color:#581cb4;font-size:24px;font-family:Arial;}
+.ag-reservation .box-fareCheck .box-cpTop .box-cpBottom .text strong{color:#010101;font-size:14px;font-family:"돋움";}
+.ag-reservation .box-fareCheck .box-cpTop .box-cpBottom .text span{font-size:14px;}
+.ag-reservation .box-fareCheck .box-cpTop .box-cpBottom .info{float:left;width:453px;*zoom:1;}
+.ag-reservation .box-fareCheck .box-cpTop .box-cpBottom .info li{*zoom:1;border-bottom:1px solid #e3e3e3;}
+.ag-reservation .box-fareCheck .box-cpTop .box-cpBottom .info li:after{content:"";display:block;clear:both;}
+.ag-reservation .box-fareCheck .box-cpTop .box-cpBottom .info li .title,
+.ag-reservation .box-fareCheck .box-cpTop .box-cpBottom .info li .memo{float:left;font-size:11px;font-family:"돋움";line-height:20px;padding:7px 0;}
+.ag-reservation .box-fareCheck .box-cpTop .box-cpBottom .info li .title{color:#5c5f66;font-weight:bold;width:81px;}
+.ag-reservation .box-fareCheck .box-cpTop .box-cpBottom .info li .memo{}
+.ag-reservation .box-fareCheck .box-cpTop .box-cpBottom .info li .memo a.linkBtn{font-size:11px;font-family:"돋움";}
+.ag-reservation .box-fareCheck .box-cpTop .box-cpBottom .info li .memo a.linkBtn *{vertical-align:middle;}
+.ag-reservation .box-fareCheck .box-cpTop .box-cpBottom .info li .memo a.linkBtn span{font-weight:bold;text-decoration:underline;}

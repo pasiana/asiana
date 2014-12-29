@@ -263,7 +263,7 @@ String member_id=(String)session.getAttribute("member_id");
 									</ul>
 									<ul>
 										<li>
-											<a href="#">
+											<a href="./checkCharge.ch">
 												<span>운임 조회</span>
 											</a>
 										</li>

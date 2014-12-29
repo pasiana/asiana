@@ -12,7 +12,6 @@ public class SubController extends HttpServlet {
 			throws ServletException, IOException{
 		ActionForward forward = null;
 		String command = request.getRequestURI().substring(request.getContextPath().length());
-		System.out.println(command);
 		
 		if(command.equals("/aircraft.su")) {
 			forward = new ActionForward();
@@ -62,7 +61,7 @@ public class SubController extends HttpServlet {
 			forward = new ActionForward();
 			forward.setPath("./asia_sub/TicketInformation.jsp");
 			forward.setRedirect(false);
-		}
+		} 
 		if(forward!=null){
 			if(forward.isRedirect()) {
 				response.sendRedirect(forward.getPath());
