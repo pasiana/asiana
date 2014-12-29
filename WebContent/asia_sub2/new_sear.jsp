@@ -32,9 +32,18 @@ $(function() {
 		}
 	});
 	$("#tabs").tabs();
+	$("input:radio").change(function() {
+		if($('input:radio:checked').val() == "OW") {
+			$('#arrive').hide();
+			$('#datepicker1').hide();
+		} else {
+			$('#arrive').show();
+			$('#datepicker1').show();
+		}
+	});	
 });
 $.datepicker.setDefaults({
-	dateFormat : 'yy-mm-dd',
+	dateFormat : 'yy/mm/dd',
 	dayNamesMin: ["일","월","화","수","목","금","토"],
 	monthNames: [ "1월", "2월", "3월", "4월", "5월", "6월",
 	              "7월", "8월", "9월", "10월", "11월", "12월" ],
@@ -309,7 +318,7 @@ width:180px;
 													title="선택하세요" >
 														<option value="ICN">서울(인천)</option>
 														<option value="GMP">서울(김포)</option>
-														<option value="KWJ">광주</option>
+														<option value="KWJ" selected="selected">광주</option>
 														<option value="TAE">대구</option>
 														<option value="MWX">무안</option>
 														<option value="PUS">부산</option>
@@ -337,6 +346,7 @@ width:180px;
 												<span class="span-select" style="height: 23px;"> <select
 													id="ul_Dom_ArrAirport" name="ul_Dom_ArrAirport"
 													title="선택하세요">
+														<option value="GMP" selected="selected">서울(김포)</option>
 														<option value="KWJ">광주</option>
 														<option value="PUS">부산</option>
 														<option value="RSU">여수</option>
@@ -357,7 +367,7 @@ width:180px;
 
 								<td class="tb_left"><strong>가는날</strong></td>
 								<td class="tb_left"><input type="text" id="datepicker"></td>
-								<td class="tb_left"><strong>오는날</strong></td>
+								<td class="tb_left"><strong id="arrive">오는날</strong></td>
 								<td class="tb_left"><input type="text" id="datepicker1"></td>
 
 							</div>
