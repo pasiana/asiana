@@ -3,19 +3,19 @@
 <!DOCTYPE html>
 <html>
 <%
-	String lea_city = (String)request.getAttribute("lea_city");
-	String arr_city = (String)request.getAttribute("arr_city");
-	String lea_time = (String)request.getAttribute("lea_time");
-	String res_sig_dou = (String)request.getAttribute("res_sig_dou");
-	int res_count = ((Integer) request.getAttribute("res_count")).intValue();
-	String lea_day = (String)request.getAttribute("lea_day");
-	int charge = ((Integer)request.getAttribute("charge")).intValue();
+	String lea_city = (String)request.getAttribute("lea_city"); //출발도시
+	String arr_city = (String)request.getAttribute("arr_city"); //도착도시 (왕복시 출발도시가됨)
+	String lea_time = (String)request.getAttribute("lea_time"); //가는편 출발시간
+	String res_sig_dou = (String)request.getAttribute("res_sig_dou"); //왕복 편도
+	int res_count = ((Integer) request.getAttribute("res_count")).intValue(); //사람수
+	String lea_day = (String)request.getAttribute("lea_day"); //가는날
+	int charge = ((Integer)request.getAttribute("charge")).intValue(); //운임요금(왕복 시 => 합계)
 	
-	//왕복
-	String arr_time = (String)request.getAttribute("arr_time");
-	String arr_day = (String)request.getAttribute("arr_day");
-	String arr_charge =(String)request.getAttribute("arr_charge");
-	String lea_charge =(String)request.getAttribute("lea_charge");
+	//왕복시
+	String arr_time = (String)request.getAttribute("arr_time"); //오는편 출발시간
+	String arr_day = (String)request.getAttribute("arr_day"); //오는날
+	String arr_charge =(String)request.getAttribute("arr_charge"); //오는요금
+	String lea_charge =(String)request.getAttribute("lea_charge"); //가는요금
 %>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -142,13 +142,17 @@
 													<th scope="col">유류할증료</th>
 													<td><span class="pr">0</span> <span class="unit">원</span>
 													</td>
+													<%if(res_sig_dou.equals("왕복")){ %>
 													<td><span class="pr">0</span> <span class="unit">원</span>
 													</td>
+													<% } %>
 												</tr>
 												<tr>
 													<th scope="col">세금 및 제반요금</th>
 													<td><span class="pr">0</span> <span class="unit">원</span></td>
+													<%if(res_sig_dou.equals("왕복")){ %>
 													<td><span class="pr">0</span> <span class="unit">원</span></td>
+													<% } %>
 												</tr>
 											</tbody>
 											<tfoot>
@@ -245,7 +249,7 @@
 						
 						<ul class="btnBoxType01">
 							<li><span class="Sbtn_TType06_2"><a href="./reserve.re">예매취소</a></span></li>
-							<li class="right"><span class="Bbtn_TType01_1"><a href="#">결제하기</a></span></li>
+							<li class="right"><span class="Bbtn_TType01_1"><a href="#none" >결제하기</a></span></li>
 						</ul>
 					</div>
 				</div>
