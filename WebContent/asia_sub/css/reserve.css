@@ -441,7 +441,12 @@ body {
 
 .btnBoxType01 {
 	width: 725px;
+<<<<<<< HEAD
 	height: 50px;
+=======
+	height: 100%;
+	overflow: hidden;
+>>>>>>> branch 'kwak' of https://github.com/pasiana/asiana.git
 }
 
 #skipct .btnBoxType01 li {

@@ -24,7 +24,7 @@ body {
 	margin: 0 auto;
 	width: 1440px;
 	height: 30px;
-	background: url("./asia_sub/img/bg_location.jpg") no-repeat center bottom;
+	background: url("../img/bg_location.jpg") no-repeat center bottom;
 }
 
 .location {
@@ -51,16 +51,15 @@ body {
 #containerBox {
 	width: 1440px;
 	height: 100%;
-	background: url("./asia_sub/img/bg_body1_1.jpg") repeat-x center -30px;
+	background: url("../img/bg_body1_1.jpg") repeat-x center -10px;
 	margin: 0 auto;
 }
 
 #skipct {
 	width: 956px;
 	height: 100%;
+	overflow: hidden;
 	margin: 0 auto;
-	padding: 29px 40px 90px 0;
-	min-height: 650px;
 }
 
 #skipct h3 {
@@ -89,7 +88,7 @@ body {
 
 #skipct .rv_stepBox .step01_end {
 	color: #5d6067;
-	background: url("./asia_sub/img/bg_rvStep01_end.gif") no-repeat 0 0;
+	background: url("../img/bg_rvStep01_end.gif") no-repeat 0 0;
 	width: 161px;
 	padding: 0 0 0 18px;
 	margin-left: -1px;
@@ -98,7 +97,7 @@ body {
 
 #skipct .rv_stepBox .step02_end {
 	color: #5d6067;
-	background: url("./asia_sub/img/bg_rvStep02_end.gif") no-repeat 0 0;
+	background: url("../img/bg_rvStep02_end.gif") no-repeat 0 0;
 	width: 179px;
 	padding: 0 0 0 18px;
 	margin-left: -2px;
@@ -108,7 +107,7 @@ body {
 #skipct .rv_stepBox .step03_on {
 	color: #5d6067;
 	font-weight: bold;
-	background: url("./asia_sub/img/bg_rvStep03_on.gif") no-repeat 0 0;
+	background: url("../img/bg_rvStep03_on.gif") no-repeat 0 0;
 	width: 154px;
 	padding: 0 0 0 43px;
 }
@@ -116,14 +115,14 @@ body {
 #skipct .rv_stepBox .step04_off {
 	color: #5d6067;
 	font-weight: normal;
-	background: url("./asia_sub/img/bg_rvStep04_off.gif") no-repeat 0 0;
+	background: url("../img/bg_rvStep04_off.gif") no-repeat 0 0;
 	width: 188px;
 }
 
 #skipct .rv_stepBox .step05_off {
 	color: #5d6067;
 	font-weight: normal;
-	background: url("./asia_sub/img/bg_rvStep05_off.gif") no-repeat 0 0;
+	background: url("../img/bg_rvStep05_off.gif") no-repeat 0 0;
 	width: 188px;
 	margin-left: -7px;
 }
@@ -139,13 +138,13 @@ body {
 	margin-top: 10px;
 	width: 108px;
 	height: 22px;
-	background: url("./asia_sub/img/bg_btnLeft6.jpg") no-repeat 0 0;
+	background: url("../img/bg_btnLeft6.jpg") no-repeat 0 0;
 	display: inline-block;
 }
 
 #skipct .helpOp .btnType06 a {
 	padding-right: 41px;
-	background: url("./asia_sub/img/bg_btnRight6.jpg") no-repeat right 0;
+	background: url("../img/bg_btnRight6.jpg") no-repeat right 0;
 	padding: 0 35px 0 8px;
 	display: block;
 	height: 22px;
@@ -161,7 +160,7 @@ body {
 
 .selectITbox3 {
 	width: 725px;
-	background: url("./asia_sub/img/bg_selectItineraryTopD2.gif") no-repeat 0 0;
+	background: url("../img/bg_selectItineraryTopD2.gif") no-repeat 0 0;
 	padding: 20px 0 0 0;
 	margin: 0 0 10px 0;
 }
@@ -170,17 +169,17 @@ body {
 	padding: 0 0 24px 0;
 	width: 725px;
 	height: 88px;
-	background: #fff url("./asia_sub/img/bg_selectItineraryBottom.gif") no-repeat 0
+	background: #fff url("../img/bg_selectItineraryBottom.gif") no-repeat 0
 		bottom;
 }
 .selectITbox3 {
-	background: url("./asia_sub/img/bg_selectItineraryTop2.gif") no-repeat 0 0;
+	background: url("../img/bg_selectItineraryTop2.gif") no-repeat 0 0;
 	padding: 5px 0 0 0;
 	margin: 0 0 10px 0;
 }
 
 .selectITbox3 .selectITinner3 {
-	background: #fff url("./asia_sub/img/bg_selectItineraryBottom.gif") no-repeat 0
+	background: #fff url("../img/bg_selectItineraryBottom.gif") no-repeat 0
 		bottom;
 	padding: 0 0 16px 0;
 }
@@ -221,10 +220,7 @@ body {
 
 .selectITbox3 .selectITinner3 li.liType01.totalIntro .tBoxD .end.oneWay
 	{
-	background: url("./asia_sub/img/bg_arrow5_1.gif") no-repeat 0 3px;
-}
-
-.selectITbox3 .selectITinner3 li.liType01.totalIntro .tBoxD .end {
+	background: url("../img/bg_arrow5_1.gif") no-repeat 0 3px;
 	padding: 0 0 0 33px;
 }
 
@@ -235,7 +231,7 @@ body {
 
 .selectITbox3 .selectITinner3 li.liType01 {
 	float: left;
-	background: url("./asia_sub/img/bg_line2.gif") no-repeat 0 0;
+	background: url("../img/bg_line2.gif") no-repeat 0 0;
 	font-size: 11px;
 	font-family: '돋움';
 }
@@ -250,7 +246,7 @@ body {
 	width: 725px;
 	height: 173px;
 	margin: 0 auto;
-	background: url("./asia_sub/img/bg_noticeTop.gif") no-repeat 0 0;
+	background: url("../img/bg_noticeTop.gif") no-repeat 0 0;
 	padding: 9px 0 0 0;
 	margin: 0 auto;
 }
@@ -258,13 +254,13 @@ body {
 .notice_container .notice_Inner {
 	width: 725px;
 	height: 167px;
-	background: url("./asia_sub/img/bg_noticeBottom.gif") no-repeat 0 bottom;
+	background: url("../img/bg_noticeBottom.gif") no-repeat 0 bottom;
 	margin: 0;
 	padding: 0 0 6px 0;
 }
 
 .notice_Inner .notice li {
-	background: url("./asia_sub/img/bl_notice.gif") no-repeat 14px 3px;
+	background: url("../img/bl_notice.gif") no-repeat 14px 3px;
 	padding: 0 0 4px 39px;
 	line-height: 21px;
 	font-size: 12px;
@@ -277,7 +273,7 @@ body {
 
 .passengerBox .h4_type01 {
 	text-align: left;
-	background: url("./asia_sub/img/bl_hType01.gif") no-repeat scroll 0 center
+	background: url("../img/bl_hType01.gif") no-repeat scroll 0 center
 		transparent;
 	color: #581CB4;
 	font-size: 14px;
@@ -304,7 +300,7 @@ body {
 }
 
 .passengerInner .passengerBody {
-	background: url("./asia_sub/img/bg_tableBox.gif") repeat-y 0 0;
+	background: url("../img/bg_tableBox.gif") repeat-y 0 0;
 	position: relative;
 	padding: 0 0 0 99px;
 }
@@ -382,12 +378,16 @@ body {
 }
 
 .noticeList li {
-	background: url("./asia_sub/img/bl_ck.gif") no-repeat -1px 5px;
+	background: url("../img/bl_ck.gif") no-repeat -1px 5px;
 	color: #666;
 	font-size: 11px;
 	line-height: 18px;
 	padding: 0 0 0 14px;
 	font-family: '돋움';
+}
+.btnBoxType01 {
+	height: 30px;
+	margin-bottom: 20px;
 }
 
 .btnBoxType01 li {
@@ -396,12 +396,12 @@ body {
 }
 
 .Sbtn_TType06_1 {
-	background: url("./asia_sub/img/Sbtn_TTypeL06_1.gif") no-repeat 0 0;
+	background: url("../img/Sbtn_TTypeL06_1.gif") no-repeat 0 0;
 	display: inline-block;
 }
 
 .Sbtn_TType06_1 a {
-	background: url("./asia_sub/img/Sbtn_TTypeR06_1.gif") no-repeat right 0;
+	background: url("../img/Sbtn_TTypeR06_1.gif") no-repeat right 0;
 	padding: 0 11px 0 27px;
 	display: block;
 	height: 25px;
@@ -416,12 +416,12 @@ body {
 }
 
 .Bbtn_TType01_1 {
-	background: url("./asia_sub/img/Bbtn_TTypeL01_1.gif") no-repeat 0 0;
+	background: url("../img/Bbtn_TTypeL01_1.gif") no-repeat 0 0;
 	display: inline-block;
 }
 
 .Bbtn_TType01_1 a {
-	background: url("./asia_sub/img/Bbtn_TTypeR01_1.gif") no-repeat right 0;
+	background: url("../img/Bbtn_TTypeR01_1.gif") no-repeat right 0;
 	padding: 0 41px 0 19px;
 	display: block;
 	height: 35px;

@@ -106,7 +106,6 @@ a {
 </a>
 </li> -->
 					</ul></li>
-
 				<li><a class="menu top2" href="#"> 할인항공권 </a>
 					<ul class="submenu sub2"
 						style="padding: 15px 0 15px 19px; display: none;">
@@ -115,7 +114,6 @@ a {
 						<li><a class="subMenu1 index3" href="#"> 국제선 오즈드림페어 </a></li>
 						<li><a class="subMenu1 index4" href="#"> 국제선 타임페어 </a></li>
 					</ul></li>
-
 				<li><a class="menu top3" href="#"> 마일리지항공권 발급 </a>
 					<ul class="submenu sub3"
 						style="padding: 15px 0 15px 19px; display: none;">
@@ -155,9 +153,6 @@ a {
 						<li><a class="subMenu1 index2" href="#"> 스크랩 보관함 </a></li>
 					</ul></li>
 				<li><a class="menu top8" href="#"> 취항 노선 </a></li>
-
-
-
 			</ul>
 		</aside>
 	</div>

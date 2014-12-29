@@ -149,8 +149,7 @@
 										<SPAN>관련서비스</SPAN>
 									</P>
 									<UL class="list-ul">
-										<LI><A
-											href="http://flyasiana.com/CW/kr/common/pageContent.do?pageId=PC_0403">초과수하물
+										<LI><A href="http://flyasiana.com/CW/kr/common/pageContent.do?pageId=PC_0403">초과수하물
 												요금표</A></LI>
 									</UL>
 								</DIV>

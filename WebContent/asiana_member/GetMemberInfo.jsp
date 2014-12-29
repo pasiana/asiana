@@ -1,15 +1,14 @@
-<%@page import="com.cafe24.itwill3.Member.db.MemberBean"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link href="asiana_member/css/reset.css" type="text/css" rel="stylesheet">
-<link href="asiana_member/css/GetMemberInfo.css" type="text/css" rel="stylesheet">
+<link href="css/reset.css" type="text/css" rel="stylesheet">
+<link href="css/GetMemberInfo.css" type="text/css" rel="stylesheet">
 <title>Insert title here</title>
 <script src="http://dmaps.daum.net/map_js_init/postcode.js"></script>
-<script type="text/javascript" src="asiana_member/js/jquery-1.11.1.js"></script>
+<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
 	//포커스 이벤트
@@ -69,7 +68,7 @@ function confirm() {
 	}
 	
 	document.frm.post_code.value=document.frm.post_code1.value+"-"+document.frm.post_code2.value;
-	document.frm.address.value=document.frm.address1.value+"&&"+document.frm.address2.value;
+	document.frm.address.value=document.frm.address1.value+"&"+document.frm.address2.value;
 	
 	if(document.frm.telephone1.value=="" && document.frm.telephone2.value=="" && document.frm.telephone3.value==""
 		&& document.frm.mobile1.value=="" && document.frm.mobile2.value=="" && document.frm.mobile3.value==""){
@@ -81,19 +80,19 @@ function confirm() {
 		if(document.frm.telephone1.value=="" || document.frm.telephone2.value=="" || document.frm.telephone3.value==""){
 			alert("전화번호를 정확히 입력하세요.");
 			return false;
-		}else{
-			document.frm.telephone.value=document.frm.telephone1.value+"-"+document.frm.telephone2.value+"-"+document.frm.telephone3.value;
 		}
 	}
 	
-	if(document.frm.mobile2.value!="" || document.frm.mobile3.value!=""){
-		if(document.frm.mobile2.value=="" || document.frm.mobile3.value==""){
+	document.frm.telephone.value=document.frm.telephone1.value+"-"+document.frm.telephone2.value+"-"+document.frm.telephone3.value;
+	
+	if(document.frm.mobile1.value!="" || document.frm.mobile2.value!="" || document.frm.mobile3.value!=""){
+		if(document.frm.mobile1.value=="" || document.frm.mobile2.value=="" || document.frm.mobile3.value==""){
 			alert("휴대전화번호를 정확히 입력하세요.");
 			return false;
-		}else{
-			document.frm.mobile.value=document.frm.mobile1.value+"-"+document.frm.mobile2.value+"-"+document.frm.mobile3.value;
 		}
 	}
+	
+	document.frm.mobile.value=document.frm.mobile1.value+"-"+document.frm.mobile2.value+"-"+document.frm.mobile3.value;
 	
 	if(document.frm.email_id.value==""){
 		alert("이메일 아이디를 입력해주세요.");
@@ -119,36 +118,12 @@ function confirm() {
 }
 </script>
 </head>
-<%
-MemberBean memberbean=(MemberBean)request.getAttribute("memberbean");
-String[] birthday=memberbean.getBirthday().split("-");
-String[] post_code=memberbean.getPost_code().split("-");
-String[] address=memberbean.getAddress().split("&&");
 
-String[] telephone=new String[3];
-if(!memberbean.getTelephone().equals("")){
-	telephone=memberbean.getTelephone().split("-");
-}
-
-String[] mobile=new String[3];
-if(!memberbean.getMobile().equals("")){
-	mobile=memberbean.getMobile().split("-");	
-}
-
-String[] email=memberbean.getEmail().split("@");
-%>
 <body>
 <header>
 	<jsp:include page="../asiana_inc/header.jsp" />
 </header>
-<form action="./ChangeMemberInformation.me" method="post" name="frm">
-<input type="hidden" name="post_code">
-<input type="hidden" name="address">
-<input type="hidden" name="telephone">
-<input type="hidden" name="mobile">
-<input type="hidden" name="email">
-<input type="hidden" name="share_info">
-
+<form action="" method="post" name="frm">
 <div class="locationBox">
 <div class="locationInner">
 <ul>
@@ -157,7 +132,7 @@ String[] email=memberbean.getEmail().split("@");
 <span>></span>
 </li>
 <li> 
-<a href="./MyAsiana.me">마이 아시아나</a>
+<a href="MyAsiana.jsp">마이 아시아나</a>
 <span>></span>
 </li>
 <li> 
@@ -185,51 +160,53 @@ String[] email=memberbean.getEmail().split("@");
 <table class="myBoxType2">
 <tr>
 <td>회원아이디</td>
-<td><%=memberbean.getMember_id() %></td>
+<td>jwan0510</td>
 </tr>
 
 <tr>
 <td class="line">회원번호</td>
-<td class="line"><%=memberbean.getMember_num() %></td>
+<td class="line">1</td>
 </tr>
 
 <tr>
-<td class="line">한글 이름</td>
-<td class="line"><%=memberbean.getKrname() %></td>
+<td class="line">이름</td>
+<td class="line">한주완</td>
 </tr>
 
 <tr>
-<td class="line">영문 이름</td>
-<td class="line"><%=memberbean.getLast_name()+"/"+memberbean.getFirst_name() %></td>
+<td class="line">영문이름</td>
+<td class="line">han ju-wan</td>
 </tr>
 
 <tr>
 <td class="line">생년월일</td>
-<td class="line"><%=birthday[0]+"년 "+birthday[1]+"월 "+birthday[2]+"일" %></td>
+<td class="line">0000년 00월 00일</td>
 </tr>
 
 <tr>
 <td class="line">성별</td>
-<td class="line"><%=memberbean.getGender() %></td>
+<td class="line">남자</td>
 </tr>
 
 <tr>
 <td class="line">주소</td>
 <td class="line">
 <ul class="ulfirst">
-<li><input type="text" class="postNum" name="post_code1" readonly="readonly" value="<%=post_code[0] %>"> -</li>
-<li>&nbsp;<input type="text" class="postNum" name="post_code2" readonly="readonly" value="<%=post_code[1] %>"></li>
+<li><input type="text" class="postNum" name="post_code1" readonly="readonly"> -</li>
+<li>&nbsp;<input type="text" class="postNum" name="post_code2" readonly="readonly"></li>
 <li>
 <span class="postNumBtn">
 <a onclick="openDaumPostcode()">우편번호 검색</a>
 </span>
 </li>
 </ul>
+<input type="hidden" name="post_code">
 
 <ul class="nextUl">
-<li><input type="text" class="wAress0" name="address1" readonly="readonly" value="<%=address[0] %>"></li>
-<li><input type="text" class="wAress0" name="address2" value="<%=address[1] %>"></li>
+<li><input type="text" class="wAress0" name="address1" readonly="readonly"></li>
+<li><input type="text" class="wAress0" name="address2"></li>
 </ul>
+<input type="hidden" name="address">
 
 </td>
 </tr>
@@ -242,75 +219,51 @@ String[] email=memberbean.getEmail().split("@");
 </p>
 
 <label>전화번호</label>
-<%if(!memberbean.getTelephone().equals("")){
-	%>
-	<input type="text" class="selTelNum" maxlength="3" name="telephone1" onkeyup="this.value=number_filter(this.value)" value="<%=telephone[0] %>"> -
-	<input type="text" class="selTelNum" maxlength="4" name="telephone2" onkeyup="this.value=number_filter(this.value)" value="<%=telephone[1] %>"> -
-	<input type="text" class="selTelNum" maxlength="4" name="telephone3" onkeyup="this.value=number_filter(this.value)" value="<%=telephone[2] %>"><br>
-	<%
-}else{
-	%>
-	<input type="text" class="selTelNum" maxlength="3" name="telephone1" onkeyup="this.value=number_filter(this.value)"> -
- 	<input type="text" class="selTelNum" maxlength="4" name="telephone2" onkeyup="this.value=number_filter(this.value)"> -
- 	<input type="text" class="selTelNum" maxlength="4" name="telephone3" onkeyup="this.value=number_filter(this.value)"><br>
-	<%
-}
-%>
 
+<input type="text" class="selTelNum" maxlength="3" name="telephone1" onkeyup="this.value=number_filter(this.value)"> -
+ <input type="text" class="selTelNum" maxlength="4" name="telephone2" onkeyup="this.value=number_filter(this.value)"> -
+ <input type="text" class="selTelNum" maxlength="4" name="telephone3" onkeyup="this.value=number_filter(this.value)"><br>
+ <input type="hidden" name="telephone">
 <label>휴대전화번호</label>
-<%if(!memberbean.getMobile().equals("")){
-	%>
-	<select id="selTelNum" class="selTelNum" name="mobile1">
-	<option value="010" <%if(mobile[0].equals("010")){%>selected<%} %>>010</option>
-	<option value="011" <%if(mobile[0].equals("011")){%>selected<%} %>>011</option>
-	<option value="016" <%if(mobile[0].equals("016")){%>selected<%} %>>016</option>
-	<option value="017" <%if(mobile[0].equals("017")){%>selected<%} %>>017</option>
-	<option value="019" <%if(mobile[0].equals("019")){%>selected<%} %>>019</option>
-	</select> - 
- 	<input type="text" class="selTelNum" maxlength="4" name="mobile2" onkeyup="this.value=number_filter(this.value)" value="<%=mobile[1] %>"> -
- 	<input type="text" class="selTelNum" maxlength="4" name="mobile3" onkeyup="this.value=number_filter(this.value)" value="<%=mobile[2] %>">
-	<%
-}else{
-	%>
-	<select id="selTelNum" class="selTelNum" name="mobile1">
-	<option value="010">010</option>
-	<option value="011">011</option>
-	<option value="016">016</option>
-	<option value="017">017</option>
-	<option value="019">019</option>
-	</select> - 
- 	<input type="text" class="selTelNum" maxlength="4" name="mobile2" onkeyup="this.value=number_filter(this.value)"> -
- 	<input type="text" class="selTelNum" maxlength="4" name="mobile3" onkeyup="this.value=number_filter(this.value)">
-	<%
-}
-%>
 
+<select id="selTelNum" class="selTelNum" name="mobile1">
+<option value="010">010</option>
+<option value="011">011</option>
+<option value="016">016</option>
+<option value="017">017</option>
+<option value="019">019</option>
+</select> - 
+ <input type="text" class="selTelNum" maxlength="4" name="mobile2" onkeyup="this.value=number_filter(this.value)"> -
+ <input type="text" class="selTelNum" maxlength="4" name="mobile3" onkeyup="this.value=number_filter(this.value)">
+ <input type="hidden" name="mobile">
 </td>
 </tr>
 
 <tr>
 <td class="line">이메일 주소</td>
 <td class="line">
-<input type="text" class="email_id" name="email_id" style="ime-mode:disabled" value="<%=email[0] %>"> 
+<input type="text" class="email_id" name="email_id" style="ime-mode:disabled"> 
 <span>@</span> 
-<input type="text" class="email_Domain" name="email_Domain" value="<%=email[1]%>">
+<input type="text" class="email_Domain" name="email_Domain">
 <select class="domain" name="domain" onchange="domainsel()">
 <option value="">직접입력</option>
-<option value="naver.com" <%if(email[1].equals("naver.com")){%>selected<%} %>>naver.com</option>
-<option value="nate.com" <%if(email[1].equals("nate.com")){%>selected<%} %>>nate.com</option>
-<option value="hanmail.net" <%if(email[1].equals("hanmail.com")){%>selected<%} %>>hanmail.net</option>
-<option value="hotmail.com" <%if(email[1].equals("hotmail.com")){%>selected<%} %>>hotmail.com</option>
-<option value="paran.com" <%if(email[1].equals("paran.com")){%>selected<%} %>>paran.com</option>
+<option value="naver.com">naver.com</option>
+<option value="nate.com">nate.com</option>
+<option value="hanmail.net">hanmail.net</option>
+<option value="hotmail.com">hotmail.com</option>
+<option value="paran.com">paran.com</option>
 <option value="dreamwiz.com">dreamwiz.com</option>
 </select>
+<input type="hidden" name="email">
 </td>
 </tr>
 
 <tr>
 <td class="line">개인정보 제3자 제공</td>
 <td class="line">
-<label class="ShareInfo"><input type="radio" name="share_info1" <%if(memberbean.getShare_info().equals("Y")){ %>checked<%} %>> 동의 </label>
-<label class="ShareInfo"><input type="radio" name="share_info1" <%if(memberbean.getShare_info().equals("N")){ %>checked<%} %>> 거부</label>
+<label class="ShareInfo"><input type="radio" name="share_info1"> 동의 </label>
+<label class="ShareInfo"><input type="radio" name="share_info1"> 거부</label>
+<input type="hidden" name="share_info">
 <span class="btn_CpopupLayer">
 <a>내용보기</a>
 </span>
@@ -346,14 +299,14 @@ String[] email=memberbean.getEmail().split("@");
 </p>
 </div>
 </div>
-<img class="btn_close" src="asiana_member/images/btn_close.gif">
+<img class="btn_close" src="images/btn_close.gif">
 </div>
 </td>
 </tr>
 </table>
 
 <div class="btn">
-<input type="image" class="close" onclick="location.href='./MyAsiana.me'; return false">
+<input type="image" class="close">
 <input type="image" class="confirm" onclick="return confirm()">
 </div>
 </div>

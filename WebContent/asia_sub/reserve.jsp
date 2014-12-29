@@ -181,7 +181,6 @@
 					}
 				});
 	}
-
 	function submit_form() {
 		lea_time = $('#datepicker').val();
 		lea_time=lea_time.replace(lea_time.split("/")[0]+"/","");
@@ -190,12 +189,15 @@
 		
 		var res_count = $('#adultCount option:selected').text()
 				.replace('명', '');
+
 		var url = "";
+
 		if (res_sig_dou == "왕복") {
 			url = "./reserve2.re?lea_city=" + lea_city + "&arr_city="
 					+ arr_city + "&res_sig_dou=" + res_sig_dou + "&lea_time="
 					+ lea_time + "&arr_time=" + arr_time + "&res_count="
 					+ res_count;
+
 		} else {
 			url = "./reserve2.re?lea_city=" + lea_city + "&arr_city="
 					+ arr_city + "&res_sig_dou=" + res_sig_dou + "&lea_time="

@@ -53,7 +53,6 @@ public class Reservation2 implements Action {
 		ActionForward forward = new ActionForward();
 		forward.setPath("./asia_sub/reserve2.jsp");
 		forward.setRedirect(false);
-		
 		return forward;
 	}
 }
