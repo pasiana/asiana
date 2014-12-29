@@ -32,7 +32,7 @@
 	var arr_city = "<%=arr_city %>";
 	var res_sig_dou = "<%=res_sig_dou %>";
 	var lea_time = "<%=lea_time %>";
-	var arr_time = "<%=lea_time %>";
+	var arr_time = "<%=arr_time %>";
 	var res_count = "<%=res_count%>";
 	var lea_day = "<%=lea_day%>";
 	var arr_day = "<%=arr_day%>";
@@ -52,7 +52,7 @@
 			+ arr_city + "&res_sig_dou=" + res_sig_dou + "&lea_time="
 			+ lea_time + "&res_count=" + res_count + "&lea_day=" + lea_day + "&charge=" + charge;
 		}
-		location.href = url; 
+		location.href = url;
 	}
 </script>
 <style type="text/css">
