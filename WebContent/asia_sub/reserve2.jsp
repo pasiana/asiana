@@ -25,6 +25,11 @@
 <link type="text/css" rel="stylesheet" href="./asia_sub/css/reserve2.css">
 <script src="js/jquery-1.11.1.js"></script>
 <script type="text/javascript">
+	var lea_city="<%=lea_city %>";
+	var arr_city="<%=arr_city %>";
+	var res_sig_dou="<%=res_sig_dou%>";
+	var res_count="<%=res_count%>";
+	
 	$(document).ready(function(){
 		//편도 li버튼
 		$('.btnDay').click(function() {
@@ -56,22 +61,73 @@
 		//편도 선택버튼 눌럿을때
 		$('.last-td').click(function(){
 			$('.last-td').css("background","none");
-			$(this).css("background","#FAF4C0");
-			
+			$(this).css("background","#FFE400");
 		});
 		
 		//왕복 선택버튼 눌럿을때
 		$('.arr_last-td').click(function(){
 			$('.arr_last-td').css("background","none");
-			$(this).css("background","#FAF4C0");
+			$(this).css("background","#FFE400");
 		});
 	});
 	
+	//'선택' 눌렀을때 정보값 나오게하기
+	var lea_time=""; //출발시간
+	var charge=""; //운임가격
+	var lea_day=""; //가는날짜
+	
+	var arr_day=""; //오는날짜(왕복)
+	var arr_time=""; //출발시간(왕복)
+	var charge2=""; //운임가격(왕복)
+	
+	//편도에서 선택 눌렀을 시
 	function btns(chk)
 	{  
 	    var row = chk.parentElement.parentElement.parentElement;
-	    var txtCell = row.cells[0].innerText+row.cells[1].innerText+row.cells[2].innerText+row.cells[3].innerText+row.cells[5].innerText+row.cells[7].innerText;
+	    var txtCell = "출발날짜:"+row.cells[7].innerText+"\n출발시간:"+row.cells[1].innerText+"\n도착시간:"+row.cells[2].innerText+"\n요금:"+row.cells[5].innerText;
 	    alert(txtCell);
+	    
+	    //값넣기
+	    lea_time=row.cells[1].innerText; //출발시간
+	    charge=row.cells[5].innerText;
+	    lea_day=row.cells[7].innerText;
+	}
+	
+	//왕복에서 선택 눌렀을 시
+	function btns2(chk)
+	{  
+	    var row = chk.parentElement.parentElement.parentElement;
+	    var txtCell ="출발날짜:"+row.cells[7].innerText+"\n출발시간:"+row.cells[1].innerText+"\n도착시간:"+row.cells[2].innerText+"\n요금:"+row.cells[5].innerText;
+	    alert(txtCell);
+	    
+	    //값넣기
+	    arr_time=row.cells[1].innerText; //출발시간
+	    charge2=row.cells[5].innerText;
+	    arr_day=row.cells[7].innerText;
+	}
+	
+	//예약3번째페이지 값넘기는 스크립트
+	function submit_form2() {
+		charge = charge.split("원");
+		charge = Number(charge[0]);
+		charge2 = charge2.split("원");
+		charge2 = Number(charge2[0]);
+		
+		var url = "";
+		if (res_sig_dou == "왕복") {
+			//왕복일때 요금 합
+			sumCharge=charge+charge2;
+			
+			url = "./reserve3.re?lea_city=" + lea_city + "&arr_city="
+			+ arr_city + "&res_sig_dou=" + res_sig_dou + "&lea_time="
+			+ lea_time + "&arr_time=" + arr_time + "&res_count=" + res_count + "&lea_day=" + lea_day +"&arr_day="+ arr_day + "&charge=" + sumCharge
+			+ "&lea_charge=" + charge +"&arr_charge=" + charge2;
+		} else {
+			url = "./reserve3.re?lea_city=" + lea_city + "&arr_city="
+					+ arr_city + "&res_sig_dou=" + res_sig_dou + "&lea_time="
+					+ lea_time + "&res_count=" + res_count + "&lea_day=" + lea_day + "&charge=" + charge;
+		}
+		location.href = url;
 	}
 </script>
 <style type="text/css">
@@ -90,10 +146,37 @@
 	height: 30px;
 	padding-top: 10px; 
 }
+
+.intxt {
+	background: none;
+	border: none;
+	border-radius: 0;
+	vertical-align: middle;
+	width: 113px;
+	height: 21px;
+	line-height: 19px;
+	font-size: 11px;
+	color: #fff;
+	margin-top: -13px;
+	padding: 0 0 0 5px;
+}
+fieldset{
+	border: none;
+}
+
+<% if(res_sig_dou.equals("왕복")){
+	%>
+	.selectITbox4 .selectITinner4 .sLeft .upsellEnd.oneWay {
+		background: url("https://flyasiana.com/images/bg/bg_arrowSE.gif") no-repeat 10px center;
+	}
+	<%												
+}%>
+
+
 </style>
 </head>
 <body>
-	
+<form method="post">
 	<header>
 		<jsp:include page="../asiana_inc/header.jsp" />
 	</header>
@@ -159,7 +242,7 @@
 							%>
 								<ul id="day">
 								<%
-									for(int i=0; i<leaday.size(); i++){
+									for(int i=0; i<7; i++){
 									ReservationBean reservationBean = leaday.get(i);
 								%>
 									<li class="btnDay" id="chagneDateSearch">
@@ -206,7 +289,7 @@
 														ReservationBean rBean = relist.get(i);
 														if(rBean.getLeaDay().equals("01/01/목")){
 											%>
-											<tr>
+											<tr class="tr">
 												<td rowspan="1"><span class="box"><span
 														class="text-type-1"><%=rBean.getFlightNum() %> </span></span></td>
 												<td rowspan="1"><span class="box"><strong><%=rBean.getLeaTime() %></strong></span></td>
@@ -271,9 +354,12 @@
 												</span></td>
 												<td class="hover_td"><span class="box"><strong><%=rBean.getSeats() %></strong>석</span>
 												</td>
+												<td style="display: none;">
+												<span class="box"><strong><%=rBean.getLeaDay() %></strong></span>
+												</td>
 												<td class="last-td last-child hover_td"><span
 													class="Sbtn_TType07_3"><a href="#none"
-														id="ra_depAvail0">선택</a></span></td>
+														id="ra_depAvail0" onclick="btns(this)">선택</a></span></td>
 											</tr>
 											<%			}
 													} 
@@ -307,9 +393,12 @@
 												</span></td>
 												<td class="hover_td"><span class="box"><strong><%=rBean.getSeats() %></strong>석</span>
 												</td>
+												<td style="display: none;">
+												<span class="box"><strong><%=rBean.getLeaDay() %></strong></span>
+												</td>
 												<td class="last-td last-child hover_td"><span
 													class="Sbtn_TType07_3"><a href="#none"
-														id="ra_depAvail0">선택</a></span></td>
+														id="ra_depAvail0" onclick="btns(this)">선택</a></span></td>
 											</tr>
 											<%			}
 													} 
@@ -343,9 +432,12 @@
 												</span></td>
 												<td class="hover_td"><span class="box"><strong><%=rBean.getSeats() %></strong>석</span>
 												</td>
+												<td style="display: none;">
+												<span class="box"><strong><%=rBean.getLeaDay() %></strong></span>
+												</td>
 												<td class="last-td last-child hover_td"><span
 													class="Sbtn_TType07_3"><a href="#none"
-														id="ra_depAvail0">선택</a></span></td>
+														id="ra_depAvail0" onclick="btns(this)">선택</a></span></td>
 											</tr>
 											<%			}
 													} 
@@ -379,9 +471,12 @@
 												</span></td>
 												<td class="hover_td"><span class="box"><strong><%=rBean.getSeats() %></strong>석</span>
 												</td>
+												<td style="display: none;">
+												<span class="box"><strong><%=rBean.getLeaDay() %></strong></span>
+												</td>
 												<td class="last-td last-child hover_td"><span
 													class="Sbtn_TType07_3"><a href="#none"
-														id="ra_depAvail0">선택</a></span></td>
+														id="ra_depAvail0" onclick="btns(this)">선택</a></span></td>
 											</tr>
 											<%			}
 													} 
@@ -415,9 +510,12 @@
 												</span></td>
 												<td class="hover_td"><span class="box"><strong><%=rBean.getSeats() %></strong>석</span>
 												</td>
+												<td style="display: none;">
+												<span class="box"><strong><%=rBean.getLeaDay() %></strong></span>
+												</td>
 												<td class="last-td last-child hover_td"><span
 													class="Sbtn_TType07_3"><a href="#none"
-														id="ra_depAvail0">선택</a></span></td>
+														id="ra_depAvail0" onclick="btns(this)">선택</a></span></td>
 											</tr>
 											<%			}
 													} 
@@ -451,9 +549,12 @@
 												</span></td>
 												<td class="hover_td"><span class="box"><strong><%=rBean.getSeats() %></strong>석</span>
 												</td>
+												<td style="display: none;">
+												<span class="box"><strong><%=rBean.getLeaDay() %></strong></span>
+												</td>
 												<td class="last-td last-child hover_td"><span
 													class="Sbtn_TType07_3"><a href="#none"
-														id="ra_depAvail0">선택</a></span></td>
+														id="ra_depAvail0" onclick="btns(this)">선택</a></span></td>
 											</tr>
 											<%			}
 													} 
@@ -545,9 +646,12 @@
 												</span></td>
 												<td class="hover_td"><span class="box"><strong><%=rBean.getSeats() %></strong>석</span>
 												</td>
+												<td style="display: none;">
+												<span class="box"><strong><%=rBean.getArrDay()%></strong></span>
+												</td>
 												<td class="last-child hover_td arr_last-td"><span
 													class="Sbtn_TType07_3"><a href="#none"
-														id="ra_depAvail0">선택</a></span></td>
+														id="ra_depAvail0" onclick="btns2(this)">선택</a></span></td>
 											</tr>
 											<%			}
 													} 
@@ -591,9 +695,12 @@
 												</span></td>
 												<td class="hover_td"><span class="box"><strong><%=rBean.getSeats() %></strong>석</span>
 												</td>
+												<td style="display: none;">
+												<span class="box"><strong><%=rBean.getArrDay()%></strong></span>
+												</td>
 												<td class="last-child hover_td arr_last-td"><span
 													class="Sbtn_TType07_3"><a href="#none"
-														id="ra_depAvail0">선택</a></span></td>
+														id="ra_depAvail0" onclick="btns2(this)" >선택</a></span></td>
 											</tr>
 											<%			}
 													} 
@@ -627,9 +734,12 @@
 												</span></td>
 												<td class="hover_td"><span class="box"><strong><%=rBean.getSeats() %></strong>석</span>
 												</td>
+												<td style="display: none;">
+												<span class="box"><strong><%=rBean.getArrDay()%></strong></span>
+												</td>
 												<td class="last-child hover_td arr_last-td"><span
 													class="Sbtn_TType07_3"><a href="#none"
-														id="ra_depAvail0">선택</a></span></td>
+														id="ra_depAvail0" onclick="btns2(this)">선택</a></span></td>
 											</tr>
 											<%			}
 													} 
@@ -663,9 +773,12 @@
 												</span></td>
 												<td class="hover_td"><span class="box"><strong><%=rBean.getSeats() %></strong>석</span>
 												</td>
+												<td style="display: none;">
+												<span class="box"><strong><%=rBean.getArrDay()%></strong></span>
+												</td>
 												<td class="last-child hover_td arr_last-td"><span
 													class="Sbtn_TType07_3"><a href="#none"
-														id="ra_depAvail0">선택</a></span></td>
+														id="ra_depAvail0" onclick="btns2(this)" >선택</a></span></td>
 											</tr>
 											<%			}
 													} 
@@ -699,9 +812,12 @@
 												</span></td>
 												<td class="hover_td"><span class="box"><strong><%=rBean.getSeats() %></strong>석</span>
 												</td>
+												<td style="display: none;">
+												<span class="box"><strong><%=rBean.getArrDay()%></strong></span>
+												</td>
 												<td class="last-child hover_td arr_last-td"><span
 													class="Sbtn_TType07_3"><a href="#none"
-														id="ra_depAvail0">선택</a></span></td>
+														id="ra_depAvail0" onclick="btns2(this)" >선택</a></span></td>
 											</tr>
 											<%			}
 													} 
@@ -735,9 +851,12 @@
 												</span></td>
 												<td class="hover_td"><span class="box"><strong><%=rBean.getSeats() %></strong>석</span>
 												</td>
+												<td style="display: none;">
+												<span class="box"><strong><%=rBean.getArrDay()%></strong></span>
+												</td>
 												<td class="last-child hover_td arr_last-td"><span
 													class="Sbtn_TType07_3"><a href="#none"
-														id="ra_depAvail0">선택</a></span></td>
+														id="ra_depAvail0" onclick="btns2(this)" >선택</a></span></td>
 											</tr>
 											<%			}
 													} 
@@ -771,9 +890,12 @@
 												</span></td>
 												<td class="hover_td"><span class="box"><strong><%=rBean.getSeats() %></strong>석</span>
 												</td>
+												<td style="display: none;">
+												<span class="box"><strong><%=rBean.getArrDay()%></strong></span>
+												</td>
 												<td class="last-child hover_td arr_last-td"><span
 													class="Sbtn_TType07_3"><a href="#none"
-														id="ra_depAvail0">선택</a></span></td>
+														id="ra_depAvail0" onclick="btns2(this)">선택</a></span></td>
 											</tr>
 											<%			}
 													} 
@@ -807,8 +929,13 @@
 						<!-- 하단 버튼부분  -->
 						<ul class="btnBoxType01">
 							<li><span class="Sbtn_TType06_1"><a href="./reserve.re">이전단계</a></span></li>
-							<li class="right"><span class="Bbtn_TType01_1"><a
-									href="#">계속하기</a></span></li>
+							<% if(lea_time.equals("01/01")){ %>
+								<li class="right"><span class="Bbtn_TType01_1">
+								<a href="#none" onclick="submit_form2();">계속하기</a></span></li>
+							<%}else { %>
+								<li class="right" style="display: none;"><span class="Bbtn_TType01_1">
+								<a href="#none" onclick="submit_form2();">계속하기</a></span></li>
+							<%} %>
 						</ul>
 						<!-- 하단 버튼부분 끝  -->
 					</div>
@@ -823,5 +950,6 @@
 		<jsp:include page="../asiana_inc/footer.jsp" />
 	</footer>
 	<!-- //main_container -->
+	</form>
 </body>
 </html>

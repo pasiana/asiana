@@ -8,8 +8,10 @@
 <link type="text/css" rel="stylesheet" href="css/checkCharge.css">
 <script src="js/jquery-1.11.1.js"></script>
 <script type="text/javascript">
-	function fncSearch() {
-		
+	function fncSearch(city) {
+		$.post('./searchCity.ch',{lea_city:city},function(result){
+			$('#keyArrivalAirport').append(result);
+		});
 	}
 </script>
 <style type="text/css">
@@ -64,19 +66,19 @@
 												<DIV class="selectStyle" style="width: 100%; height: 23px;">
 													<SPAN class="span-select">
 														<INPUT tabindex="-1" title="출발지" id="hiddenKeyD" type="text" readonly="readonly" value="서울(김포) (김포공항-국내선)">
-														<SELECT	name="keyDepartureAirport" title="출발지 선택" id="keyDepartureAirport">
+														<SELECT	name="keyDepartureAirport" title="출발지 선택" id="keyDepartureAirport" onchange="fncSearch(this.options[this.selectedIndex].text);">
 															<OPTION value="">선택하세요</OPTION>
-															<OPTION value="KWJ">광주 (광주공항)</OPTION>
-															<OPTION selected="selected" value="GMP">서울(김포)(김포공항-국내선)</OPTION>
-															<OPTION value="PUS">부산 (김해공항-국제선)</OPTION>
-															<OPTION value="TAE">대구 (대구공항)</OPTION>
-															<OPTION value="MWX">무안 (무안공항)</OPTION>
-															<OPTION value="HIN">진주 (사천 공항)</OPTION>
-															<OPTION value="RSU">여수 (여수공항)</OPTION>
-															<OPTION value="USN">울산 (울산공항)</OPTION>
-															<OPTION value="ICN">서울(인천) (인천공항)</OPTION>
-															<OPTION value="CJU">제주 (제주공항)</OPTION>
-															<OPTION value="CJJ">청주 (청주공항)</OPTION>
+															<OPTION value="KWJ">광주</OPTION>
+															<OPTION selected="selected" value="GMP">김포</OPTION>
+															<OPTION value="PUS">부산</OPTION>
+															<OPTION value="TAE">대구</OPTION>
+															<OPTION value="MWX">무안</OPTION>
+															<OPTION value="HIN">진주</OPTION>
+															<OPTION value="RSU">여수</OPTION>
+															<OPTION value="USN">울산</OPTION>
+															<OPTION value="ICN">인천</OPTION>
+															<OPTION value="CJU">제주</OPTION>
+															<OPTION value="CJJ">청주</OPTION>
 														</SELECT>
 													</SPAN>
 												</DIV>
