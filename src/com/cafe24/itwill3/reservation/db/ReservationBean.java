@@ -4,26 +4,32 @@ import java.sql.Date;
 
 public class ReservationBean {
 	private String lcKey;
-	private String arKey;
+	private String acKey;
 	private String leaDay;
+	private String arrDay;
 	private String flightNum;
 	private String leaTime;
 	private String arrTime;
 	private String flyModel;
 	private int charge;
 	private int seats;
-	
+	public String getArrDay() {
+		return arrDay;
+	}
+	public void setArrDay(String arrDay) {
+		this.arrDay = arrDay;
+	}
 	public String getLcKey() {
 		return lcKey;
 	}
 	public void setLcKey(String lcKey) {
 		this.lcKey = lcKey;
 	}
-	public String getArKey() {
-		return arKey;
+	public String getAcKey() {
+		return acKey;
 	}
-	public void setArKey(String arKey) {
-		this.arKey = arKey;
+	public void setAcKey(String acKey) {
+		this.acKey = acKey;
 	}
 	public String getLeaDay() {
 		return leaDay;
@@ -67,4 +73,5 @@ public class ReservationBean {
 	public void setSeats(int seats) {
 		this.seats = seats;
 	}
+	
 }

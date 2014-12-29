@@ -93,13 +93,13 @@ a {
 			style="margin: 10px 0 0 0; padding-bottom: 10px; background: #fff;">
 			<h2
 				style="background: url('http://flyasiana.com/CW/images/bg/bg_h2.png') no-repeat 0 0; width: 171px; height: 60px; padding: 21px 0 0 19px;">
-				<a href="Admin1.jsp"> <img src="img/admin_nav.png">
+				<a href="Admin1.jsp"> <img src="asia_admin/img/admin_nav.png">
 				</a>
 			</h2>
 
 			<ul
 				style="background: url('https://flyasiana.com/CW/images/bg/bg_lnbBottom.png') no-repeat 0 bottom; padding: 0 1px 4px 1px; width: 188px;">
-				<li><a class="menu top1" href="Admin1.jsp"> 회원목록 </a></li>
+				<li><a class="menu top1" href="./AsianaMemberList.me"> 회원목록 </a></li>
 
 				<li><a class="menu top2" href="Admin2.jsp"> 예약목록 </a></li>
 			</ul>

@@ -12,54 +12,55 @@ public class SubController extends HttpServlet {
 			throws ServletException, IOException{
 		ActionForward forward = null;
 		String command = request.getRequestURI().substring(request.getContextPath().length());
+		System.out.println(command);
 		
-		if(command.equals("/asia_sub/aircraft.su")) {
+		if(command.equals("/aircraft.su")) {
 			forward = new ActionForward();
-			forward.setPath("./Aircraft_Information.jsp");
+			forward.setPath("./asia_sub/Aircraft_Information.jsp");
 			forward.setRedirect(false);
-		} else if(command.equals("/asia_sub/bag.su")) {
+		} else if(command.equals("/bag.su")) {
 			forward = new ActionForward();
-			forward.setPath("./Baggage.jsp");
+			forward.setPath("./asia_sub/Baggage.jsp");
 			forward.setRedirect(false);
-		} else if(command.equals("/asia_sub/booking.su")) {
+		} else if(command.equals("/booking.su")) {
 			forward = new ActionForward();
-			forward.setPath("./BookingAirport.jsp");
+			forward.setPath("./asia_sub/BookingAirport.jsp");
 			forward.setRedirect(false);
-		} else if(command.equals("/asia_sub/bookOn.su")) {
+		} else if(command.equals("/bookOn.su")) {
 			forward = new ActionForward();
-			forward.setPath("./BookOnLine.jsp");
+			forward.setPath("./asia_sub/BookOnLine.jsp");
 			forward.setRedirect(false);
-		} else if(command.equals("/asia_sub/check.su")) {
+		} else if(command.equals("/check.su")) {
 			forward = new ActionForward();
-			forward.setPath("./Check_In.jsp");
+			forward.setPath("./asia_sub/Check_In.jsp");
 			forward.setRedirect(false);
-		} else if(command.equals("/asia_sub/elec.su")) {
+		} else if(command.equals("/elec.su")) {
 			forward = new ActionForward();
-			forward.setPath("./Electronics_Instructional.jsp");
+			forward.setPath("./asia_sub/Electronics_Instructional.jsp");
 			forward.setRedirect(false);
-		} else if(command.equals("/asia_sub/entry.su")) {
+		} else if(command.equals("/entry.su")) {
 			forward = new ActionForward();
-			forward.setPath("./Entry_Procedures.jsp");
+			forward.setPath("./asia_sub/Entry_Procedures.jsp");
 			forward.setRedirect(false);
-		} else if(command.equals("/asia_sub/suite.su")) {
+		} else if(command.equals("/suite.su")) {
 			forward = new ActionForward();
-			forward.setPath("./First_Suite.jsp");
+			forward.setPath("./asia_sub/First_Suite.jsp");
 			forward.setRedirect(false);
-		} else if(command.equals("/asia_sub/first.su")) {
+		} else if(command.equals("/first.su")) {
 			forward = new ActionForward();
-			forward.setPath("./First.jsp");
+			forward.setPath("./asia_sub/First.jsp");
 			forward.setRedirect(false);
-		} else if(command.equals("/asia_sub/meals.su")) {
+		} else if(command.equals("/meals.su")) {
 			forward = new ActionForward();
-			forward.setPath("./Meals.jsp");
+			forward.setPath("./asia_sub/Meals.jsp");
 			forward.setRedirect(false);
-		} else if(command.equals("/asia_sub/mobile.su")) {
+		} else if(command.equals("/mobile.su")) {
 			forward = new ActionForward();
-			forward.setPath("./Mobile_Services.jsp");
+			forward.setPath("./asia_sub/Mobile_Services.jsp");
 			forward.setRedirect(false);
-		} else if(command.equals("/asia_sub/ticket.su")) {
+		} else if(command.equals("/ticket.su")) {
 			forward = new ActionForward();
-			forward.setPath("./TicketInformation.jsp");
+			forward.setPath("./asia_sub/TicketInformation.jsp");
 			forward.setRedirect(false);
 		}
 		if(forward!=null){

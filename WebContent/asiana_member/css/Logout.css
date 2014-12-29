@@ -1,0 +1,89 @@
+@CHARSET "UTF-8";
+
+.locationBox{
+background: url(../images/bg_location.jpg) no-repeat center bottom;
+}
+
+.locationInner{
+width: 956px;
+height: 30px;
+line-height: 32px;
+margin: 0 auto;
+}
+
+.locationInner ul li{
+float: left;
+font-size: 11px;
+}
+
+.locationInner span{
+padding: 0 8px;
+}
+
+.locationInner ul li a{
+color: #333;
+}
+
+.locationInner ul li{
+color: #999;
+}
+
+#containerBox{
+background: url(../images/bg_body1_1.jpg) repeat-x center 0;
+}
+
+#containerBox #container{
+background: url(../images/bg_body2.jpg) no-repeat 0 0;
+}
+
+#containerBox #container #skipCt{
+width: 957px;
+margin: 0 auto;
+min-height: 500px;
+}
+
+#containerBody{
+padding: 29px 40px 50px 0;
+min-height: 500px;
+width: 956px;
+}
+
+#containerBody .h3_type02{
+font-size: 24px;
+color: #010101;
+margin-bottom: 44px;
+}
+
+#containerBody .loginBoxTyp0{
+background: url(../images/bgK_loginBoxType0Top.jpg) no-repeat top left;
+margin: 0 0 60px; 
+}
+
+.loginBoxTyp0 .boxInner{
+background: url(../images/bgK_loginBoxType0Bot.jpg) no-repeat bottom left;
+padding: 40px 32px;
+}
+
+.btn_personnerList2{
+text-align: left;
+padding: 20px 0 0;
+}
+
+.btnKType04{
+background: url(../images/bgK_selectLeft13.gif) no-repeat;
+display: inline-block;
+}
+
+.btnPadding{
+margin-right: 10px;
+}
+
+.btnKType04 a{
+background: url(../images/bgK_selectRight13.gif) no-repeat right;
+padding: 0 29px 0 11px;
+display: block;
+color: #333;
+height: 25px;
+line-height: 25px;
+font-size: 12px;
+}
