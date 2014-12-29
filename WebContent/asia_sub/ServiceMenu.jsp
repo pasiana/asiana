@@ -106,7 +106,7 @@ a {
 						<li><a class="subMenu1 index2 First" href="./first.su"> 퍼스트 </a></li>
 					</ul></li>
 
-				<li><a class="menu top2" href="TicketInformation.jsp"> 항공권 예매 </a>
+				<li><a class="menu top2" href="./ticket.su"> 항공권 예매 </a>
 					<ul class="submenu sub2"
 						style="padding: 15px 0 15px 19px; display: none;">
 						<li><a class="subMenu1 index1 TicketInformation" href="./ticket.su"> 항공권 안내 </a></li>
@@ -114,7 +114,7 @@ a {
 						<li><a class="subMenu1 index4 BookingAirport" href="./booking.su"> 공항 예매 </a></li>
 					</ul></li>
 
-				<li><a class="menu top5" href="Check_In.jsp"> 공항에서 </a>
+				<li><a class="menu top5" href="./check.su"> 공항에서 </a>
 					<ul class="submenu sub5"
 						style="padding: 15px 0 15px 19px; display: none;">
 						<li><a class="subMenu1 index1 Check_In" href="./check.su">

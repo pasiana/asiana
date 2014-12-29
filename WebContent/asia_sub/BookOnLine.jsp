@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>인터넷예매</title>
-<link type="text/css" rel="stylesheet" href="css/bookonline.css">
+<link type="text/css" rel="stylesheet" href="./asia_sub/css/bookonline.css">
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
@@ -48,12 +48,12 @@ $(document).ready(function() {
 						<h3 class="h3_type01">인터넷 예매</h3>
 
 						<div class="service_contents">
-							<img src="img/bookonline.jpg">
+							<img src="./asia_sub/img/bookonline.jpg">
 						</div>
 
 						<div class="common-boxRelationService">
 							<div class="common-innerRelationService">
-								<img src="img/service.jpg">
+								<img src="./asia_sub/img/service.jpg">
 							</div>
 						</div>
 

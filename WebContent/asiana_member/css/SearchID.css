@@ -1,0 +1,136 @@
+@CHARSET "UTF-8";
+
+.locationBox{
+background: url(../images/bg_location.jpg) no-repeat center bottom;
+}
+
+.locationInner{
+width: 956px;
+height: 30px;
+line-height: 32px;
+margin: 0 auto;
+}
+
+.locationBox .locationInner ul li{
+float: left;
+color: #999;
+font-size: 11px;
+text-align: left center;
+}
+
+.locationBox .locationInner ul li a{
+color: #333;
+}
+
+.locationInner span{
+padding: 0 8px;
+}
+
+.loginBox{
+background: url(../images/bg_body1_1.jpg) repeat-x center 0;
+}
+
+.loginBox .container{
+background: url(../images/bg_body2.jpg) no-repeat 0 0;
+width: 956px;
+margin: 0 auto;
+}
+
+.loginBox .container .skipCt{
+width: 957px;
+min-height: 570px;
+}
+
+.loginBox .container .skipCt #containerBody{
+padding: 29px 40px 50px 0;
+width: 956px;
+}
+
+#containerBody .h3_type02{
+color: #010101;
+margin-bottom: 44px;
+font-size: 24px;
+}
+
+.topBtnArea{
+text-align: right;
+margin: -65px 0 44px;
+}
+
+.loginBox .btnKtype01{
+border-bottom: 1px solid #b2b2b2;
+}
+
+.loginBox .btnKtype01 a{
+background: url(../images/bgK_selectRight19.gif) no-repeat right;
+font-size: 14px;
+font-weight: bold;
+padding-right: 21px;
+line-height: 20px;
+height: 20px;
+}
+
+.accInnerBox{
+background: url(../images/bgK_loginAccInnerBoxTop.gif) no-repeat left top;
+width: 439px;
+margin: 0 auto;
+}
+
+.boxInner{
+background: url(../images/bgK_loginAccInnerBoxBot.gif) no-repeat bottom left;
+padding: 27px 26px;
+color: #656565;
+line-height: 18px;
+font-size: 11px;
+}
+
+.boxInner .h4_type01{
+background: url(../images/bl_hType01.gif) no-repeat 0 2px;
+color: #5e14cc;
+font-size: 14px;
+padding: 0 9px 3px 28px;
+display: inline-block;
+line-height: 22px;
+margin: -2px 0 10px 0;
+}
+
+.SearchBox td:FIRST-CHILD{
+width: 90px;
+line-height: 30px;
+font-size: 12px;
+color: #5c5f66;
+font-weight: bold;
+float: left;
+}
+
+.SearchBox .inputType01{
+width: 286px;
+border: 1px solid #999;
+height: 23px;
+line-height: 23px;
+padding: 0 3px;
+color: #808080;
+}
+
+.accInnerBox select{
+width: 70px;
+height: 24px;
+}
+
+.accInnerBox .btnArea{
+text-align: right;
+}
+
+.Sbtn_TType3_1{
+background: url(../images/Sbtn_TTypeL02_1.gif) no-repeat;
+display: inline-block;
+}
+
+.Sbtn_TType3_1 a{
+background: url(../images/Sbtn_TTypeR02_1.gif) no-repeat right 0;
+padding: 0 15px;
+display: block;
+height: 25px;
+line-height: 25px;
+font-weight: bold;
+}

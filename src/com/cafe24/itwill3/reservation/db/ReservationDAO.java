@@ -11,6 +11,8 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
+import org.apache.tomcat.jni.OS;
+
 public class ReservationDAO {
 	Context initCtx = null;
 	DataSource ds = null;
@@ -26,7 +28,7 @@ public class ReservationDAO {
 		return conn;
 	}
 	
-	public List<ReservationBean> leave(String lea_city, String arr_city) {
+	public List<ReservationBean> leave(String lea_city, String arr_city, String lea_time) {
 		
 		List<ReservationBean> leavelist = new ArrayList<ReservationBean>();
 		
@@ -41,11 +43,15 @@ public class ReservationDAO {
 				while(rs.next()) {
 					citykey += rs.getString("city_key")+",";
 				}
-				
-				sql = "SELECT * FROM leave_data WHERE lc_key = ? and ac_key = ? ";
+				int leaTimeInt = Integer.parseInt(lea_time.split("/")[1])+6;
+				String leaTimeString = String.valueOf("0"+leaTimeInt);
+				String leaTimeReplace = "01/" + lea_time.substring(3,5).replace(lea_time.split("/")[1],leaTimeString);
+				sql = "SELECT * FROM leave_data WHERE lc_key = ? and ac_key = ? and lea_day between ? and ? ";
 				pstmt = conn.prepareStatement(sql);
 				pstmt.setString(1, citykey.split(",")[0]);
 				pstmt.setString(2, citykey.split(",")[1]);
+				pstmt.setString(3, lea_time);
+				pstmt.setString(4, leaTimeReplace);
 				rs = pstmt.executeQuery();
 				while(rs.next()) {
 					ReservationBean rBean = new ReservationBean();
@@ -71,7 +77,7 @@ public class ReservationDAO {
 		return leavelist;
 	}
 	
-	public List<ReservationBean> leaDay(String lea_city, String arr_city){
+	public List<ReservationBean> leaDay(String lea_city, String arr_city, String lea_time){
 		
 		List<ReservationBean> leaDaylist = new ArrayList<ReservationBean>();
 		

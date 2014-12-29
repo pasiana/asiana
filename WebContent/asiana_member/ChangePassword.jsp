@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link href="css/reset.css" type="text/css" rel="stylesheet">
-<link href="css/ChangePassword.css" type="text/css" rel="stylesheet">
+<link href="asiana_member/css/reset.css" type="text/css" rel="stylesheet">
+<link href="asiana_member/css/ChangePassword.css" type="text/css" rel="stylesheet">
 <title>Insert title here</title>
-<script type="text/javascript" src="js/jquery-1.11.1.js"></script> 
+<script type="text/javascript" src="asiana_member/js/jquery-1.11.1.js"></script> 
 <script type="text/javascript">
 $(document).ready(function(){
 	//포커스 이벤트
@@ -61,12 +61,17 @@ function confirm() {
 }
 </script>
 </head>
-
+<%
+String member_id=(String)session.getAttribute("member_id");
+if(member_id==null){
+	response.sendRedirect("./AsianaLogin.me");
+}
+%>
 <body>
 <header>
 	<jsp:include page="../asiana_inc/header.jsp" />
 </header>
-<form action="" method="post" name="frm">
+<form action="./DoChangePassword.me" method="post" name="frm">
 <div class="locationBox">
 <div class="locationInner">
 <ul>

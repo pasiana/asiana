@@ -23,7 +23,7 @@ body {
 	margin: 0 auto;
 	width: 1440px;
 	height: 30px;
-	background: url("../img/bg_location.jpg") no-repeat center bottom;
+	background: url("./asia_sub/img/bg_location.jpg") no-repeat center bottom;
 }
 
 .location {
@@ -50,7 +50,7 @@ body {
 
 #containerBox {
 	width: 1440px;
-	background: url("../img/bg_body1_1.jpg") repeat-x center 0;
+	background: url("./asia_sub/img/bg_body1_1.jpg") repeat-x center 0;
 	margin: 0 auto;
 }
 

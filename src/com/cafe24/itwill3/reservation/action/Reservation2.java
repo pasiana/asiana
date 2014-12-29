@@ -31,8 +31,8 @@ public class Reservation2 implements Action {
 		List<ReservationBean> relist = null;
 		List<ReservationBean> leaday = null;
 
-		relist=reservationDAO.leave(lea_city, arr_city);
-		leaday=reservationDAO.leaDay(lea_city, arr_city);
+		relist=reservationDAO.leave(lea_city, arr_city, lea_time);
+		leaday=reservationDAO.leaDay(lea_city, arr_city, lea_time);
 		
 		//왕복
 		List<ReservationBean> arrlist=null;

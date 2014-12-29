@@ -4,9 +4,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link href="css/reset.css" type="text/css" rel="stylesheet">
-<link href="css/CheckRegistered.css" type="text/css" rel="stylesheet">
+<link href="asiana_member/css/reset.css" type="text/css" rel="stylesheet">
+<link href="asiana_member/css/CheckRegistered.css" type="text/css" rel="stylesheet">
 <title>Insert title here</title>
+<script type="text/javascript" src="asiana_member/js/jquery-1.11.1.js"></script>
 <script type="text/javascript">
 //전체 약관 동의
 var checked=0;
@@ -51,15 +52,17 @@ function confirm() {
 <header>
 	<jsp:include page="../asiana_inc/header.jsp" />
 </header>
-<form action="input_join.jsp" method="post" name="regi">
+<form action="./AsianaMemberJoin.me" method="post" name="regi">
+<input type="hidden" name="share_info">
+<input type="hidden" name="agree" value="Y">
 <div class="stepBG">
-<img src="images/StepBG.JPG" style="margin: 15px 550px;">
+<img src="asiana_member/images/StepBG.JPG" style="margin: 15px 550px;">
 </div>
 
 <div class="issueCont">
 <div class="memberLeftArea">
 <h2>
-<img src="images/textK_member_step3_1.gif">
+<img src="asiana_member/images/textK_member_step3_1.gif">
 </h2>
 </div>
 
@@ -450,7 +453,6 @@ flyasiana.com에서 항공권 등을 구입한 이용자는 아시아나항공�
 <label><input type="radio" name="agree3" class="Noagree"> 동의하지 않습니다.</label>
 </li>
 </ul>
-<input type="hidden" name="share_info">
 </div>
 
 <h4 style="margin-top: 40px;">
@@ -491,7 +493,7 @@ flyasiana.com에서 항공권 등을 구입한 이용자는 아시아나항공�
 </div>
 
 <div class="btn">
-<input type="image" class="close">
+<input type="image" class="close" onclick="location.href='./AsianaMain.me'; return false">
 <input type="image" class="confirm" onclick="return confirm()">
 </div>
 </div>

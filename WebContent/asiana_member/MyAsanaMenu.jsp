@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link href="css/reset.css" type="text/css" rel="stylesheet">
-<link href="css/MyAsianoMenu.css" type="text/css" rel="stylesheet">
+<link href="asiana_member/css/reset.css" type="text/css" rel="stylesheet">
+<link href="asiana_member/css/MyAsianoMenu.css" type="text/css" rel="stylesheet">
 <title>Insert title here</title>
-<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+<script type="text/javascript" src="asiana_member/js/jquery-1.11.1.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
 	//메뉴 클릭 시 서브메뉴 오픈
@@ -32,19 +32,19 @@ $(document).ready(function(){
 <div style="position: absolute; top: 0; left: 0;">
 <aside style="margin: 10px 0 0 0; padding-bottom: 10px; background: #fff;">
 <h2 style="background: url('https://flyasiana.com/CW/images/bg/bg_h2.png') no-repeat 0 0; width: 171px; height: 60px; padding: 21px 0 0 19px;">
-<a href="MyAsiana.jsp">
+<a href="./MyAsiana.me">
 <img src="https://flyasiana.com/CW/images/nav/nav03_h98.png">
 </a>
 </h2>
 
 <ul style="background: url('https://flyasiana.com/CW/images/bg/bg_lnbBottom.png') no-repeat 0 bottom; padding: 0 1px 4px 1px; width: 188px;">
 <li>
-<a class="menu top1" href="ReservationList.jsp">
+<a class="menu top1" href="./ReservationList.me">
 예매/구매내역
 </a>
 <ul class="submenu sub1" style="padding: 15px 0 15px 19px; display: none;">
 <li>
-<a class="subMenu1 index1" href="ReservationList.jsp">
+<a class="subMenu1 index1" href="./ReservationList.me">
 항공권 예약 현황
 </a>
 </li>
@@ -131,22 +131,22 @@ $(document).ready(function(){
 </li>
 
 <li>
-<a class="menu top5" href="GetPassword.jsp">
+<a class="menu top5" href="./GetPassword.me">
 회원정보
 </a>
 <ul class="submenu sub5" style="padding: 15px 0 15px 19px; display: none;">
 <li>
-<a class="subMenu1 index1" href="GetPassword.jsp">
+<a class="subMenu1 index1" href="./GetPassword.me">
 회원정보변경
 </a>
 </li>
 <li>
-<a class="subMenu1 index2" href="ChangePassword.jsp">
+<a class="subMenu1 index2" href="./ChangePassword.me">
 비밀번호변경
 </a>
 </li>
 <li>
-<a class="subMenu1 index3" href="MyAsianaOut.jsp">
+<a class="subMenu1 index3" href="./MyAsianaOut.me">
 회원탈퇴
 </a>
 </li>

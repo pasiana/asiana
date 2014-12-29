@@ -33,4 +33,41 @@
   	<servlet-name>MemberFrontController</servlet-name>
   	<url-pattern>*.me</url-pattern>
   </servlet-mapping>
+  
+   <servlet>
+  	<servlet-name>NewsFrontController</servlet-name>
+  	<servlet-class>com.cafe24.itwill3.news.action.NewsFrontController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>NewsFrontController</servlet-name>
+  	<url-pattern>*.ne</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>EventFrontController</servlet-name>
+  	<servlet-class>com.cafe24.itwill3.event.action.EventFrontController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>EventFrontController</servlet-name>
+  	<url-pattern>*.ev</url-pattern>
+  </servlet-mapping>
+
+ <servlet>
+  	<servlet-name>MainFrontController</servlet-name>
+  	<servlet-class>com.cafe24.itwill3.main.action.MainFrontController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>MainFrontController</servlet-name>
+  	<url-pattern>*.ma</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>SubController</servlet-name>
+  	<servlet-class>com.cafe24.itwill3.sub.action.SubController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>SubController</servlet-name>
+  	<url-pattern>*.su</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

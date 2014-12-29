@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link href="css/reset.css" type="text/css" rel="stylesheet">
-<link href="css/ReservationList.css" type="text/css" rel="stylesheet">
+<link href="asiana_member/css/reset.css" type="text/css" rel="stylesheet">
+<link href="asiana_member/css/ReservationList.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="asiana_member/js/jquery-1.11.1.js"></script>
 <title>Insert title here</title>
-
 </head>
 
 <body>
@@ -48,7 +48,7 @@
 <h3 class="h3_type01">항공권 예약 현황</h3>
 <div class="inquiryTextBox">
 <p class="inquiryTitle">
-<img src="images/text_inquiry.gif">
+<img src="asiana_member/images/text_inquiry.gif">
 </p>
 
 <ul>
@@ -71,7 +71,7 @@
 <div class="LineBottom">
 
 <h4 class="h4_type01">
-<img src="images/text_myReservation.jpg">
+<img src="asiana_member/images/text_myReservation.jpg">
 </h4>
 
 <p class="reCntText bgText">
@@ -89,16 +89,17 @@
 
 <table class="tableType_1">
 <tr>
+<th rowspan="2">편도/왕복</th>
 <th rowspan="2">예약번호</th>
 <th rowspan="2">예약일</th>
 <th colspan="4">여정</th>
 </tr>
 
 <tr>
-<th>출발</th>
-<th>도착</th>
-<th>가는 날</th>
-<th>오는 날</th>
+<th>출발지</th>
+<th>도착지</th>
+<th>출발 일시</th>
+<th>도착 일시</th>
 </tr>
 </table>
 </div>
