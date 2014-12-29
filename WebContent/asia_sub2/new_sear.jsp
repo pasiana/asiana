@@ -14,8 +14,10 @@
 <link rel ="shortcut icon" href="images/logo/favicon.ico">
 <script type="text/javascript">
 var date = new Date();
-var lea_time = date.getFullYear()+"-"+new String(date.getMonth()+1)+"-"+date.getDate();
-var arr_time = date.getFullYear()+"-"+new String(date.getMonth()+1)+"-"+(date.getDate()+3);
+/* var lea_time = date.getFullYear()+"/"+new String(date.getMonth()+1)+"/"+date.getDate();
+var arr_time = date.getFullYear()+"/"+new String(date.getMonth()+1)+"/"+(date.getDate()+3); */
+var lea_time = "2015/01/01";
+var arr_time = "2015/01/04";
 $(function() {
 	$('.top2').addClass("menuchange");
 	$('.top2').parent().children('ul').css('display', 'block');
@@ -54,6 +56,11 @@ $.datepicker.setDefaults({
 
 function click_search(){
 	$('.sear_tb').toggle();/*클릭시 자동으로 온/오프  */
+	var dep = $('#ul_Dom_DepAirport option:selected').text();
+	var arr = $('#ul_Dom_ArrAirport option:selected').text();
+	$.post("",{},function(result){
+		
+	});
 }
 
 </script>
