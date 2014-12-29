@@ -209,7 +209,7 @@ String member_id=(String)session.getAttribute("member_id");
 			<div>
 				<h1 style="padding: 20px 0 0 1px; margin: 0 0 0 -1px;">
 					<!-- 메인 로고 시작 -->
-					<a href="#">	
+					<a href="./ItanaMain.ma">	
 						<img src="./asiana_inc/img/Logo.png" alt="아시아나 항공">
 					</a>
 					<!-- 메인 로고 끝 -->
