@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>항공권안내</title>
-<link type="text/css" rel="stylesheet" href="css/ticketinformation.css">
+<link type="text/css" rel="stylesheet" href="./asia_sub/css/ticketinformation.css">
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
@@ -126,22 +126,22 @@ $(document).ready(function() {
 						</ul>
 
 						<div class="service_contents">
-							<img src="img/TicketInformation.jpg" class="eTicket" >
+							<img src="./asia_sub/img/TicketInformation.jpg" class="eTicket" >
 							
-							<img src="img/sent.jpg" class="Sent" style="display: none;">
+							<img src="./asia_sub/img/sent.jpg" class="Sent" style="display: none;">
 							
-							<img src="img/Reissue.jpg" class="Reissue" style="display: none;">
+							<img src="./asia_sub/img/Reissue.jpg" class="Reissue" style="display: none;">
 							
-							<img src="img/Lost.jpg" class="Lost" style="display: none;">
+							<img src="./asia_sub/img/Lost.jpg" class="Lost" style="display: none;">
 							
-							<img src="img/Upgrades.jpg" class="Upgrades" style="display: none;">
+							<img src="./asia_sub/img/Upgrades.jpg" class="Upgrades" style="display: none;">
 							
-							<img src="img/PurchaseMeans.jpg" class="PurchaseMeans" style="display: none;">
+							<img src="./asia_sub/img/PurchaseMeans.jpg" class="PurchaseMeans" style="display: none;">
 						</div>
 
 						<div class="common-boxRelationService">
 							<div class="common-innerRelationService">
-								<img src="img/service.jpg">
+								<img src="./asia_sub/img/service.jpg">
 							</div>
 						</div>
 

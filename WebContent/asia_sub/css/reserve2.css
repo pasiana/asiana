@@ -1,4 +1,5 @@
 @CHARSET "UTF-8";
+
 * {
 	margin: 0;
 	padding: 0;
@@ -51,7 +52,7 @@ body {
 	width: 1440px;
 	height: 100%;
 	overflow: hidden;
-	background: url("../img/bg_body1_1.jpg") repeat-x center -30px;
+	background: url("../img/bg_body1_1.jpg") repeat-x center -10px;
 	margin: 0 auto;
 }
 
@@ -60,7 +61,6 @@ body {
 	height: 100%;
 	overflow: hidden;
 	margin: 0 auto;
-
 }
 
 #skipct h3 {
@@ -92,8 +92,8 @@ body {
 	font-weight: normal;
 	background: url("../img/bg_rvStep01_end.gif") no-repeat 0 0;
 	width: 161px;
-	padding: 0 0 0 18px;
-	margin-left: -1px;
+	padding: 0 0 0 17px;
+	margin-left: 1px;
 }
 
 #skipct .rv_stepBox .step02_on {
@@ -169,14 +169,45 @@ body {
 .selectITbox4 .selectITinner4 {
 	width: 688px;
 	height: 29px;
-	background: url("../img/bg_selectItineraryBottom.gif") no-repeat 0 bottom;
+	background: url("../img/bg_selectItineraryBottom.gif") no-repeat 0
+		bottom;
 	padding: 0 14px 16px 23px;
-	background: url("../img/bg_selectItineraryBottom.gif") no-repeat 0 bottom;
+	background: url("../img/bg_selectItineraryBottom.gif") no-repeat 0
+		bottom;
+}
+
+.selectITbox4 .selectITinner4 .sLeft {
+	float: left;
+	width: 575px;
+}
+
+.selectITbox4 .selectITinner4 .sLeft .upsellStart {
+	font-size: 16px;
+	height: 20px;
+	display: inline-block;
+	font-family: '돋움';
+}
+
+.selectITbox4 .selectITinner4 .sLeft .upsellEnd.oneWay {
+	background: url("../img/bg_arrowSE2.gif") no-repeat 10px center;
+}
+
+.selectITbox4 .selectITinner4 .sLeft .upsellEnd {
+	font-size: 16px;
+	padding: 0 0 0 49px;
+	height: 20px;
+	display: inline-block;
+}
+
+.selectITbox4 .selectITinner4 .sLeft .ppCnt {
+	color: #5e14cc;
+	font-size: 11px;
+	padding: 0 0 0 16px;
+	font-family: '돋움';
 }
 
 .tableBox04 {
 	width: 725px;
-	height: 860px;
 	margin: 0 0 13px 0;
 }
 
@@ -198,8 +229,8 @@ body {
 }
 
 .tableBox04 .selectBox {
-	width:741px;
-	height:14px;
+	width: 741px;
+	height: 14px;
 	text-align: right;
 	margin: -13px -8px 11px;
 }
@@ -215,20 +246,20 @@ body {
 }
 
 .tableBox04 .selectBox span.minimum {
-	width:81px;
-	height:13px;
+	width: 81px;
+	height: 13px;
 	background: url("../img/bg_minimum.gif") no-repeat 0 1px;
 }
 
 .tableBox04 .selectBox span.communal {
-	width:92px;
-	height:13px;
+	width: 92px;
+	height: 13px;
 	background: url("../img/bg_communal2.gif") no-repeat 0 1px;
 }
 
 .tableBox04 .startAr {
-	width:619px;
-	height:66px;
+	width: 619px;
+	height: 66px;
 	background: #dedfe0 url("../img/bg_startAr.gif") no-repeat 32px 28px;
 	padding: 8px 0 11px 106px;
 	border-top: 1px solid #5c5f66;
@@ -236,6 +267,24 @@ body {
 	font-size: 14px;
 	margin: 8px 0 0 0;
 	font-weight: bold;
+}
+
+.tableBox04 .startAr strong {
+	color: #4c4c4c;
+	font-size: 11px;
+	font-family: "돋움";
+	line-height: 20px;
+	display: block;
+}
+
+.tableBox04 .startAr .day {
+	color: #333;
+	font-size: 11px;
+	font-family: "돋움";
+	line-height: 20px;
+	display: block;
+	font-weight: normal;
+	margin-top: -9px;
 }
 
 .tableBox04 .dayListBox {
@@ -255,19 +304,72 @@ body {
 	width: 22px;
 	height: 22px;
 }
+
 .tableBox04 .dayListBox ul {
 	width: 683px;
 	height: 85px;
 }
 
 .tableBox04 .dayListBox .btnDay {
-	width:89px;
-	height:85px;
+	width: 89px;
+	height: 85px;
 	float: left;
 	background: url("../img/bg_stTitle.gif") no-repeat 0 0;
 	margin: 0 3px 0 0;
 	position: relative;
 }
+
+.tableBox04 .dayListBox .btnDay a .day {
+	text-align: center;
+	display: block;
+	color: #333;
+	line-height: 36px;
+	padding: 0 0 0 4px;
+}
+.tableBox04 .dayListBox .btnDay a .price strong {
+font-size: 13px;
+color: #000;
+}
+.tableBox04 .dayListBox .btnDay a .price {
+	text-align: right;
+	display: block;
+	color: #666;
+	font-size: 11px;
+	padding: 4px 9px 0 0;
+	line-height: 17px;
+	font-family: '돋움';
+}
+
+.tableBox04 .dayListBox .btnDay1 {
+	width: 89px;
+	height: 85px;
+	float: left;
+	background: url("../img/bg_stTitle.gif") no-repeat 0 0;
+	margin: 0 3px 0 0;
+	position: relative;
+}
+
+.tableBox04 .dayListBox .btnDay1 a .day {
+	text-align: center;
+	display: block;
+	color: #333;
+	line-height: 36px;
+	padding: 0 0 0 4px;
+}
+.tableBox04 .dayListBox .btnDay1 a .price strong {
+font-size: 13px;
+color: #000;
+}
+.tableBox04 .dayListBox .btnDay1 a .price {
+	text-align: right;
+	display: block;
+	color: #666;
+	font-size: 11px;
+	padding: 4px 9px 0 0;
+	line-height: 17px;
+	font-family: '돋움';
+}
+
 .tableBox04 .dayListBox .btnNext {
 	position: absolute;
 	top: 26px;
@@ -275,16 +377,86 @@ body {
 	width: 22px;
 	height: 22px;
 }
+
 .tableTypeBox01 {
-	width:725px;
-	height:642px;
-	border/* -top */: 1px solid #adafb2;
+	width: 725px;
+	border-top: 1px solid #adafb2;
 	margin: 0 0 15px 0;
 }
 
+.itineraryBoxPs .tableBox04 .inner-table {
+	overflow: auto;
+	border-bottom: 1px solid #adafb2;
+}
+
+.tableType03 {
+	width: 100%;
+}
+
+.tableBox04 .tableType03 th {
+	font-size: 11px;
+	color: #6a655d;
+	background: #f8f8f8;
+	border-right: 1px solid #dfdfdf;
+	border-bottom: 1px solid #a4a4a4;
+	text-align: left;
+	padding: 10px 0 7px 10px;
+	vertical-align: top;
+	font-weight: normal;
+	line-height: 17px;
+	font-family: '돋움';
+}
+
+.tableBox04 .tableType03 td {
+	border-right: 1px solid #e4e4e4;
+	border-bottom: 1px solid #cecfd1;
+	vertical-align: top;
+	line-height: 15px;
+}
+
+.tableBox04 .tableType03 tr.hoverTrOut td {
+	background: #fff;
+	border-top: 1px solid #cecfd1;
+	border-bottom: 1px solid #cecfd1;
+}
+
+.Sbtn_TType07_3 {
+	background: url("https://flyasiana.com/images/bg/Sbtn_TTypeL07_3.gif")
+		no-repeat 0 0;
+	display: inline-block;
+}
+
+.Sbtn_TType07_3 a {
+	background: url("https://flyasiana.com/images/bg/Sbtn_TTypeR07_3.gif") no-repeat right 0;
+	padding: 0 11px;
+	display: block;
+	height: 22px;
+	line-height: 22px;
+	color: #000;
+	font-size: 11px;
+	font-family: "돋움";
+}
+
+.itineraryBoxPs .tableBox04 .tableType03 .Sbtn_TType07_3,.itineraryBoxPs .tableBox04 .tableType03 .Sbtn_TType07_4
+	{
+	margin: 12px 0 18px 10px;
+}
+
+.itineraryBoxPs .tableBox04 .tableType03 td span.box {
+	position: relative;
+	padding: 9px 0 9px 8px;
+	display: block;
+	line-height: 18px;
+}
+
+.tableBox04 .tableType03 td span.box .text-type-1 {
+	font-size: 14px;
+	font-weight: bold;
+}
+
 .tableBox04 .comingAr {
-	width:619px;
-	height:66px;
+	width: 619px;
+	height: 66px;
 	background: #dedfe0 url("../img/bg_comingAr.gif") no-repeat 32px 28px;
 	padding: 8px 0 11px 106px;
 	border-top: 1px solid #5c5f66;
@@ -294,10 +466,28 @@ body {
 	font-weight: bold;
 }
 
+.tableBox04 .comingAr strong {
+	color: #4c4c4c;
+	font-size: 11px;
+	font-family: "돋움";
+	line-height: 20px;
+	display: block;
+}
+
+.tableBox04 .comingAr .day {
+	color: #333;
+	font-size: 11px;
+	font-family: "돋움";
+	line-height: 20px;
+	display: block;
+	font-weight: normal;
+	margin-top: -9px;
+}
+
 .itineraryBoxPs.fareBox .tableNotice {
-	width:725px;
-	height:114px;
-	margin: -20px 0 25px 0;
+	width: 725px;
+	height: 114px;
+	margin: 10px 0 25px 0;
 }
 
 .itineraryBoxPs.fareBox .tableNotice li {
@@ -311,3 +501,55 @@ body {
 .itineraryBoxPs.fareBox .tableNotice li.c_5e14cc {
 	color: #5e14cc;
 }
+
+.btnBoxType01 {
+	height: 30px;
+	margin-bottom: 20px;
+}
+
+.btnBoxType01 li {
+	width: 48%;
+	float: left;
+}
+
+.btnBoxType01 li.right {
+	float: right;
+	text-align: right;
+}
+
+.Sbtn_TType06_1 {
+	background: url("../img/Sbtn_TTypeL06_1.gif") no-repeat 0 0;
+	display: inline-block;
+}
+
+.Sbtn_TType06_1 a {
+	background: url("../img/Sbtn_TTypeR06_1.gif") no-repeat right 0;
+	padding: 0 11px 0 27px;
+	display: block;
+	height: 25px;
+	line-height: 25px;
+	color: #666;
+	font-weight: bold;
+}
+
+.btnBoxType01 li.right {
+	float: right;
+	text-align: right;
+}
+
+.Bbtn_TType01_1 {
+	background: url("../img/Bbtn_TTypeL01_1.gif") no-repeat 0 0;
+	display: inline-block;
+}
+
+.Bbtn_TType01_1 a {
+	background: url("../img/Bbtn_TTypeR01_1.gif") no-repeat right 0;
+	padding: 0 41px 0 19px;
+	display: block;
+	height: 35px;
+	line-height: 35px;
+	color: #fff;
+	font-size: 13px;
+	font-weight: bold;
+}
+

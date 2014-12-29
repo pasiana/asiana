@@ -50,14 +50,12 @@ body {
 
 #containerBox {
 	width: 1440px;
-	height: 1100px;
 	background: url("../img/bg_body1_1.jpg") repeat-x center -30px;
 	margin: 0 auto;
 }
 
 #skipct {
 	width: 956px;
-	height: 1100px;
 	margin: 0 auto;
 }
 
@@ -196,7 +194,6 @@ body {
 
 #skipct .tableStyle01 {
 	width: 725px;
-	height: 520px;
 	border-top: 1px solid #5c5f66;
 	border-bottom: 1px solid #adafb2;
 	margin-top: 15px;
@@ -343,7 +340,8 @@ body {
 
 #skipct .tableStyle01 #CalendarBox {
 	width: 725px;
-	height: 200px;
+	height: 319px;
+	overflow: hidden;
 	position: relative;
 	z-index: 40;
 }
@@ -443,7 +441,12 @@ body {
 
 .btnBoxType01 {
 	width: 725px;
-	height: 35px;
+<<<<<<< HEAD
+	height: 50px;
+=======
+	height: 100%;
+	overflow: hidden;
+>>>>>>> branch 'kwak' of https://github.com/pasiana/asiana.git
 }
 
 #skipct .btnBoxType01 li {
@@ -507,3 +510,17 @@ body {
 	width: 270px;
 	display: block;
 }
+.ui-datepicker {
+	width: 260px;
+	background: #f0f0f0;
+	border: 0px solid #555;
+	color: #333;
+}
+div.ui-datepicker-header {
+	text-align: center;
+	background: #f0f0f0;
+	color: #333;
+	border: 0px;
+}
+.ui-datepicker-week-end:first-child, .ui-datepicker-week-end:first-child a {color:red}
+.ui-datepicker-week-end:last-child, .ui-datepicker-week-end:last-child a {color:blue}

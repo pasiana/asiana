@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>입국절차</title>
 
-<link type="text/css" rel="stylesheet" href="css/bookonline.css">
+<link type="text/css" rel="stylesheet" href="./asia_sub/css/bookonline.css">
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
@@ -49,12 +49,12 @@ $(document).ready(function() {
 						<h3 class="h3_type01">공항 탑승수속 절차</h3>
 
 						<div class="service_contents">
-							<img src="img/Entry_Procedures.jpg">
+							<img src="./asia_sub/img/Entry_Procedures.jpg">
 						</div>
 
 						<div class="common-boxRelationService">
 							<div class="common-innerRelationService">
-								<img src="img/service.jpg">
+								<img src="./asia_sub/img/service.jpg">
 							</div>
 						</div>
 

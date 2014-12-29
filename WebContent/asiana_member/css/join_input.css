@@ -1,0 +1,167 @@
+@CHARSET "UTF-8";
+
+.stepBox{
+width: 100%;
+height: 100px;
+margin: 0 auto;
+border-bottom: 1px solid #D5D5D5;
+}
+
+.issueCont{
+margin: 0 auto;
+margin-top: 10px;
+width: 956px;
+height: 900px;
+}
+
+.memberLeftArea{
+background: url(../images/bgK_memberLeft.gif) no-repeat 0 32px;
+width:102px;
+height: 100px;
+float: left;
+}
+
+.memberLeftArea img{
+margin-top: 50px;
+}
+
+.memberwrap .logo{
+margin-top: 10px;
+margin-left: 110px;
+}
+
+.memberBox{
+margin: 0 auto;
+margin-top: 10px;
+margin-right: 70px;
+border-collapse: collapse;
+border-top: 1px solid #5c5f66;
+border-bottom: 1px solid #adafb2;
+width: 70%;
+}
+
+.memberBox td:FIRST-CHILD {
+background: #f3f3f3 url(../images/bg_blueArrow.gif) no-repeat left center;
+color: #5c5f66;
+font-weight: bold;
+padding: 5px 10px;
+text-align: left;
+border-bottom: 1px solid #d9d9d9;
+font-size: 12px;
+}
+
+.memberBox td:LAST-CHILD{
+border-bottom: 1px solid #d9d9d9;
+padding: 12px 0px 12px 10px;
+}
+
+.memberBox input[type=text], input[type=password]{
+width: 173px;
+height: 23px;
+padding: 0 3px;
+color: #808080;
+border: 1px solid #a6a6a6;
+}
+
+.memberBox .noticeInTd{
+font-size: 11px;
+color: #666;
+margin: 6px 0 5px;
+}
+
+.memberBox .inputname{
+width: 93px !important;
+}
+
+.memberBox ul li{
+float: left;
+}
+
+.memberBox .ulfirst li .postNum{
+width: 79px;
+background: #E5E5E5;
+border: 1px solid gray;
+}
+
+.memberBox .ulfirst li .postNumBtn{
+background: url(../images/Sbtn_TTypeL04_6.gif) no-repeat;
+display: inline-block;
+margin-left: 5px;
+}
+
+.memberBox .ulfirst li .postNumBtn a{
+background: url(../images/Sbtn_TTypeR04_6.gif) no-repeat right 0;
+padding: 0 15px 0 35px;
+display: block;
+height: 25px;
+line-height: 25px;
+font-weight: bold;
+cursor: pointer;
+}
+
+.memberBox .nextUl{
+height: 25px;
+margin-top: 30px;
+}
+
+.memberBox .nextUl .wAress0{
+width: 221px;
+color: #808080;
+}
+
+.memberBox .nextUl li:LAST-CHILD {
+margin-left: 5px;
+}
+
+.memberBox strong{
+font-size: 12px;
+}
+
+.birth, .gender{
+color: #808080;
+font-size: 12px;
+padding: 5px;
+}
+
+.memberBox .selTelNum{
+width: 81px !important;
+}
+
+.memberBox #selTelNum{
+width: 89px !important;	
+}
+
+.memberBox .email_id{
+width: 95px !important;
+}
+
+.memberBox .email_Domain{
+width: 132px !important;
+}
+
+.memberBox span{
+font-size: 12px;
+}
+
+.memberBox select{
+height: 23px;
+}
+
+.btn{
+width: 170px;
+height: 36px;
+margin-left: 725px;
+margin-top: 20px;
+}
+
+.btn .close{
+background: url(../images/btn_close.JPG) no-repeat;
+width: 68px;
+height: 36px;
+}
+
+.btn .join{
+background: url(../images/btn_join.JPG) no-repeat;
+width: 89px;
+height: 36px;
+}

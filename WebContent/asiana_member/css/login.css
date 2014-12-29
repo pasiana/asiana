@@ -36,6 +36,7 @@ margin: 0 auto;
 
 .hr{
 border-bottom: 1px solid #D5D5D5;
+margin-bottom: 90px;
 }
 
 #containerBody{
@@ -46,90 +47,132 @@ margin: 0 auto;
 
 #containerBody h2{
 margin-top: 20px;
+font-size: 24px;
 }
 
-.loginBox .loginArea{
-border: 1px solid #000;
-border-radius: 15px;
+.errorBox{
+background: url(../images/bg_errorBoxTop.gif) no-repeat;
+padding-top: 14px;
+width: 966px;
+margin: 0 auto;
+margin-top: -50px;
+display: none;
+}
+
+.errorBox .errorInner{
+background: url(../images/bg_errorBoxBottom.gif) no-repeat 0 bottom;
+padding: 0 85px 23px 106px;
+color: #333;
+font-size: 11px;
+}
+
+.errorBox .errorInner .noticeBl{
+background: url(../images/bg_noticeBlType01.png) no-repeat 0 6px;
+padding: 0 0 2px 67px;
+margin-left: -69px;
+min-height: 52px;
+}
+
+.errorBox .errorInner .noticeBl p{
+font-size: 13px;
+line-height: 26px;
+}
+
+.loginAreaTop{
+background: url(../images/bg_loginTopK.gif) no-repeat top left;
 width: 580px;
-height: 215px;
 margin: 0 auto;
-margin-top: 100px;
+padding: 10px 0 0;
 }
 
-.loginBox .loginArea ul{
-margin: 0 auto;
-margin-top: 30px;
-width: 530px;
-height: 56px;
+.loginAreaTop .contentsLogin{
+width: 570px;
+background: url(../images/bg_loginBottomK.gif) no-repeat bottom left;
+padding: 19px 1px 0;
+min-width: 235px;
 }
 
-.loginBox .loginArea #contType li{
-width: 210px;
-height: 56px;
+.contentsLogin .selType{
+border-bottom: 1px solid #d9d9d9;
+height: 27px;
+}
+
+.contentsLogin .selType li{
 float: left;
+display: inline-block;
+padding: 0 10px 10px;
 }
 
-.loginBox .loginArea #contType .inputfocus{
-color: #808080;
+.contentsLogin .selType li label{
+font-size: 13px;
+color: #5e14cc;
+font-weight: bold;
+margin-left: 8px;
 }
 
-.loginBox .loginArea #contType li label{
+.contentsLogin .contType{
+border-bottom: 1px solid #d9d9d9;
+padding: 15px 21px;
+min-height: 120px;
+}
+
+.contentsLogin .contType li ul{
+margin: 0 -30px 15px 0;
+height: 56px;
+}
+
+.contentsLogin .contType ul li{
+float: left;
+max-width: 210px;
+line-height: 25px;
+display: inline-block;
+}
+
+.contentsLogin .contType ul li label{
+font-size: 13px;
+color: #000;
 font-weight: bold;
 }
 
-.loginBox .loginArea #forLoginID, #forLoginPasswd{
-width: 193px;
-height: 30px;
+.contentsLogin .contType .inputfocus{
 border: 1px solid #a6a6a6;
-margin-top: 5px;
+width: 193px;
+height: 28px;
+line-height: 28px;
+padding: 0 3px;
+color: #808080;
 }
 
-.loginBox .loginArea #btnLogin{
-background: url(../images/btn_login.JPG) no-repeat;
+#btnLogin{
+background: url(../images/btn_login.JPG);
 width: 108px;
 height: 30px;
-margin-top: 27px;
+margin-top: 25px;
 }
 
-.loginBox .loginArea #contType li:LAST-CHILD {
-width: 108px;
+.utillBtn{
+padding: 11px 23px 11px;
+display: inline-block;
+margin: 0 auto;
+margin-left: 60px;
 }
 
-.loginBox .loginArea #contType_sub{
-margin-top: 15px;
+.utillBtn li{
+float: left;
+padding-right: 50px;
 }
 
-.loginBox .loginArea #contType_sub li{
-font-size: 12px;
-padding: 2px;
-}
-
-.sub_loginArea{
-border-top: 1px solid #D5D5D5;
-height: 50px;
-margin-top: 5px;
-}
-
-.sub_loginArea div{
-height: 50px;
-text-align: center;
-}
-
-.btnType02{
+.utillBtn .btnType02{
 background: url(../images/bg_btnLeft2.jpg) no-repeat;
 display: inline-block;
-margin: 13px 20px;
 }
 
 .btnType02 a{
-background: url(../images/bg_btnRight2.jpg) no-repeat right;
+background: url(../images/bg_btnRight2.jpg) no-repeat right 0;
 padding: 0 29px 0 13px;
 display: block;
 height: 22px;
 line-height: 22px;
-line-height: 22px;
 color: #4c4c4c;
 font-size: 11px;
-font-family: '돋움';
 }

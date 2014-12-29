@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link href="css/reset.css" type="text/css" rel="stylesheet">
-<link href="css/GetPassword.css" type="text/css" rel="stylesheet">
+<link href="asiana_member/css/reset.css" type="text/css" rel="stylesheet">
+<link href="asiana_member/css/GetPassword.css" type="text/css" rel="stylesheet">
 <title>Insert title here</title>
-<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+<script type="text/javascript" src="asiana_member/js/jquery-1.11.1.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
 	//비밀번호 텍스트 상자 포커스이벤트
@@ -27,18 +27,32 @@ function gap_filter(str_value) {
 
 //확인버튼 클릭
 function confirm() {
-	if(document.frm.passwd.value==""){
+	var member_id=document.frm.member_id.value;
+	var passwd=document.frm.passwd.value;
+
+	if(passwd==""){
 		alert("비밀번호를 입력하세요.");
 		document.frm.passwd.focus();
 		return false;
 	}
 	
-	if(document.frm.passwd.value.length<5 || document.frm.passwd.value.length>10){
+	if(passwd.length<5){
 		alert("비밀번호는 5~10자리입니다.");
 		document.frm.passwd.focus();
 		return false;
-	}	
-	document.frm.submit();
+	}
+	
+	$.ajax({
+		url: 'asiana_member/loginCheck.jsp?member_id='+member_id+'&passwd='+passwd,
+		type: 'post',
+		success:function(data){
+			if(data==0){
+				alert("비밀번호가 일치하지 않습니다.");
+				$('.notice_container').css('display','block');
+				return false;
+			}
+		}
+	});
 }
 </script>
 
@@ -58,12 +72,18 @@ font-weight: bold;
 }
 </style>
 </head>
-
+<%
+String member_id=(String)session.getAttribute("member_id");
+if(member_id==null){
+	response.sendRedirect("./AsianaLogin.me");
+}
+%>
 <body>
 <header>
 	<jsp:include page="../asiana_inc/header.jsp" />
 </header>
-<form action="GetMemberInfo.jsp" method="post" name="frm">
+<form action="./GetMemberInfo.me" method="post" name="frm">
+<input type="hidden" name="member_id" value="<%=member_id %>">
 <div class="locationBox">
 <div class="locationInner">
 <ul>
@@ -72,7 +92,7 @@ font-weight: bold;
 <span>></span>
 </li>
 <li> 
-<a href="MyAsiana.jsp">마이 아시아나</a>
+<a href="./MyAsiana.me">마이 아시아나</a>
 <span>></span>
 </li>
 <li> 
@@ -97,8 +117,20 @@ font-weight: bold;
 <div id="containerBody">
 <h3 class="h3_type01">비밀번호 확인</h3>
 <h4 class="h4_type01">회원님의 개인정보를 안전하게 보호하기 위해 비밀번호를 다시 입력하여 주세요.</h4>
-<table class="myBoxType2">
 
+<!-- 에러박스 시작-->
+<div class="notice_container">
+<div class="notice_Inner">
+<ul class="notice">
+<li>
+<p>비밀번호가 일치하지 않습니다.</p>
+</li>
+</ul>
+</div>
+</div>
+<!-- 에러박스 끝 -->
+
+<table class="myBoxType2">
 <tr class="tableTRtype2">
 <td>
 회원 아이디
@@ -106,7 +138,7 @@ font-weight: bold;
 
 <td>
 <strong>
-<span class="fontPerple">jwan0510</span>
+<span class="fontPerple"><%=member_id %></span>
 </strong>
 </td>
 </tr>

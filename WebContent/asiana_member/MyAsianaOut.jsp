@@ -1,13 +1,14 @@
+<%@page import="com.cafe24.itwill3.Member.db.MemberBean"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link href="css/reset.css" type="text/css" rel="stylesheet">
-<link href="css/GetPassword.css" type="text/css" rel="stylesheet">
+<link href="asiana_member/css/reset.css" type="text/css" rel="stylesheet">
+<link href="asiana_member/css/GetPassword.css" type="text/css" rel="stylesheet">
 <title>Insert title here</title>
-<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+<script type="text/javascript" src="asiana_member/js/jquery-1.11.1.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
 	//비밀번호 텍스트 상자 포커스이벤트
@@ -27,6 +28,9 @@ function gap_filter(str_value) {
 
 //확인버튼 클릭
 function confirm() {
+	var member_id=document.frm.member_id.value;
+	var passwd=document.frm.passwd.value;
+	
 	if(document.frm.passwd.value==""){
 		alert("비밀번호를 입력하세요.");
 		document.frm.passwd.focus();
@@ -38,7 +42,18 @@ function confirm() {
 		document.frm.passwd.focus();
 		return false;
 	}	
-	document.frm.submit();
+	
+	$.ajax({
+		url: 'asiana_member/loginCheck.jsp?member_id='+member_id+'&passwd='+passwd,
+		type: 'post',
+		success:function(data){
+			if(data==0){
+				alert("비밀번호가 일치하지 않습니다.");
+				$('.notice_container').css('display','block');
+				return false;
+			}
+		}
+	});
 }
 </script>
 
@@ -58,12 +73,15 @@ font-weight: bold;
 }
 </style>
 </head>
-
+<%
+MemberBean memberbean=(MemberBean)request.getAttribute("memberbean");
+%>
 <body>
 <header>
 	<jsp:include page="../asiana_inc/header.jsp" />
 </header>
-<form action="" method="post" name="frm">
+<form action="./MyAsianaOutAction.me" method="post" name="frm">
+<input type="hidden" name="member_id" value="<%=memberbean.getMember_id() %>">
 <div class="locationBox">
 <div class="locationInner">
 <ul>
@@ -97,6 +115,19 @@ font-weight: bold;
 <div id="containerBody">
 <h3 class="h3_type01">회원탈퇴</h3>
 <h4 class="h4_type01">정상적인 회원탈퇴를 위해 회원님의 비밀빈호를 다시 입력해주세요.</h4>
+
+<!-- 에러박스 시작-->
+<div class="notice_container">
+<div class="notice_Inner">
+<ul class="notice">
+<li>
+<p>비밀번호가 일치하지 않습니다.</p>
+</li>
+</ul>
+</div>
+</div>
+<!-- 에러박스 끝 -->
+
 <table class="myBoxType2">
 
 <tr class="tableTRtype2">
@@ -106,7 +137,7 @@ font-weight: bold;
 
 <td>
 <strong>
-<span class="fontPerple">jwan0510</span>
+<span class="fontPerple"><%=memberbean.getMember_id() %></span>
 </strong>
 </td>
 </tr>
@@ -118,7 +149,7 @@ font-weight: bold;
 
 <td class="line">
 <strong>
-<span class="fontPerple">한주완</span>
+<span class="fontPerple"><%=memberbean.getKrname() %></span>
 </strong>
 </td>
 </tr>
