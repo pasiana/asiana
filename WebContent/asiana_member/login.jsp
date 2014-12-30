@@ -22,7 +22,11 @@ $(document).ready(function(){
 
 //아이디 공백, 특수문자 입력 제어
 function special_filter(str_value){
-	return str_value.replace(/[^\w]/g, "");
+	if(document.frm.loginType.value==0){
+		return str_value.replace(/[^\w]/g, "");
+	}else{
+		return str_value.replace(/[^0-9]/g, "");
+	}
 }
 
 //비밀번호 공백 제어
@@ -30,7 +34,7 @@ function gap_filter(str_value) {
 	return str_value.replace(/[\s]/g , "");
 }
 
-//id 쿠키 있을 시 id값 가져오기
+//화면 로딩
 function init() {
 	var type;
 	var result;
@@ -82,7 +86,20 @@ function getCookie(Name) {
     }
 }
 
-//로그인 타입
+//아이디(회원번호)저장 체크
+var check=0;
+function labelcheck(){
+	document.frm.saveID.checked=true;
+	
+	if(check==1){
+		document.frm.saveID.checked=false;
+		check=0;
+		return;
+	}
+	check=1;
+}
+
+//로그인 타입(아이디 & 회원번호)
 function showLoginType(val){
 	if(val == 1){
 		$("#forLoginID").val("");
@@ -104,6 +121,7 @@ function login() {
 	var passwd=document.frm.passwd.value;
 	var radLoginType;
 	var loginType=document.frm.loginType.value;
+	
 	if(member_id==""){
 		alert("아이디를 입력하세요.");
 		document.frm.member_id.focus();
@@ -139,7 +157,7 @@ function login() {
 	}else{
 		setCookie("member_id", radLoginType, member_id, 0);
 	}
-
+	
 	$.ajax({
 		url: 'asiana_member/loginCheck.jsp',
 		type: 'post',
@@ -151,9 +169,11 @@ function login() {
 		success:function(data){
 			if(data==0){
 				alert("아이디 또는 비밀번호 오류입니다.\n입력하신 아이디 또는 비밀번호가 등록되어 있지 않거나, 잘못 입력하셨습니다.");
-				$('.loginAreaTop').css('margin-top', '20px');
+				$('.loginAreaTop').css('margin-top','10px');
+				$('.errorBox').css('margin-top','-40px');
 				$('.errorBox').css('display','block');
-				return false;
+			}else{
+				document.frm.submit();
 			}
 		}
 	});
@@ -165,8 +185,9 @@ function login() {
 <header>
 	<jsp:include page="../asiana_inc/header.jsp" />
 </header>
-<form action="./MemberLoginAction.me" method="post" name="frm">
+<form action="./MemberLoginAction.me" method="post" name="frm" onsubmit="return false;">
 <input type="hidden" id="loginType" name="loginType" value="0">
+<input type="hidden" id="error" name="error" value="0">
 <div class="locationBox">
 <div class="locationInner">
 <ul>
@@ -230,13 +251,13 @@ function login() {
 </li>
 
 <li>
-<input type="image" id="btnLogin" onclick="return login()">
+<input type="image" id="btnLogin" onclick="return login(); return asdf();">
 </li>
 </ul>
 
 <p style="width:100px; line-height: 20px; display: block; margin-top: 10px;">
 <input type="checkbox" name="saveID">
-<label id="labelSave">아이디 저장</label>
+<label id="labelSave" onclick="labelcheck();">아이디 저장</label>
 </p>
 
 <p>* 아이디와 비밀번호는 대/소문자를 구별하여 입력하시기 바랍니다.</p>

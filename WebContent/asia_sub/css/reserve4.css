@@ -516,13 +516,14 @@ tr {
 	background: url("../img/Bbtn_TTypeL01_1.gif") no-repeat 0 0;
 	display: inline-block;
 }
-.Bbtn_TType01_1 a {
+.Bbtn_TType01_1 input {
 	background: url("../img/Bbtn_TTypeR01_1.gif") no-repeat right 0;
 	padding: 0 41px 0 19px;
-	display: block;
 	height: 35px;
 	line-height: 35px;
 	color: #fff;
 	font-size: 13px;
 	font-weight: bold;
+	border: none;
+	cursor: pointer;
 }

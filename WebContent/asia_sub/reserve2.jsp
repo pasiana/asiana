@@ -78,10 +78,11 @@
 	
 	//'선택' 눌렀을때 정보값 나오게하기
 	var lea_time=""; //출발시간
+	var lea_time_b="";//도착시간
 	var charge=""; //운임가격
 	var lea_day=""; //가는날짜
-	
 	var arr_day=""; //오는날짜(왕복)
+	var arr_time_b="";//도착시간(왕복)
 	var arr_time=""; //출발시간(왕복)
 	var charge2=""; //운임가격(왕복)
 	
@@ -94,8 +95,9 @@
 	    
 	    //값넣기
 	    lea_time=row.cells[1].innerText; //출발시간
-	    charge=row.cells[5].innerText;
-	    lea_day=row.cells[7].innerText;
+	    lea_time_b=row.cells[2].innerText; //도착시간
+	    charge=row.cells[5].innerText; //운임요금
+	    lea_day=row.cells[7].innerText; //가는날
 	}
 	
 	//왕복에서 선택 눌렀을 시
@@ -107,8 +109,9 @@
 	    
 	    //값넣기
 	    arr_time=row.cells[1].innerText; //출발시간
-	    charge2=row.cells[5].innerText;
-	    arr_day=row.cells[7].innerText;
+	    arr_time_b=row.cells[2].innerText; //도착시간 
+	    charge2=row.cells[5].innerText; //운임요금
+	    arr_day=row.cells[7].innerText; //오는날
 	}
 	
 	//예약3번째페이지 값넘기는 스크립트
@@ -126,11 +129,11 @@
 			url = "./reserve3.re?lea_city=" + lea_city + "&arr_city="
 			+ arr_city + "&res_sig_dou=" + res_sig_dou + "&lea_time="
 			+ lea_time + "&arr_time=" + arr_time + "&res_count=" + res_count + "&lea_day=" + lea_day +"&arr_day="+ arr_day + "&charge=" + sumCharge
-			+ "&lea_charge=" + charge +"&arr_charge=" + charge2;
+			+ "&lea_charge=" + charge +"&arr_charge=" + charge2 + "&lea_time_b=" + lea_time_b +"&arr_time_b="+arr_time_b;
 		} else {
 			url = "./reserve3.re?lea_city=" + lea_city + "&arr_city="
 					+ arr_city + "&res_sig_dou=" + res_sig_dou + "&lea_time="
-					+ lea_time + "&res_count=" + res_count + "&lea_day=" + lea_day + "&charge=" + charge;
+					+ lea_time + "&res_count=" + res_count + "&lea_day=" + lea_day + "&charge=" + charge +"&lea_time_b=" + lea_time_b;
 		}
 		location.href = url;
 	}

@@ -94,6 +94,7 @@ public class MemberDAO {
 		int check=0;
 		try {
 			con=getConnection();
+			
 			StringBuffer sql=new StringBuffer();
 			sql.append("select passwd from Member");
 			
@@ -121,16 +122,15 @@ public class MemberDAO {
 		return check;
 	}
 	
-	//회원번호로 회원아이디 찾기
+	//회원번호로 회원아이디 구하기
 	public String getMember_id(String member_id){
 		String id="";
 		try {
 			con=getConnection();
 			sql="select member_id from Member where member_num=?";
-			pstmt=con.prepareStatement(sql);
+			pstmt=con.prepareStatement(sql.toString());
 			pstmt.setString(1, member_id);
 			rs=pstmt.executeQuery();
-			
 			if(rs.next()){
 				id=rs.getString("member_id");
 			}

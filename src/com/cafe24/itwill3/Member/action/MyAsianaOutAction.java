@@ -17,17 +17,33 @@ public class MyAsianaOutAction implements Action{
 		HttpSession session=request.getSession();
 		String member_id=(String)session.getAttribute("member_id");
 		
-		MemberDAO memberdao=new MemberDAO();
-		memberdao.DeleteMember(member_id);
+		int loginType=0;
+		String passwd=request.getParameter("passwd");
 		
-		session.invalidate();
-		response.setContentType("text/html; charset=UTF-8");
-		PrintWriter out=response.getWriter();
-		out.println("<script>");
-		out.println("alert('회원탈퇴가 정상적으로 이루어졌습니다.');");
-		out.println("location.href=('./AsianaMain.me')");
-		out.println("</script>");
-		out.close();
-		return null;
+		MemberDAO memberdao=new MemberDAO();
+		int check=memberdao.MemberLogin(loginType, member_id, passwd);
+		
+		if(check==0){
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out=response.getWriter();
+			out.println("<script>");
+			out.println("alert('비밀번호가 일치하지 않습니다.')");
+			out.println("history.back()");
+			out.println("</script>");
+			out.close();
+			return null;
+		}else{
+			memberdao.DeleteMember(member_id);
+			
+			session.invalidate();
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out=response.getWriter();
+			out.println("<script>");
+			out.println("alert('회원탈퇴가 정상적으로 이루어졌습니다.');");
+			out.println("location.href=('./AsianaMain.me')");
+			out.println("</script>");
+			out.close();
+			return null;
+		}
 	}
 }

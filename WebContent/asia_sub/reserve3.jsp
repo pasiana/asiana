@@ -12,6 +12,7 @@ if(member_id == null) {
 	String lea_city = (String)request.getAttribute("lea_city");
 	String arr_city = (String)request.getAttribute("arr_city");
 	String lea_time = (String)request.getAttribute("lea_time");
+	String lea_time_b =(String)request.getAttribute("lea_time_b");
 	String res_sig_dou = (String)request.getAttribute("res_sig_dou");
 	int res_count = ((Integer) request.getAttribute("res_count")).intValue();
 	String lea_day = (String)request.getAttribute("lea_day");
@@ -19,6 +20,7 @@ if(member_id == null) {
 	
 	//왕복
 	String arr_time = (String)request.getAttribute("arr_time");
+	String arr_time_b = (String)request.getAttribute("arr_time_b");
 	String arr_day = (String)request.getAttribute("arr_day");
  	String arr_charge =(String)request.getAttribute("arr_charge");
  	String lea_charge =(String)request.getAttribute("lea_charge");
@@ -38,7 +40,9 @@ if(member_id == null) {
 	var arr_city = "<%=arr_city %>";
 	var res_sig_dou = "<%=res_sig_dou %>";
 	var lea_time = "<%=lea_time %>";
+	var lea_time_b = "<%=lea_time_b %>";
 	var arr_time = "<%=arr_time %>";
+	var arr_time_b ="<%=arr_time_b%>";
 	var res_count = "<%=res_count%>";
 	var lea_day = "<%=lea_day%>";
 	var arr_day = "<%=arr_day%>";
@@ -51,12 +55,13 @@ if(member_id == null) {
 		if (res_sig_dou == "왕복") {
 			url = "./reserve4.re?lea_city=" + lea_city + "&arr_city="
 			+ arr_city + "&res_sig_dou=" + res_sig_dou + "&lea_time="
-			+ lea_time + "&arr_time=" + arr_time + "&res_count=" + res_count + "&lea_day=" + lea_day +"&arr_day="+ arr_day + "&charge=" + charge
+			+ lea_time + "&arr_time=" + arr_time + "&lea_time_b="+ lea_time_b + "&arr_time_b=" + arr_time_b
+			+ "&res_count=" + res_count + "&lea_day=" + lea_day +"&arr_day="+ arr_day + "&charge=" + charge
 			+ "&lea_charge=" + lea_charge +"&arr_charge=" + arr_charge;
 		} else {
 			url = "./reserve4.re?lea_city=" + lea_city + "&arr_city="
 			+ arr_city + "&res_sig_dou=" + res_sig_dou + "&lea_time="
-			+ lea_time + "&res_count=" + res_count + "&lea_day=" + lea_day + "&charge=" + charge;
+			+ lea_time + "&lea_time_b="+ lea_time_b + "&res_count=" + res_count + "&lea_day=" + lea_day + "&charge=" + charge;
 		}
 		location.href = url;
 	}

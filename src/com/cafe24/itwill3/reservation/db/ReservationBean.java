@@ -1,7 +1,5 @@
 package com.cafe24.itwill3.reservation.db;
 
-import java.sql.Date;
-
 public class ReservationBean {
 	private String lcKey;
 	private String acKey;
