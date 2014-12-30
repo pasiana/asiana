@@ -27,6 +27,10 @@ function gap_filter(str_value) {
 
 //확인
 function confirm() {
+	var member_id=document.frm.member_id.value;
+	var passwd=document.frm.passwd.value;
+	var checkpass=document.getElementById("checkpass");
+	
 	if(document.frm.passwd.value.length<5){
 		alert("비밀번호는 5~10자리입니다.");
 		document.frm.passwd.focus();
@@ -72,6 +76,7 @@ if(member_id==null){
 	<jsp:include page="../asiana_inc/header.jsp" />
 </header>
 <form action="./DoChangePassword.me" method="post" name="frm">
+<input type="hidden" name="member_id" value="<%=member_id %>">
 <div class="locationBox">
 <div class="locationInner">
 <ul>
@@ -112,7 +117,9 @@ if(member_id==null){
 <table class="myBoxType2">
 <tr>
 <td>기존 비밀번호</td>
-<td><input type="password" class="inputfocus" name="passwd" maxlength="10" onkeyup="this.value=gap_filter(this.value)"></td>
+<td>
+<input type="password" class="inputfocus" name="passwd" maxlength="10" onkeyup="this.value=gap_filter(this.value)">
+</td>
 </tr>
 
 <tr>

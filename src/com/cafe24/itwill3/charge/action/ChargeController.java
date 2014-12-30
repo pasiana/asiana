@@ -14,14 +14,24 @@ public class ChargeController extends HttpServlet {
 		String command = request.getRequestURI().substring(request.getContextPath().length());
 		ActionForward forward = null;
 		Action action = null;
-		System.out.println(command);
-		if(command.equals("/asia_sub2/searchCity.ch")) {
+		if(command.equals("/searchCity.ch")) {
 			action = new SearchCity();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+		} else if(command.equals("/searchCharge.ch")) {
+			action = new SearchCharge();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/checkCharge.ch")) {
+			forward = new ActionForward();
+			forward.setPath("./asia_sub2/checkCharge.jsp");
+			forward.setRedirect(false);
 		}
 		if(forward != null) {
 			if(forward.isRedirect()){

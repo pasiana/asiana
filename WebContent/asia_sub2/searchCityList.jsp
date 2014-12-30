@@ -4,9 +4,10 @@
     pageEncoding="UTF-8"%>
 <%
 	ArrayList list = (ArrayList)request.getAttribute("list");
+	out.println("<OPTION>선택하세요</OPTION>");
 	for(int i=0; i<list.size(); i++) {
 		ChargeBean chargeBean = (ChargeBean)list.get(i);
-		System.out.println(chargeBean.getArrCity());
-		out.println(chargeBean.getArrCity());
+		out.println("<option value="+chargeBean.getArrCity()+">"+chargeBean.getArrCity()+"</option>");
+		out.flush();
 	}
 %>

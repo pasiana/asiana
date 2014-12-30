@@ -1,5 +1,7 @@
 package com.cafe24.itwill3.Member.action;
 
+import java.io.PrintWriter;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -23,11 +25,28 @@ public class GetMemberInfo implements Action{
 			return forward;
 		}
 		
+		int loginType=0;
+		String passwd=request.getParameter("passwd");
+		
 		MemberDAO memberdao=new MemberDAO();
-		MemberBean memberbean=memberdao.Member_Info(member_id);
-		request.setAttribute("memberbean", memberbean);
-		forward.setPath("./asiana_member/GetMemberInfo.jsp");
-		forward.setRedirect(false);
-		return forward;
+		int check=memberdao.MemberLogin(loginType, member_id, passwd);
+		
+		if(check==0){
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out=response.getWriter();
+			out.println("<script>");
+			out.println("alert('비밀번호가 일치하지 않습니다.')");
+			out.println("history.back()");
+			out.println("</script>");
+			out.close();
+			return null;
+		}else{
+			memberdao=new MemberDAO();
+			MemberBean memberbean=memberdao.Member_Info(member_id);
+			request.setAttribute("memberbean", memberbean);
+			forward.setPath("./asiana_member/GetMemberInfo.jsp");
+			forward.setRedirect(false);
+			return forward;
+		}
 	}
 }

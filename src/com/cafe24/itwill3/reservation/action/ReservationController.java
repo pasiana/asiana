@@ -22,9 +22,29 @@ public class ReservationController extends HttpServlet {
 			forward = new ActionForward();
 			forward.setPath("./asia_sub/reserve.jsp");
 			forward.setRedirect(false);
-		}
-		else if(command.equals("/reserve2.re")) {
+		} else if(command.equals("/reserve2.re")) {
 			action = new Reservation2();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}else if(command.equals("/reserve3.re")) {
+			action = new Reservation3();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}else if(command.equals("/reserve4.re")) {
+			action = new Reservation4();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}else if(command.equals("/reserve5.re")) {
+			action = new Reservation5();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {

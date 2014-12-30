@@ -12,7 +12,6 @@ public class SubController extends HttpServlet {
 			throws ServletException, IOException{
 		ActionForward forward = null;
 		String command = request.getRequestURI().substring(request.getContextPath().length());
-		System.out.println(command);
 		
 		if(command.equals("/aircraft.su")) {
 			forward = new ActionForward();
@@ -62,7 +61,19 @@ public class SubController extends HttpServlet {
 			forward = new ActionForward();
 			forward.setPath("./asia_sub/TicketInformation.jsp");
 			forward.setRedirect(false);
-		}
+		} else if(command.equals("/information.su")) {
+			forward = new ActionForward();
+			forward.setPath("./asia_sub3/Introduction.jsp");
+			forward.setRedirect(false);
+		} else if(command.equals("/magicInfo.su")) {
+			forward = new ActionForward();
+			forward.setPath("./asiana_inc/magicInfo.jsp");
+			forward.setRedirect(false);
+		} else if(command.equals("/schedual.su")) {
+			forward = new ActionForward();
+			forward.setPath("./asia_sub2/new_sear.jsp");
+			forward.setRedirect(false);
+		} 
 		if(forward!=null){
 			if(forward.isRedirect()) {
 				response.sendRedirect(forward.getPath());

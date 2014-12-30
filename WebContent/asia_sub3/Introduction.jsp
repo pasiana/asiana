@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>IT아시아나클럽 소개</title>
-<link type="text/css" rel="stylesheet" href="css/bookonline.css">
+<link type="text/css" rel="stylesheet" href="./asia_sub3/css/bookonline.css">
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {

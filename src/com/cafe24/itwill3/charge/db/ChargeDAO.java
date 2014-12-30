@@ -44,6 +44,27 @@ public class ChargeDAO {
 		}
 		return list;
 	}
+	public ChargeBean searchCharge(String lea_city, String arr_city) {
+		ChargeBean chargeBean = new ChargeBean();
+		try {
+			conn = dbConn();
+			sql = "SELECT charge FROM charge WHERE lea_city = ? and arr_city = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, lea_city);
+			pstmt.setString(2, arr_city);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				chargeBean.setCharge(Integer.parseInt(rs.getString("charge")));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if(rs!=null)try{rs.close();}catch(Exception e){}
+			if(pstmt!=null)try{pstmt.close();}catch(Exception e){}
+			if(conn!=null)try{conn.close();}catch(Exception e){}
+		}
+		return chargeBean;
+	}
 	
 	
 }

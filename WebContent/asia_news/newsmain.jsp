@@ -1,13 +1,37 @@
 <%@page import="java.util.List"%>
-<%@page import="com.cafe24.itwill3.news.db.NewsBean"%>
+<%@page import="itana.news.db.NewsBean"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>News</title>
+<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		//메뉴 클릭 시 서브메뉴 오픈
+		$('.menu').click(function() {
+			$('.menu').removeClass("menuchange");
+			$('.menu').parent().children('ul').css('display', 'none');
+			$(this).addClass("menuchange");
+			$(this).parent().children('ul').css('display', 'block');
+		});
 
+		//서브메뉴 클릭 시 글자 굵기
+		$('.subMenu1').click(function() {
+			$('.subMenu1').css('font-weight', 'normal');
+			$(this).css('font-weight', 'bold');
+		});
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('.top2').addClass("menuchange");
+		$('.top2').parent().children('ul').css('display', 'block');
+	});
+</script>
 
 
 <style type="text/css">
@@ -37,7 +61,7 @@ margin: 0 auto;
 	width: 976px;
 	height: 30px;
 }
-.lo_li{padding-top: 5px; margin-left: 40px;}
+.lo_li{padding-top: 5px;}
 .lo_li li{
 	float:left;
 	margin-left: 5px;
@@ -56,28 +80,114 @@ background-position: bottom; }
 	width: 976px;
 	height:100%;overflow: hidden;
 }
+.content{width:80%;
+height: 100%; overflow: hidden;}
+.left_menu{width: 20%; float: left;}
 .co_title {
-	width:974px;
+	width:99%;
+	float:right;
+	margin-top:10px;
 	border: 1px solid #EAEAEA;
-	border-top: none;
-	padding-top: 40px;
+	padding-top: 30px;
 }
 .co_title p{
 color:red;
 font-size:3em;
-margin: 0 0 30px 40px;
+margin: 0 0 30px 30px;
 }
+.right_con{
+float:right;
+width:780px;
+padding-top: 7px;
+}
+.news_table{width:760px;margin: 0 auto;
+}
+.news_table td{padding-top:20px; padding-bottom: 20px;
+border-top: 1px solid #EAEAEA;
+border-bottom:1px solid #EAEAEA;}
+
+.td1{width:565px; color:grey; font-size: 1.2em;}
+
+.td1 a{font-size:1.4em; }
+.td1 a:HOVER{color:red; text-decoration: underline;}
+.td2{text-align:right;
+width:190px; 
+color:grey;
+font-size: 1.2em;}
+.list_num{padding:10px;
+margin:0 auto;
+width:150px;
+ }
+.list_num a{font-size: 1.5em; padding-left: 10px;
+color:#8C8C8C}
+
+
+
+.menu {
+	padding: 7px 0 7px 19px;
+	line-height: 20px;
+	display: block;
+	font-size: 12px;
+	border-top: 1px solid #e8e8e8;
+	color: #000;
+}
+
+.menuchange {
+	padding: 7px 0 7px 19px;
+	line-height: 20px;
+	display: block;
+	color: #fff;
+	font-size: 12px;
+	font-weight: bold;
+	background: #73706c;
+}
+
+.subMenu1 {
+	padding: 0 0 0 15px;
+	color: #333;
+	font-size: 11px;
+	font-family: 돋움;
+	line-height: 20px;
+	display: block;
+	width: 145px;
+	background: url('https://flyasiana.com/CW/images/bg/bg_asideOn.gif') 0
+		9px no-repeat;
+}
+
+.subMenu1:hover {
+	font-weight: bold;
+}
+
+#comm_lnb{
+	width: 190px;
+	
+}
+
+/* .news_fir_tr td{display: none;} */
 </style>
 </head>
 <body>
 <%
+//request.setAttribute("count", count);
+int count=((Integer)request.getAttribute("count")).intValue();
+//request.setAttribute("currentPage", currentPage);
+int currentPage=((Integer)request.getAttribute("currentPage")).intValue();
 List<NewsBean> newslist=(List)request.getAttribute("newslist");
-
+//request.setAttribute("pageCount", pageCount);
+int pageCount=((Integer)request.getAttribute("pageCount")).intValue();
+//request.setAttribute("startPage", startPage);
+int startPage=((Integer)request.getAttribute("startPage")).intValue();
+//request.setAttribute("endPage", endPage);
+int endPage=((Integer)request.getAttribute("endPage")).intValue();
+//request.setAttribute("number", number);
+int number=((Integer)request.getAttribute("number")).intValue();
+//request.setAttribute("pageBlock", pageBlock);
+int pageBlock=((Integer)request.getAttribute("pageBlock")).intValue();
 %>
-<%-- 
+ 
 	<header>
 		<jsp:include page="/asiana_inc/header.jsp" />
-	</header> --%>
+	</header>
 	
 	<section id="news">	
 	
@@ -85,8 +195,9 @@ List<NewsBean> newslist=(List)request.getAttribute("newslist");
 	
 	<div class="location">
 			<ul class="lo_li">
-				<li><a href="#">HOME</a><span>&gt;</span></li>
-				<li><a href="#">이벤트/혜택</a><span>&gt;</span></li>
+				<li><a href="ItanaMain.ma">HOME</a><span>&gt;</span></li>
+				<li><a href="#">IT아시아나</a><span>&gt;</span></li>
+				<li><a href="ItanaNews.ne">IT아시아나 뉴스</a><span>&gt;</span></li>
 				<li>뉴스</li>
 			</ul>
 		
@@ -97,35 +208,88 @@ List<NewsBean> newslist=(List)request.getAttribute("newslist");
 	
 	
 	<div class="new_content">
+		<div class="left_menu">
+		<div id="comm_lnb" >
+		<aside
+			style="margin: 10px 0 0 0; padding-bottom: 10px; background: #fff;">
+			<h2
+				style="background: url('http://flyasiana.com/CW/images/bg/bg_h2.png') no-repeat 0 0; width: 171px; height: 60px; padding: 21px 0 0 19px;">
+				<a href="Admin1.jsp"> <img src="http://flyasiana.com/CW/images/nav/nav03_h2.png">
+				</a>
+			</h2>
+
+			<ul
+				style="background: url('https://flyasiana.com/CW/images/bg/bg_lnbBottom.png') no-repeat 0 bottom; padding: 0 1px 4px 1px; width: 188px;">
+				<li><a class="menu top1" href="ItanaInfo.ne"> IT아시아나클럽 소개 </a></li>
+
+				<li><a class="menu top2" href="ItanaNews.ne"> 뉴스/이벤트 </a>
+					<ul class="submenu sub2"
+						style="padding: 15px 0 15px 19px; display: none;">
+						<li><a class="subMenu1 index1 TicketInformation" href="ItanaNews.ne"> 뉴스 </a></li>
+						<li><a class="subMenu1 index2 BookOnLine" href="ItanaEvent.ev"> 이벤트 </a></li>
+					</ul>
+				</li>
+			</ul>
+		</aside>
+	</div>
 	
+	</div>
+	
+	
+	
+	
+	
+	<div class="content">
 	<div class="co_title">
 	<p>아시아나 뉴스</p>
 	</div>
 	
-	<div class="content">
-		<table>
-		<%-- <%
+	<div class="right_con">	
+		<table class="news_table">
+
+		<tr>
+		<%
    		for(int i=0;i<newslist.size();i++){
 
     	NewsBean newsbean=newslist.get(i);
-   		}
+   		
+    	
     	%>
- --%>    	<tr>
-    	<td>content</td>
-		<td><!-- 날짜 --></td>
+ 
+		<td class="td1">
+		<a href="NewsDetailAction.ne?num=<%=newsbean.getNews_num()%>&pageNum=<%=currentPage%>"><%=newsbean.getNews_sub1()%></a><br>
+		<%=newsbean.getNews_sub2()%><!-- 제목 --></a></td>
+		<td class="td2"><%=newsbean.getWrite_date()%><!-- 날짜 --></td>
 		</tr>
-		<tr>
-		<%-- <td><%= %> <!-- 제목 --></td>
-		<td><%= %><!-- 날짜 --></td> --%>
-		</tr>
-	
+	<%
+	}
+	%>
 		
 		
 		</table>	
 	
 	
+	<div class="list_num">
+	<%
+if(count>0){
 	
-	
+	//[이전]
+	if(startPage>pageBlock){
+		%><a href="./ItanaNews.ne?pageNum=<%=startPage-pageBlock%>">[이전]</a><%
+	}
+	//[1] ~ [10]
+	for(int i=startPage;i<=endPage;i++){
+		%><a href="./ItanaNews.ne?pageNum=<%=i%>">[<%=i %>]</a><%
+	}
+	//[다음]		
+	if(endPage<pageCount){
+		%><a href="./ItanaNews.ne?pageNum=<%=startPage+pageBlock%>">[다음]</a><%
+	}
+}
+%>
+	</div>
+
+		</div>
 	
 	
 	
@@ -145,9 +309,9 @@ List<NewsBean> newslist=(List)request.getAttribute("newslist");
 	</section>
 	
 
-	<%-- <footer>
+	<footer>
 		<jsp:include page="/asiana_inc/footer.jsp" />
-	</footer> --%>
+	</footer>
 </div>
 </body>
 </html>

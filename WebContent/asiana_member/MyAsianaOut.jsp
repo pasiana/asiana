@@ -43,17 +43,7 @@ function confirm() {
 		return false;
 	}	
 	
-	$.ajax({
-		url: 'asiana_member/loginCheck.jsp?member_id='+member_id+'&passwd='+passwd,
-		type: 'post',
-		success:function(data){
-			if(data==0){
-				alert("비밀번호가 일치하지 않습니다.");
-				$('.notice_container').css('display','block');
-				return false;
-			}
-		}
-	});
+	document.frm.submit();
 }
 </script>
 
@@ -115,18 +105,6 @@ MemberBean memberbean=(MemberBean)request.getAttribute("memberbean");
 <div id="containerBody">
 <h3 class="h3_type01">회원탈퇴</h3>
 <h4 class="h4_type01">정상적인 회원탈퇴를 위해 회원님의 비밀빈호를 다시 입력해주세요.</h4>
-
-<!-- 에러박스 시작-->
-<div class="notice_container">
-<div class="notice_Inner">
-<ul class="notice">
-<li>
-<p>비밀번호가 일치하지 않습니다.</p>
-</li>
-</ul>
-</div>
-</div>
-<!-- 에러박스 끝 -->
 
 <table class="myBoxType2">
 

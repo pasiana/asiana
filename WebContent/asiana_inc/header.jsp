@@ -209,7 +209,7 @@ String member_id=(String)session.getAttribute("member_id");
 			<div>
 				<h1 style="padding: 20px 0 0 1px; margin: 0 0 0 -1px;">
 					<!-- 메인 로고 시작 -->
-					<a href="#">	
+					<a href="./ItanaMain.ma">	
 						<img src="./asiana_inc/img/Logo.png" alt="아시아나 항공">
 					</a>
 					<!-- 메인 로고 끝 -->
@@ -249,21 +249,21 @@ String member_id=(String)session.getAttribute("member_id");
 													<a href="./reserve.re">국내선</a>
 												</li>
 												<li>
-													<a href="#">예약조회</a>
+													<a href="./ReservationList.me">예약조회</a>
 												</li>
 											</ul>
 										</li>
 									</ul>
 									<ul>
 										<li>
-											<a href="#">
+											<a href="./schedual.su">
 												<span>스케쥴 조회</span>
 											</a>
 										</li>
 									</ul>
 									<ul>
 										<li>
-											<a href="#">
+											<a href="./checkCharge.ch">
 												<span>운임 조회</span>
 											</a>
 										</li>
@@ -279,14 +279,14 @@ String member_id=(String)session.getAttribute("member_id");
 							<div class="nav_sub">
 								<ul>
 									<li>
-										<a href="#">
+										<a href="./information.su">
 											<span>아시아나클럽 소개</span>
 										</a>
 									</li>
 								</ul>
 								<ul>
 									<li>
-										<a href="#">
+										<a href="ItanaNews.ne">
 											<span>뉴스/이벤트</span>
 										</a>
 									</li>
@@ -364,14 +364,7 @@ String member_id=(String)session.getAttribute("member_id");
 								</ul>
 								<ul>
 									<li>
-										<a href="#">
-											<span>문화초대</span>
-										</a>
-									</li>
-								</ul>
-								<ul>
-									<li>
-										<a href="#">
+										<a href="./magicInfo.su">
 											<span>매직보딩패스</span>
 										</a>
 									</li>

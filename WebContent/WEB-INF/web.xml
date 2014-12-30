@@ -36,7 +36,7 @@
   
    <servlet>
   	<servlet-name>NewsFrontController</servlet-name>
-  	<servlet-class>com.cafe24.itwill3.news.action.NewsFrontController</servlet-class>
+  	<servlet-class>itana.news.action.NewsFrontController</servlet-class>
   </servlet>
   <servlet-mapping>
   	<servlet-name>NewsFrontController</servlet-name>
@@ -78,4 +78,15 @@
   	<servlet-name>ChargeController</servlet-name>
   	<url-pattern>*.ch</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>SchedualController</servlet-name>
+  	<servlet-class>com.cafe24.itwill3.schedual.action.SchedualController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>SchedualController</servlet-name>
+  	<url-pattern>*.sc</url-pattern>
+  </servlet-mapping>
+  
+  
 </web-app>

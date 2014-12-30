@@ -1,11 +1,29 @@
+<%@page import="com.cafe24.itwill3.Member.db.MemberBean"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html >
 <html>
 <%
+
+String member_id = (String)session.getAttribute("member_id");
+if(member_id == null) {
+	response.sendRedirect("./AsianaLogin.me");
+}
+MemberBean memberbean=(MemberBean)request.getAttribute("memberbean");
+
+String[] mobile=new String[3];
+if(!memberbean.getMobile().equals("")){
+	mobile=memberbean.getMobile().split("-");	
+}else{
+	mobile[0]="";
+	mobile[1]="";
+	mobile[2]="";
+}
+
 	String lea_city = (String)request.getAttribute("lea_city");
 	String arr_city = (String)request.getAttribute("arr_city");
 	String lea_time = (String)request.getAttribute("lea_time");
+	String lea_time_b =(String)request.getAttribute("lea_time_b");
 	String res_sig_dou = (String)request.getAttribute("res_sig_dou");
 	int res_count = ((Integer) request.getAttribute("res_count")).intValue();
 	String lea_day = (String)request.getAttribute("lea_day");
@@ -13,6 +31,7 @@
 	
 	//왕복
 	String arr_time = (String)request.getAttribute("arr_time");
+	String arr_time_b = (String)request.getAttribute("arr_time_b");
 	String arr_day = (String)request.getAttribute("arr_day");
  	String arr_charge =(String)request.getAttribute("arr_charge");
  	String lea_charge =(String)request.getAttribute("lea_charge");
@@ -21,8 +40,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>예매3</title>
-<link type="text/css" rel="stylesheet" href="css/reserve3.css">
-<script src="js/jquery-1.11.1.js"></script>
+<link type="text/css" rel="stylesheet" href="./asia_sub/css/reserve3.css">
+<script src="./asia_sub/js/jquery-1.11.1.js"></script>
 <script type="text/javascript">
 	function back(){
 		history.back();
@@ -32,7 +51,9 @@
 	var arr_city = "<%=arr_city %>";
 	var res_sig_dou = "<%=res_sig_dou %>";
 	var lea_time = "<%=lea_time %>";
+	var lea_time_b = "<%=lea_time_b %>";
 	var arr_time = "<%=arr_time %>";
+	var arr_time_b ="<%=arr_time_b%>";
 	var res_count = "<%=res_count%>";
 	var lea_day = "<%=lea_day%>";
 	var arr_day = "<%=arr_day%>";
@@ -45,12 +66,13 @@
 		if (res_sig_dou == "왕복") {
 			url = "./reserve4.re?lea_city=" + lea_city + "&arr_city="
 			+ arr_city + "&res_sig_dou=" + res_sig_dou + "&lea_time="
-			+ lea_time + "&arr_time=" + arr_time + "&res_count=" + res_count + "&lea_day=" + lea_day +"&arr_day="+ arr_day + "&charge=" + charge
+			+ lea_time + "&arr_time=" + arr_time + "&lea_time_b="+ lea_time_b + "&arr_time_b=" + arr_time_b
+			+ "&res_count=" + res_count + "&lea_day=" + lea_day +"&arr_day="+ arr_day + "&charge=" + charge
 			+ "&lea_charge=" + lea_charge +"&arr_charge=" + arr_charge;
 		} else {
 			url = "./reserve4.re?lea_city=" + lea_city + "&arr_city="
 			+ arr_city + "&res_sig_dou=" + res_sig_dou + "&lea_time="
-			+ lea_time + "&res_count=" + res_count + "&lea_day=" + lea_day + "&charge=" + charge;
+			+ lea_time + "&lea_time_b="+ lea_time_b + "&res_count=" + res_count + "&lea_day=" + lea_day + "&charge=" + charge;
 		}
 		location.href = url;
 	}
@@ -169,7 +191,7 @@ fieldset{
 										</li>
 										<li>스타얼라이언스 회원사로 마일리지 적립을 원하는 경우 반드시 영문 성함으로 입력하여 주시기
 											바랍니다. 에어부산이 운항하는 공동운항편은 스타얼라이언스 회원사로 마일리지 적립이 불가합니다.</li>
-										<li><img src="img/bg_communal2.gif" alt="공동운항"> 표기는
+										<li><img src="./asia_sub/img/bg_communal2.gif" alt="공동운항"> 표기는
 											공동운항을 의미하며, 마우스를 클릭하시면 세부 항공편이 안내됩니다.</li>
 									</ul>
 								</div>
@@ -204,7 +226,7 @@ fieldset{
 													<div class="entry z2" style="width: 231px;">
 														<label for="familyName0" style=><strong>성</strong>(family
 															name)</label> <input type="text" class="text01"
-															style="width: 95px; text-transform: uppercase;">
+															style="width: 95px; text-transform: uppercase;" value="<%=memberbean.getLast_name()%>">
 														<span style="padding-left: 10px;">/</span>
 													</div>
 													<div class="text gap-2" style="width: 100px;">
@@ -214,7 +236,7 @@ fieldset{
 													<div class="entry z2"
 														style="width: 139px; float: right; margin: -35px 10px 0 0;">
 														<input type="text" class="text01"
-															style="width: 135px; text-transform: uppercase;">
+															style="width: 135px; text-transform: uppercase;" value="<%=memberbean.getFirst_name()%>">
 													</div>
 												</div>
 											</div>
@@ -237,11 +259,11 @@ fieldset{
 											<div>
 												<input type="text" class="text01" id="phoneNo1"
 													name="phoneNo1" maxlength="4" title="휴대전화 앞번호"
-													style="width: 95px;"> - <input type="text"
+													style="width: 95px;" value="<%=mobile[0]%>"> - <input type="text"
 													class="text01" id="phoneNo2" name="phoneNo2" maxlength="4"
-													title="가운데번호" style="width: 95px;"> - <input
+													title="가운데번호" style="width: 95px;" value="<%=mobile[1]%>"> - <input
 													type="text" class="text01" id="phoneNo3" name="phoneNo3"
-													maxlength="4" title="끝번호" style="width: 95px;">
+													maxlength="4" title="끝번호" style="width: 95px;" value="<%=mobile[2]%>">
 											</div>
 										</div>
 									</div>
@@ -253,7 +275,7 @@ fieldset{
 										<div class="entry">
 											<div>
 												<input type="text" class="text01" id="tt_email"
-													name="tt_email" style="width: 480px;">
+													name="tt_email" style="width: 480px;" value="<%=memberbean.getEmail()%>">
 											</div>
 										</div>
 									</div>

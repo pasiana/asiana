@@ -101,7 +101,7 @@ a {
 				style="background: url('https://flyasiana.com/CW/images/bg/bg_lnbBottom.png') no-repeat 0 bottom; padding: 0 1px 4px 1px; width: 188px;">
 				<li><a class="menu top1" href="./AsianaMemberList.me"> 회원목록 </a></li>
 
-				<li><a class="menu top2" href="Admin2.jsp"> 예약목록 </a></li>
+				<li><a class="menu top2" href="./AsianaResList.me"> 예약목록 </a></li>
 			</ul>
 		</aside>
 	</div>

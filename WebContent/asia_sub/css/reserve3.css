@@ -219,7 +219,7 @@ body {
 }
 
 .selectITbox3 .selectITinner3 li.liType01.totalIntro .tBoxD .end.oneWay
-	{
+{
 	background: url("../img/bg_arrow5_1.gif") no-repeat 0 3px;
 	padding: 0 0 0 33px;
 }
@@ -384,6 +384,10 @@ body {
 	line-height: 18px;
 	padding: 0 0 0 14px;
 	font-family: '돋움';
+}
+.btnBoxType01 {
+	height: 30px;
+	margin-bottom: 20px;
 }
 .btnBoxType01 {
 	height: 30px;

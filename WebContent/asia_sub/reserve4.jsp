@@ -1,15 +1,45 @@
+<%@page import="com.cafe24.itwill3.Member.db.MemberBean"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+<%
+
+String member_id = (String)session.getAttribute("member_id");
+if(member_id == null) {
+	response.sendRedirect("./AsianaLogin.me");
+}
+MemberBean memberbean=(MemberBean)request.getAttribute("memberbean");
+	String lea_city = (String)request.getAttribute("lea_city"); //출발도시
+	String arr_city = (String)request.getAttribute("arr_city"); //도착도시 (왕복시 출발도시가됨)
+	String lea_time = (String)request.getAttribute("lea_time"); //가는편 출발시간
+	String lea_time_b = (String)request.getAttribute("lea_time_b"); //가는편 도착시간
+	String res_sig_dou = (String)request.getAttribute("res_sig_dou"); //왕복 편도
+	int res_count = ((Integer) request.getAttribute("res_count")).intValue(); //사람수
+	String lea_day = (String)request.getAttribute("lea_day"); //가는날
+	int charge = ((Integer)request.getAttribute("charge")).intValue(); //운임요금(왕복 시 => 합계)
+	
+	//왕복시
+	String arr_time = (String)request.getAttribute("arr_time"); //오는편 출발시간
+	String arr_time_b =(String)request.getAttribute("arr_time_b"); //오는편 도착시간
+	String arr_day = (String)request.getAttribute("arr_day"); //오는날
+	String arr_charge =(String)request.getAttribute("arr_charge"); //오는요금
+	String lea_charge =(String)request.getAttribute("lea_charge"); //가는요금
+%>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>예매4</title>
-<link type="text/css" rel="stylesheet" href="css/reserve4.css">
-<script src="js/jquery-1.11.1.js"></script>
-
+<link type="text/css" rel="stylesheet" href="./asia_sub/css/reserve4.css">
+<script src="./asia_sub/js/jquery-1.11.1.js"></script>
 <style type="text/css">
-
+<% if(res_sig_dou.equals("왕복")){
+	%>
+	.selectITbox3 .selectITinner3 li.liType01.totalIntro .tBoxD .end.oneWay {
+		background: url("https://flyasiana.com/images/bg/bg_arrow5.gif") no-repeat 0 3px;
+		padding: 0 0 0 33px;
+	}
+	<%												
+}%>
 </style>
 </head>
 <body>
@@ -51,13 +81,13 @@
 								<ul style="height: 88px;">
 									<!-- 사람수, 공항 -->
 									<li class="liType01 totalIntro"><strong class="sTitle">총
-											인원 1명</strong>
+											인원 <%=res_count %>명</strong>
 										<div class="tBoxD">
 											<p class="start">
-												<strong>김포</strong><br> 
+												<strong><%=lea_city %></strong><br> 
 											</p>
 											<p class="end oneWay">
-												<strong>제주</strong><br> 
+												<strong><%=arr_city %></strong><br> 
 											</p>
 										</div></li>
 									<!-- 사람수, 공항 끝-->
@@ -66,13 +96,21 @@
 									<li class="liType01 selectStart"><strong class="sTitle">가는
 											날</strong>
 										<div class="pType01">
-											<strong>2014/12/17(수)<br>13:55
+											<strong>2015/<%=lea_day %><br><%=lea_time %>
 											</strong><br>
 										</div></li>
 									<!-- 가는날 정보 끝 -->
 									
+									<%if(res_sig_dou.equals("왕복")){ %>
 									<!-- 오는날 정보  -->
+									<li class="liType01 selectStart"><strong class="sTitle">오는
+											날</strong>
+										<div class="pType01">
+											<strong>2015/<%=arr_day %><br><%=arr_time %>
+											</strong><br>
+										</div></li>
 									<!-- 오는날 정보 끝  -->
+									<%} %>
 								</ul>
 
 								<div class="passengerFareBox">
@@ -82,37 +120,54 @@
 									<div class="memberBox DmemberBox" style="*z-index: 27;">
 										<div class="mName">
 											<div class="name">
-												<strong>YU/YUYU</strong>
+												<strong><%=memberbean.getLast_name() %>/<%=memberbean.getFirst_name() %></strong>
 											</div>
 										</div>
 										<table class="DtableType1_1">
 											<thead>
 												<tr>
 													<th scope="col">구분</th>
-													<th scope="col" class="textRight">가는 편(김포-제주)</th>
+													<th scope="col" class="textRight">가는 편(<%=lea_city %>-<%=arr_city %>)</th>
+													<%if(res_sig_dou.equals("왕복")){ %>
+													<th scope="col" class="textRight">오는 편(<%=arr_city %>-<%=lea_city %>)</th>
+													<%} %>
 												</tr>
 											</thead>
 
 											<tbody>
 												<tr>
 													<th scope="col">항공운임</th>
-													<td><span class="pr">49,700</span> <span class="unit">원</span>
+													<%if(res_sig_dou.equals("왕복")){ %>
+													<td><span class="pr"><%=lea_charge %></span> <span class="unit">원</span>
 														<br></td>
+													<td><span class="pr"><%=arr_charge %></span> <span class="unit">원</span>
+														<br></td>
+													<%}else{ %>
+													<td><span class="pr"><%=charge %></span> <span class="unit">원</span>
+														<br></td>
+													<% } %>
 												</tr>
 												<tr>
 													<th scope="col">유류할증료</th>
 													<td><span class="pr">0</span> <span class="unit">원</span>
 													</td>
+													<%if(res_sig_dou.equals("왕복")){ %>
+													<td><span class="pr">0</span> <span class="unit">원</span>
+													</td>
+													<% } %>
 												</tr>
 												<tr>
 													<th scope="col">세금 및 제반요금</th>
 													<td><span class="pr">0</span> <span class="unit">원</span></td>
+													<%if(res_sig_dou.equals("왕복")){ %>
+													<td><span class="pr">0</span> <span class="unit">원</span></td>
+													<% } %>
 												</tr>
 											</tbody>
 											<tfoot>
 												<tr>
 													<td colspan="3"><strong class="ttText">합계</strong><strong
-														class="ttPrice">49,700 원</strong></td>
+														class="ttPrice"><%=charge %> 원</strong></td>
 												</tr>
 											</tfoot>
 										</table>
@@ -120,7 +175,7 @@
 									<!-- 회원정보 끝 -->
 									<div class="btnPrice">
 										<span class="btnType06 btn_CpopupLayer"></span> <strong
-											class="text">총 지불금액</strong> <span class="totalP"><strong>49,700</strong>
+											class="text">총 지불금액</strong> <span class="totalP"><strong><%=charge %></strong>
 											원</span>
 									</div>
 								</div>
@@ -133,7 +188,7 @@
 							<h4 class="h4_type01">결제방식을 선택하세요.</h4>
 							
 							<div class="fareMethodTable">
-								<div class="totalMethod">결제금액<br><strong class="money">49,700</strong> <strong class="unit">원</strong></div>
+								<div class="totalMethod">결제금액<br><strong class="money"><%=charge %></strong> <strong class="unit">원</strong></div>
 								<div class="fareMethodText">
 											<ul class="noticeList">
 												<li>홈페이지를 통해 신용카드(체크카드 포함) 및 계좌이체를 통한 결제가 가능합니다. </li>
@@ -200,11 +255,26 @@
 							</div>
 						</div>
 						<!-- 결제 끝 -->
+						<form action="./reserve5.re" method="post">
+							<!-- 편도 -->
+							<input type="hidden" name="res_sig_dou" value="<%=res_sig_dou%>"> <!-- 편도인지 왕복인지  -->
+							<input type="hidden" name="res_count" value="<%=res_count %>" > <!-- 사람수  -->
+							<input type="hidden" name="lea_city" value="<%=lea_city %>" > <!--  출발도시  -->
+							<input type="hidden" name="arr_city" value="<%=arr_city %>" > <!--  도착도시 (왕복시 출발도시가됨) -->
+							<input type="hidden" name="lea_day" value="<%=lea_day%>" > <!-- 가는날  -->
+							<input type="hidden" name="lea_time" value="<%=lea_time %>" > <!-- 가는날 출발시간 -->
+							<input type="hidden" name="lea_time_b" value="<%=lea_time_b %>" > <!-- 가는날 도착시간 -->
+							
+							<!-- 왕복 -->
+							<input type="hidden" name="arr_day" value="<%=arr_day%>" > <!-- 오는날  -->
+							<input type="hidden" name="arr_time" value="<%=arr_time%>"> <!-- 오는날 출발시간  -->
+							<input type="hidden" name="arr_time_b" value="<%=arr_time_b%>"> <!-- 오는날 도착시간 -->
 						
-						<ul class="btnBoxType01">
-							<li><span class="Sbtn_TType06_2"><a href="#">예매취소</a></span></li>
-							<li class="right"><span class="Bbtn_TType01_1"><a href="#">결제하기</a></span></li>
-						</ul>
+							<ul class="btnBoxType01">
+								<li><span class="Sbtn_TType06_2"><a href="./reserve.re">예매취소</a></span></li>
+								<li class="right"><span class="Bbtn_TType01_1"><input type="submit" value="결제하기"></span></li>
+							</ul>
+						</form>
 					</div>
 				</div>
 			</div>

@@ -5,12 +5,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>예매5</title>
-<link type="text/css" rel="stylesheet" href="css/reserve5.css">
-<script src="js/jquery-1.11.1.js"></script>
+<link type="text/css" rel="stylesheet" href="./asia_sub/css/reserve5.css">
+<script src="./asia_sub/js/jquery-1.11.1.js"></script>
 
 <style type="text/css">
 </style>
 </head>
+<%
+String member_id = (String)session.getAttribute("member_id");
+if(member_id == null) {
+	response.sendRedirect("./AsianaLogin.me");
+}
+%>
 <body>
 	<header>
 		<jsp:include page="../asiana_inc/header.jsp" />
@@ -43,11 +49,11 @@
 				</p>
 
 				<div class="reserve_img">
-					<img src="img/reserve.png" style="display: block;">
+					<img src="./asia_sub/img/reserve.png" style="display: block;">
 				</div>
 				
 				<ul class="btnBoxType01">
-					<li class="right"><span class="Bbtn_TType01_1"><a href="#">완료</a></span></li>
+					<li class="right"><span class="Bbtn_TType01_1"><a href="./ReservationList.me">완료</a></span></li>
 				</ul>
 			</div>
 			<!-- skipct끝  -->

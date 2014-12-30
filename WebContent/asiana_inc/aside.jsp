@@ -56,7 +56,7 @@ a{color:#000;text-decoration:none;cursor:pointer;}
 	line-height: 20px;
 	display: block;
 	width: 145px;
-	background: url('img/sub_event/bg_asideOn.gif') 0 9px no-repeat;
+	background: url('./asiana_inc/img/sub_event/bg_asideOn.gif') 0 9px no-repeat;
 }
 
 .subMenu1:hover {
@@ -70,13 +70,13 @@ a{color:#000;text-decoration:none;cursor:pointer;}
 		<aside
 			style="margin: 10px 0 0 0; padding-bottom: 10px; background: #fff;">
 			<h2
-				style="background: url('img/sub_event/bg_h2.png') no-repeat 0 0; width: 171px; height: 60px; padding: 21px 0 0 19px;">
-				<a href="#"> <img src="img/sub_event/nav03_h5.png">
+				style="background: url('./asiana_inc/img/sub_event/bg_h2.png') no-repeat 0 0; width: 171px; height: 60px; padding: 21px 0 0 19px;">
+				<a href="#"> <img src="./asiana_inc/img/sub_event/nav03_h5.png">
 				</a>
 			</h2>
 
 			<ul
-				style="background: url('img/sub_event/bg_lnbBottom.png') no-repeat 0 bottom; padding: 0 1px 4px 1px; width: 188px;">
+				style="background: url('./asiana_inc/img/sub_event/bg_lnbBottom.png') no-repeat 0 bottom; padding: 0 1px 4px 1px; width: 188px;">
 				<li><a class="menu top1" href="#"> 이벤트 </a>
 					<ul class="submenu sub1"
 						style="padding: 15px 0 15px 19px; display: none;">
@@ -84,31 +84,10 @@ a{color:#000;text-decoration:none;cursor:pointer;}
 						<li><a class="subMenu1 index2" href="#"> 종료 이벤트 </a></li>
 					</ul></li>
 
-				<li><a class="menu top2" href="#"> 문화초대 </a>
-					<ul class="submenu sub2"
-						style="padding: 15px 0 15px 19px; display: none;">
-						<li><a class="subMenu1 index1" href="#"> 문화초대 이벤트 </a></li>
-						<li><a class="subMenu1 index2" href="#"> 공연정보 </a></li>
-						<li><a class="subMenu1 index3" href="#"> 도서정보 </a></li>
-					</ul></li>
 
-				<li><a class="menu top3" href="#"> 아시아나 라이크 </a></li>
+				<li><a class="menu top5" href="./magicInfo.su"> 매직보딩패스 </a></li>
 
-				<li><a class="menu top4" href="#"> 당첨자 발표 </a></li>
 
-				<li><a class="menu top5" href="#"> 매직보딩패스 </a></li>
-
-				<li><a class="menu top6" href="#"> 신용카드 혜택 </a></li>
-
-				<li><a class="menu top7" href="#"> 아시아나 항공교실 </a>
-					<ul class="submenu sub7"
-						style="padding: 15px 0 15px 19px; display: none;">
-						<li><a class="subMenu1 index1" href="#"> 비행기 원리 </a></li>
-						<li><a class="subMenu1 index2" href="#"> 항공 퀴즈 짱 </a></li>
-						<li><a class="subMenu1 index3" href="#"> 항공사 직업 소개 </a></li>
-						<li><a class="subMenu1 index4" href="#"> 일일 조종사 체험 </a></li>
-						<li><a class="subMenu1 index5" href="#"> 항공 용어사전 </a></li>
-					</ul></li>
 			</ul>
 		</aside>
 	</div>

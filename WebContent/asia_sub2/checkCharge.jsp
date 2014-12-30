@@ -5,15 +5,29 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title></title>
-<link type="text/css" rel="stylesheet" href="css/checkCharge.css">
-<script src="js/jquery-1.11.1.js"></script>
+<link type="text/css" rel="stylesheet" href="asia_sub2/css/checkCharge.css">
+<script src="asia_sub2/js/jquery-1.11.1.js"></script>
 <script type="text/javascript">
+	$(function() {
+		$('.top3').addClass("menuchange");
+		$('.top3').parent().children('ul').css('display', 'block');
+	});
+	function fncCity(city) {
+		$.post('./searchCity.ch',{lea_city:city},function(result){
+			$('#keyArrivalAirport').html(result);
+		});
+	}
 	function fncSearch() {
-		
+		var depart = $('#keyDepartureAirport option:selected').text();
+		var arrival = $('#keyArrivalAirport option:selected').text();
+		$.post('./searchCharge.ch',{lea_city:depart, arr_city:arrival},function(result) {
+			$('.common-table-3 tbody').show();
+			$('#charge_ajax').html(result);
+			var total = parseInt(result)+8800+4000;
+			$('#charge_total').html(total);
+		});
 	}
 </script>
-<style type="text/css">
-</style>
 </head>
 <body>
 	<header>
@@ -32,7 +46,7 @@
 			</div>
 		</div>
 	
-		<div id="containerBox">
+		<div id="containerBox" class="ag-reservation">
 			<div id="container">
 				<!-- 사이드 메뉴 -->
 				<jsp:include page="MyAsanaMenu.jsp" />
@@ -64,19 +78,19 @@
 												<DIV class="selectStyle" style="width: 100%; height: 23px;">
 													<SPAN class="span-select">
 														<INPUT tabindex="-1" title="출발지" id="hiddenKeyD" type="text" readonly="readonly" value="서울(김포) (김포공항-국내선)">
-														<SELECT	name="keyDepartureAirport" title="출발지 선택" id="keyDepartureAirport">
+														<SELECT	name="keyDepartureAirport" title="출발지 선택" id="keyDepartureAirport" onchange="fncCity(this.options[this.selectedIndex].text);">
 															<OPTION value="">선택하세요</OPTION>
-															<OPTION value="KWJ">광주 (광주공항)</OPTION>
-															<OPTION selected="selected" value="GMP">서울(김포)(김포공항-국내선)</OPTION>
-															<OPTION value="PUS">부산 (김해공항-국제선)</OPTION>
-															<OPTION value="TAE">대구 (대구공항)</OPTION>
-															<OPTION value="MWX">무안 (무안공항)</OPTION>
-															<OPTION value="HIN">진주 (사천 공항)</OPTION>
-															<OPTION value="RSU">여수 (여수공항)</OPTION>
-															<OPTION value="USN">울산 (울산공항)</OPTION>
-															<OPTION value="ICN">서울(인천) (인천공항)</OPTION>
-															<OPTION value="CJU">제주 (제주공항)</OPTION>
-															<OPTION value="CJJ">청주 (청주공항)</OPTION>
+															<OPTION value="KWJ">광주</OPTION>
+															<OPTION selected="selected" value="GMP">김포</OPTION>
+															<OPTION value="PUS">부산</OPTION>
+															<OPTION value="TAE">대구</OPTION>
+															<OPTION value="MWX">무안</OPTION>
+															<OPTION value="HIN">진주</OPTION>
+															<OPTION value="RSU">여수</OPTION>
+															<OPTION value="USN">울산</OPTION>
+															<OPTION value="ICN">인천</OPTION>
+															<OPTION value="CJU">제주</OPTION>
+															<OPTION value="CJJ">청주</OPTION>
 														</SELECT>
 													</SPAN>
 												</DIV>
@@ -108,11 +122,10 @@
 								<TABLE class="common-table-3">
 									<CAPTION>노선별 일반운임 조회</CAPTION>
 									<COLGROUP>
-										<COL width="29%">
-										<COL width="*">
-										<COL width="*">
-										<COL width="*">
-										<COL width="*">
+										<COL width="25%">
+										<COL width="25%">
+										<COL width="25%">
+										<COL width="25%">
 									</COLGROUP>
 									<THEAD>
 										<TR>
@@ -122,14 +135,13 @@
 											<TH class="last-child" scope="col">총계</TH>
 										</TR>
 									</THEAD>
-									<TBODY>
+									<TBODY style="display: none;">
 										<TR>
-											<TH scope="row">기본운임</TH>
-											<TD style="text-align: right; padding-right: 10px;"></TD>
-											<TD style="text-align: right; padding-right: 10px;"></TD>
-											<TD style="text-align: right; padding-right: 10px;"></TD>
+											<TD style="text-align: center; padding-right: 10px;"><span id="charge_ajax"></span></TD>
+											<TD style="text-align: center; padding-right: 10px;">8,800원</TD>
+											<TD style="text-align: center; padding-right: 10px;">4,000원</TD>
 											<TD class="last-child"
-												style="text-align: right; padding-right: 10px;"></TD>
+												style="text-align: center; padding-right: 10px;"><span id="charge_total"></span></TD>
 										</TR>
 									</TBODY>
 								</TABLE>

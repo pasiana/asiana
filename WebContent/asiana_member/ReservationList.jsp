@@ -1,3 +1,8 @@
+<%@page import="java.sql.Timestamp"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="com.cafe24.itwill3.reservation.db.Reserva5_Bean"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -9,7 +14,10 @@
 <script type="text/javascript" src="asiana_member/js/jquery-1.11.1.js"></script>
 <title>Insert title here</title>
 </head>
-
+<%
+List ReservationList=(List)request.getAttribute("ReservationList");
+SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+%>
 <body>
 <header>
 	<jsp:include page="../asiana_inc/header.jsp" />
@@ -75,16 +83,19 @@
 </h4>
 
 <p class="reCntText bgText">
+<%
+	if(ReservationList.size() == 0) {
+%>
 <strong>최근 6개월 중에 예약하신 내역이 없습니다.</strong>
 </p>
-
+<% } %>
 </div>
 </div>
 
 <div class="LineInner bgType01">
 <div class="LineBottom bgBottomType">
 <p class="rangeText" style="border-bottom: 1px solid #5c5f66;">
-첫 여정의 출발 일시가 빠른 순서로 정렬됩니다.
+예약번호가 빠른 순서로 정렬됩니다.
 </p>
 
 <table class="tableType_1">
@@ -101,6 +112,34 @@
 <th>출발 일시</th>
 <th>도착 일시</th>
 </tr>
+<%for(int i=0;i<ReservationList.size();i++){ 
+Reserva5_Bean bean=(Reserva5_Bean)ReservationList.get(i);
+%>
+<tr style="text-align: center; border-bottom: 1px solid #777;">
+<td><%=bean.getRes_sig_dou() %></td>
+<td><%=bean.getRes_num() %></td>
+<td><%=sdf.format(bean.getRes_date()) %></td>
+<td><%=bean.getLea_city() %></td>
+<td><%=bean.getArr_city() %></td>
+<td><%=bean.getLea_time() %></td>
+<td><%=bean.getArr_time() %></td>
+</tr>
+<% 
+if(bean.getRes_sig_dou().equals("왕복")){
+	%>
+	<tr style="text-align: center; border-bottom: 1px solid #777;">
+	<td></td>
+	<td></td>
+	<td></td>
+	<td><%=bean.getB_lea_city() %></td>
+	<td><%=bean.getB_arr_city() %></td>
+	<td><%=bean.getB_lea_time() %></td>
+	<td><%=bean.getB_arr_time() %></td>
+</tr>
+	<%
+}
+}
+%>
 </table>
 </div>
 </div>
