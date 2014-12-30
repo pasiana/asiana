@@ -279,7 +279,7 @@ String member_id=(String)session.getAttribute("member_id");
 							<div class="nav_sub">
 								<ul>
 									<li>
-										<a href="#">
+										<a href="./information.su">
 											<span>아시아나클럽 소개</span>
 										</a>
 									</li>
@@ -364,14 +364,7 @@ String member_id=(String)session.getAttribute("member_id");
 								</ul>
 								<ul>
 									<li>
-										<a href="#">
-											<span>문화초대</span>
-										</a>
-									</li>
-								</ul>
-								<ul>
-									<li>
-										<a href="#">
+										<a href="./magicInfo.su">
 											<span>매직보딩패스</span>
 										</a>
 									</li>

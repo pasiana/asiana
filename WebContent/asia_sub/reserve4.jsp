@@ -12,6 +12,12 @@
 
 </style>
 </head>
+<%
+String member_id = (String)session.getAttribute("member_id");
+if(member_id == null) {
+	response.sendRedirect("./AsianaLogin.me");
+}
+%>
 <body>
 	<header>
 		<jsp:include page="../asiana_inc/header.jsp" />

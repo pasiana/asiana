@@ -1,4 +1,4 @@
-package com.cafe24.itwill3.reservation.action;
+package com.cafe24.itwill3.schedual.action;
 
 import java.io.IOException;
 
@@ -8,31 +8,22 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-public class ReservationController extends HttpServlet {
-
+public class SchedualController extends HttpServlet {
 	protected void doProcess(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// 주소 가져오기
 		String command = request.getRequestURI().substring(request.getContextPath().length());
-		ActionForward forward=null;
-		Action action=null;
-		System.out.println(command);
-		if(command.equals("/reserve.re")) {
-			forward = new ActionForward();
-			forward.setPath("./asia_sub/reserve.jsp");
-			forward.setRedirect(false);
-		} else if(command.equals("/reserve2.re")) {
-			action = new Reservation2();
+		ActionForward forward = null;
+		Action action = null;
+		if(command.equals("/schedual.sc")) {
+			action = new SearchSchedual();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
-		//이동
-		if(forward!=null){
-			if(forward.isRedirect()) {
+		if(forward != null) {
+			if(forward.isRedirect()){
 				response.sendRedirect(forward.getPath());
 			} else {
 				RequestDispatcher dispatcher = request.getRequestDispatcher(forward.getPath());
@@ -40,6 +31,8 @@ public class ReservationController extends HttpServlet {
 			}
 		}
 	}
+
+	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
@@ -51,5 +44,5 @@ public class ReservationController extends HttpServlet {
 			throws ServletException, IOException {
 		doProcess(req, resp);
 	}
-	
+
 }

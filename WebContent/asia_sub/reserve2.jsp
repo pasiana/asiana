@@ -4,7 +4,12 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-	<%
+<%
+	
+		String member_id = (String)session.getAttribute("member_id");
+		if(member_id == null) {
+			response.sendRedirect("./AsianaLogin.me");
+		}
 		//편도
 		List<ReservationBean> relist = (List)request.getAttribute("relist");
 		String lea_city = (String)request.getAttribute("lea_city");

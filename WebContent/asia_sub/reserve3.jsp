@@ -3,6 +3,12 @@
 <!DOCTYPE html >
 <html>
 <%
+
+String member_id = (String)session.getAttribute("member_id");
+if(member_id == null) {
+	response.sendRedirect("./AsianaLogin.me");
+}
+
 	String lea_city = (String)request.getAttribute("lea_city");
 	String arr_city = (String)request.getAttribute("arr_city");
 	String lea_time = (String)request.getAttribute("lea_time");

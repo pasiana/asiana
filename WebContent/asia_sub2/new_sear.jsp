@@ -58,7 +58,7 @@ function click_search(){
 	$('.sear_tb').toggle();/*클릭시 자동으로 온/오프  */
 	var dep = $('#ul_Dom_DepAirport option:selected').text();
 	var arr = $('#ul_Dom_ArrAirport option:selected').text();
-	$.post("",{},function(result){
+	$.post("./schedual.sc",{},function(result){
 		
 	});
 }

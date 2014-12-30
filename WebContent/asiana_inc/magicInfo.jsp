@@ -4,8 +4,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link href="css/footer.css" type="text/css" rel="stylesheet">
-<link href="css/header.css" type="text/css" rel="stylesheet">
+<link href="./asiana_inc/css/footer.css" type="text/css" rel="stylesheet">
+<link href="./asiana_inc/css/header.css" type="text/css" rel="stylesheet">
 <title>Insert title here</title>
 <script src="js/jquery-1.11.1.js"></script>
 <script type="text/javascript">
@@ -14,9 +14,9 @@ $(function(){
 		$(this).parent().parent().children('div').toggle();
 		$(this).css('background',function(){
 			if($(this).parent().parent().children('div').css('display') == "none"){
-				return "#fff url('img/sub_event/blP_arrow.gif') no-repeat 678px 25px;color: #2a2c39;font-size: 16px;font-weight: bold;padding: 19px 0 18px 7px";
+				return "#fff url('./asiana_inc/img/sub_event/blP_arrow.gif') no-repeat 678px 25px;color: #2a2c39;font-size: 16px;font-weight: bold;padding: 19px 0 18px 7px";
 			} else {
-				return "#f5f5f5 url('img/sub_event/blP_arrow_on.gif') no-repeat 678px 25px";
+				return "#f5f5f5 url('./asiana_inc/img/sub_event/blP_arrow_on.gif') no-repeat 678px 25px";
 			}
 		});
 	});
@@ -103,7 +103,7 @@ $(function(){
 }
 .info_title>a{
 	display: block;
-	background:#fff url('img/sub_event/blP_arrow.gif') no-repeat 678px 25px;
+	background:#fff url('./asiana_inc/img/sub_event/blP_arrow.gif') no-repeat 678px 25px;
 	color: #2a2c39;
 	font-size: 16px;
 	font-weight: bold;
@@ -116,13 +116,13 @@ $(function(){
 	top: -37px;
 	right: 41px;
 }
-.wd680box{position:absolute;top:0px;left:16px; background:url('img/sub_event/bgP_width680_top.gif') no-repeat 0 0;width:680px;padding:10px 0 0 0;z-index:9999;}
-.wd680box-inner{background:url("img/sub_event/bgP_width680_bottom.gif") no-repeat 0 bottom;padding:0 2px 50px 2px;}
+.wd680box{position:absolute;top:0px;left:16px; background:url('./asiana_inc/img/sub_event/bgP_width680_top.gif') no-repeat 0 0;width:680px;padding:10px 0 0 0;z-index:9999;}
+.wd680box-inner{background:url("./asiana_inc/img/sub_event/bgP_width680_bottom.gif") no-repeat 0 bottom;padding:0 2px 50px 2px;}
 .titlebox{ background: #e8e8f7; line-height: 19px; margin: 0 8px 25px; padding: 0 0 0 9px;}
 .titlebox strong{color: #201CB4; font-size: 13px;}
 .content{border-top:1px solid #d3d2f0; padding:16px 22px 0 22px;}
 .content-inner{height:337px; overflow-x:hidden; overflow-y:auto;}
-.kor{background:url("img/sub_event/logoP_magic_boarding_pass.jpg") no-repeat 471px 0;}
+.kor{background:url("./asiana_inc/img/sub_event/logoP_magic_boarding_pass.jpg") no-repeat 471px 0;}
 .con-title{display:block; color:#333; line-height:20px; padding:25px 0 22px 0; font-size:16px;}
 .content-inner ul li{line-height:20px; color:#333; border-bottom:none;}
 .layer-slbClose{position:absolute; top:15px; right:15px;} 
@@ -130,12 +130,14 @@ $(function(){
 </head>
 <body>
 	<!-- header 시작 -->
-	
+	<header>
+		<jsp:include page="../asiana_inc/header.jsp" />
+	</header>
 	<!-- header 끝 -->
 	<!-- section 시작 -->
 	<section id="main">
 		<!-- 헤더와 메인 사이 로케이션 박스 시작 -->
-		<div id="locationBox" style="background: url('img/sub_event/bg_location.jpg') no-repeat center bottom;">
+		<div id="locationBox" style="background: url('./asiana_inc/img/sub_event/bg_location.jpg') no-repeat center bottom;">
 			<div id="locationInner">
 				<div id="location">
 					<ul>
@@ -154,7 +156,7 @@ $(function(){
 		</div>
 		<!-- 헤더와 메인 사이 로케이션 박스 끝 -->
 		<!-- 메인 시작 -->
-		<div id="containerBox" style="background: url('img/sub_event/bgP_body_boardingpass.jpg') no-repeat center 0">
+		<div id="containerBox" style="background: url('./asiana_inc/img/sub_event/bgP_body_boardingpass.jpg') no-repeat center 0">
 			<div id="container" style="width: 956px;margin: 0 auto;position: relative;">
 				<!-- aside(메인 왼쪽) 시작 -->
 				<jsp:include page="aside.jsp" />
@@ -166,10 +168,10 @@ $(function(){
 						<div class="eventbox bg2">
 							<div class="boarding">
 								<h4 style="padding: 3px 0 0 1px;">
-									<img src="img/sub_event/textP_boarding1.png">
+									<img src="./asiana_inc/img/sub_event/textP_boarding1.png">
 								</h4>
 								<div style="margin: 31px 0 59px 0;line-height: 22px;color: #000;">
-									<img src="img/sub_event/textP_boarding2.png" style="margin: 0 0 9px 0;">
+									<img src="./asiana_inc/img/sub_event/textP_boarding2.png" style="margin: 0 0 9px 0;">
 									<p style="margin: 0 0 0 1px;">
 									아시아나항공 국내선, 국제선 이용 고객 (공동운항 항공편 제외)<br> 
 									탑승일 기준 7일 동안 제휴사에서 이용하실 수 있습니다.
@@ -177,7 +179,7 @@ $(function(){
 								</div>
 								<div class="info_content">
 									<h5>
-										<img src="img/sub_event/textP_boarding3.gif" style="border: 0 none;vertical-align: top;font-weight: bold;font-size: 0.83em;">
+										<img src="./asiana_inc/img/sub_event/textP_boarding3.gif" style="border: 0 none;vertical-align: top;font-weight: bold;font-size: 0.83em;">
 									</h5>
 									<ul class="info_accodian">
 										<li>
@@ -190,14 +192,14 @@ $(function(){
 												<ul style="margin: -10px 0 0 -33px;">
 													<li>
 														<strong>01. 종이 탑승권</strong>
-														<img src="img/sub_event/bgP_boarding_img1.jpg">													<p>
+														<img src="./asiana_inc/img/sub_event/bgP_boarding_img1.jpg">													<p>
 														탑승권 부분을 절취하여 제시하시면 매직보딩패스로 이용<br>
 														가능합니다. 이용 시 신분증을 함께 제시하시기 바랍니다.
 														</p>
 													</li>
 													<li>
 														<strong>02. 국내선 키오스크 발급 탑승권</strong>
-														<img src="img/sub_event/bgP_boarding_img2.jpg">
+														<img src="./asiana_inc/img/sub_event/bgP_boarding_img2.jpg">
 														<p>
 														국내선 키오스크 발급 탑승권을 제시하시면<br> 
 														매직보딩패스로 이용 가능합니다.
@@ -205,7 +207,7 @@ $(function(){
 													</li>
 													<li>
 														<strong>03. 온라인 체크인 시 이메일 보딩패스</strong>
-														<img src="img/sub_event/bgP_boarding_img3.jpg">
+														<img src="./asiana_inc/img/sub_event/bgP_boarding_img3.jpg">
 														<p>
 														홈페이지 및 모바일 웹/앱에서 인터넷 체크인을 하시는 경우<br> 
 														메일로 받으신 탑승권 양식을 출력하여 제시하시면<br> 
@@ -214,7 +216,7 @@ $(function(){
 													</li>
 													<li>
 														<strong>04. 모바일 탑승권</strong>
-														<img src="img/sub_event/bgP_boarding_img4.jpg">
+														<img src="./asiana_inc/img/sub_event/bgP_boarding_img4.jpg">
 														<p>
 														모바일 웹/앱의 모바일탑승권을 제시하시면<br> 
 														매직보딩패스로 이용 가능합니다.
@@ -234,8 +236,8 @@ $(function(){
 												- 탑승권은 본인만 사용 가능합니다.<br> 
 												- 일부 제휴사는 사전 예약이 필요하오니, 제휴사/혜택에서 확인하시기 바랍니다.<br> 
 												- 제공 혜택은 제휴사의 사정에 따라 사전 예고 없이 변경될 수 있습니다.
-												<span style="background: url('img/sub_event/bg_btnLeft2.jpg') no-repeat 0 0; display: inline-block;">
-													<a href="#none" style="background: url('img/sub_event/bg_btnRight2.jpg') no-repeat right 0;padding: 0 29px 0 13px;display: block;height: 22px;line-height: 22px;line-height: 22px;color: #4c4c4c;">이용 조건 모두 보기</a>
+												<span style="background: url('./asiana_inc/img/sub_event/bg_btnLeft2.jpg') no-repeat 0 0; display: inline-block;">
+													<a href="#none" style="background: url('./asiana_inc/img/sub_event/bg_btnRight2.jpg') no-repeat right 0;padding: 0 29px 0 13px;display: block;height: 22px;line-height: 22px;line-height: 22px;color: #4c4c4c;">이용 조건 모두 보기</a>
 												</span>
 												<div class="reWrapBox3 CreWrapBox" style="display: none;">
 													<!-- layerPopup -->
@@ -269,7 +271,7 @@ $(function(){
 															</div>
 														</div>
 														<a href="#none" class="layer-slbClose">
-															<img src="img/sub_event/btn_close.gif">
+															<img src="./asiana_inc/img/sub_event/btn_close.gif">
 														</a>
 													</div>
 													<!-- //layerPopup -->
@@ -292,7 +294,9 @@ $(function(){
 	</section>
 	<!-- section 끝 -->
 	<!-- footer 시작 -->
-	
+	<footer>
+		<jsp:include page="../asiana_inc/footer.jsp" />
+	</footer>
 	<!-- footer 끝 -->
 </body>
 </html>
