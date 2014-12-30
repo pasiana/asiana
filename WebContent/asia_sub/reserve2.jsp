@@ -28,7 +28,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>예매2</title>
 <link type="text/css" rel="stylesheet" href="./asia_sub/css/reserve2.css">
-<script src="js/jquery-1.11.1.js"></script>
+<script src="./asia_sub/js/jquery-1.11.1.js"></script>
 <script type="text/javascript">
 	var lea_city="<%=lea_city %>";
 	var arr_city="<%=arr_city %>";

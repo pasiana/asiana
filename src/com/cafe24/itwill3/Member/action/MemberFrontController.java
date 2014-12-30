@@ -110,9 +110,12 @@ public class MemberFrontController extends HttpServlet{
 		}
 		//항공권 예약 현황
 		else if(command.equals("/ReservationList.me")){
-			forward=new ActionForward();
-			forward.setPath("./asiana_member/ReservationList.jsp");
-			forward.setRedirect(false);
+			action=new ReservationListAction();
+			try {
+				forward=action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 		//회원정보 변경(비밀번호 확인)
 		else if(command.equals("/GetPassword.me")){
@@ -183,6 +186,15 @@ public class MemberFrontController extends HttpServlet{
 		//회원목록 검색(관리자)
 		else if(command.equals("/AsianaMemberListSearch.me")){
 			action=new MemberListSearch();
+			try {
+				forward=action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		//예약목록(관리자)
+		else if(command.equals("/AsianaResList.me")){
+			action=new ResListAction();
 			try {
 				forward=action.execute(request, response);
 			} catch (Exception e) {

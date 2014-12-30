@@ -2,6 +2,10 @@ package com.cafe24.itwill3.reservation.action;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.cafe24.itwill3.Member.db.MemberBean;
+import com.cafe24.itwill3.Member.db.MemberDAO;
 
 public class Reservation4 implements Action {
 
@@ -9,6 +13,12 @@ public class Reservation4 implements Action {
 	public ActionForward execute(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		System.out.println("예약 4번째 페이지");
+		
+		HttpSession session=request.getSession();
+		String member_id=(String)session.getAttribute("member_id");
+		
+		MemberDAO memberdao=new MemberDAO();
+		MemberBean memberbean=memberdao.Member_Info(member_id);
 		
 		String res_sig_dou = request.getParameter("res_sig_dou"); //편도 왕복
 		String lea_city = request.getParameter("lea_city"); //출발공항
@@ -31,7 +41,8 @@ public class Reservation4 implements Action {
 			String lea_charge = request.getParameter("lea_charge"); //가는요금
 			request.setAttribute("lea_charge", lea_charge);
 		}
-
+		
+		request.setAttribute("memberbean", memberbean);
 		request.setAttribute("lea_city", lea_city);
 		request.setAttribute("arr_city", arr_city);
 		request.setAttribute("lea_time", lea_time);

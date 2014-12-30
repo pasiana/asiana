@@ -8,6 +8,10 @@
 <link type="text/css" rel="stylesheet" href="asia_sub2/css/checkCharge.css">
 <script src="asia_sub2/js/jquery-1.11.1.js"></script>
 <script type="text/javascript">
+	$(function() {
+		$('.top3').addClass("menuchange");
+		$('.top3').parent().children('ul').css('display', 'block');
+	});
 	function fncCity(city) {
 		$.post('./searchCity.ch',{lea_city:city},function(result){
 			$('#keyArrivalAirport').html(result);

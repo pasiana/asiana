@@ -213,16 +213,17 @@ public class ReservationDAO {
 			}else{
 				num=1;//글이 없는 경우
 			}
-			sql="insert into Double_res(res_sig_dou,res_count,lea_city,arr_city,lea_time,arr_time,res_num,res_date ) values(?,?,?,?,?,?,?,?)";
+			sql="insert into Double_res(member_id, res_sig_dou,res_count,lea_city,arr_city,lea_time,arr_time,res_num,res_date ) values(?,?,?,?,?,?,?,?,?)";
 			pstmt=conn.prepareStatement(sql);
-			pstmt.setString(1, reserva5_Bean.getRes_sig_dou());
-			pstmt.setInt(2, reserva5_Bean.getRes_count());
-			pstmt.setString(3, reserva5_Bean.getLea_city());
-			pstmt.setString(4, reserva5_Bean.getArr_city());
-			pstmt.setString(5, reserva5_Bean.getLea_time());
-			pstmt.setString(6, reserva5_Bean.getArr_time());
-			pstmt.setInt(7, num);
-			pstmt.setTimestamp(8, reserva5_Bean.getRes_date());
+			pstmt.setString(1, reserva5_Bean.getMember_id());
+			pstmt.setString(2, reserva5_Bean.getRes_sig_dou());
+			pstmt.setInt(3, reserva5_Bean.getRes_count());
+			pstmt.setString(4, reserva5_Bean.getLea_city());
+			pstmt.setString(5, reserva5_Bean.getArr_city());
+			pstmt.setString(6, reserva5_Bean.getLea_time());
+			pstmt.setString(7, reserva5_Bean.getArr_time());
+			pstmt.setInt(8, num);
+			pstmt.setTimestamp(9, reserva5_Bean.getRes_date());
 			
 			pstmt.executeUpdate();
 			
@@ -236,7 +237,7 @@ public class ReservationDAO {
 	}
 	
 	//왕복예약완료
-	public void dou_reserve(Reserva5_Bean reserva5_Bean){
+	public void dou_reserve(String member_id, Reserva5_Bean reserva5_Bean){
 		int num=0;
 		try {
 			conn = dbConn();
@@ -249,20 +250,21 @@ public class ReservationDAO {
 			}else{
 				num=1;//글이 없는 경우
 			}
-			sql="insert into Double_res(res_sig_dou,res_count,lea_city,arr_city,lea_time,arr_time,b_lea_city,b_arr_city,b_lea_time,b_arr_time,res_num,res_date) values(?,?,?,?,?,?,?,?,?,?,?,?)";
+			sql="insert into Double_res(member_id,res_sig_dou,res_count,lea_city,arr_city,lea_time,arr_time,b_lea_city,b_arr_city,b_lea_time,b_arr_time,res_num,res_date) values(?,?,?,?,?,?,?,?,?,?,?,?,?)";
 			pstmt=conn.prepareStatement(sql);
-			pstmt.setString(1, reserva5_Bean.getRes_sig_dou());
-			pstmt.setInt(2, reserva5_Bean.getRes_count());
-			pstmt.setString(3, reserva5_Bean.getLea_city());
-			pstmt.setString(4, reserva5_Bean.getArr_city());
-			pstmt.setString(5, reserva5_Bean.getLea_time());
-			pstmt.setString(6, reserva5_Bean.getArr_time());
-			pstmt.setString(7, reserva5_Bean.getB_lea_city());
-			pstmt.setString(8, reserva5_Bean.getB_arr_city());
-			pstmt.setString(9, reserva5_Bean.getB_lea_time());
-			pstmt.setString(10, reserva5_Bean.getB_arr_time());
-			pstmt.setInt(11, num);
-			pstmt.setTimestamp(12, reserva5_Bean.getRes_date());
+			pstmt.setString(1, member_id);
+			pstmt.setString(2, reserva5_Bean.getRes_sig_dou());
+			pstmt.setInt(3, reserva5_Bean.getRes_count());
+			pstmt.setString(4, reserva5_Bean.getLea_city());
+			pstmt.setString(5, reserva5_Bean.getArr_city());
+			pstmt.setString(6, reserva5_Bean.getLea_time());
+			pstmt.setString(7, reserva5_Bean.getArr_time());
+			pstmt.setString(8, reserva5_Bean.getB_lea_city());
+			pstmt.setString(9, reserva5_Bean.getB_arr_city());
+			pstmt.setString(10, reserva5_Bean.getB_lea_time());
+			pstmt.setString(11, reserva5_Bean.getB_arr_time());
+			pstmt.setInt(12, num);
+			pstmt.setTimestamp(13, reserva5_Bean.getRes_date());
 			
 			pstmt.executeUpdate();
 			

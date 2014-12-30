@@ -69,6 +69,10 @@ public class SubController extends HttpServlet {
 			forward = new ActionForward();
 			forward.setPath("./asiana_inc/magicInfo.jsp");
 			forward.setRedirect(false);
+		} else if(command.equals("/schedual.su")) {
+			forward = new ActionForward();
+			forward.setPath("./asia_sub2/new_sear.jsp");
+			forward.setRedirect(false);
 		} 
 		if(forward!=null){
 			if(forward.isRedirect()) {

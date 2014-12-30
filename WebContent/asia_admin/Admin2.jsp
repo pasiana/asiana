@@ -1,3 +1,6 @@
+<%@page import="com.cafe24.itwill3.reservation.db.Reserva5_Bean"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -5,7 +8,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>예약목록</title>
-<link type="text/css" rel="stylesheet" href="css/bookonline.css">
+<link type="text/css" rel="stylesheet" href="asia_admin/css/bookonline.css">
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
@@ -26,7 +29,7 @@ $(document).ready(function() {
 	.memberlist tr:nth-child(1) td{
 		font-size: 1.2em;
 		font-weight: bold;
-		background: url(img/t_back.jpg) repeat-x center center;
+		background: url(asia_admin/img/t_back.jpg) repeat-x center center;
 		padding: 7px 7px 9px 7px;
 		color: white;
 	}
@@ -49,6 +52,12 @@ $(document).ready(function() {
 	}
 </style>
 </head>
+<%
+List MemberResList=(List)request.getAttribute("MemberResList");
+SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+String Go="";
+String arrive="";
+%>
 <body>
 	<header>
 		<jsp:include page="../asiana_inc/header.jsp" />
@@ -59,9 +68,8 @@ $(document).ready(function() {
 			<div class="location">
 				<ul>
 					<li><a href="#none">HOME</a> <span>&gt;</span></li>
-					<li><a href="#none">관리자목록</a> <span>&gt;</span></li>
-					<li><a href="#none">관리자에서</a> <span>&gt;</span></li>
-					<li>예약목록</li>
+					<li><a href="#none">관리자 목록</a> <span>&gt;</span></li>
+					<li>예약 목록</li>
 				</ul>
 			</div>
 		</div>
@@ -80,7 +88,7 @@ $(document).ready(function() {
 						<div class="service_contents">
 							<table class="memberlist">
 								<tr>
-									<td class="name">이름</td>
+									<td class="id">편도/왕복</td>
 									<td class="id">아이디</td>
 									<td class="air1">가는 항공편(시간)</td>
 									<td class="air2">오는 항공편(시간)</td>
@@ -88,21 +96,35 @@ $(document).ready(function() {
 								</tr>
 								
 								<!-- 반복해야할곳 -->
-								<tr>
-									<td>안드로이드</td>
-									<td>and</td>
-									<td>부산</td>
-									<td>제주</td>
-									<td>2014-12-23</td>
-								</tr>
-								
-								<tr>
-									<td>안드로이드</td>
-									<td>and</td>
-									<td>부산</td>
-									<td>제주</td>
-									<td>2014-12-23</td>
-								</tr>
+								<%
+								for(int i=0;i<MemberResList.size();i++){
+									Reserva5_Bean bean=(Reserva5_Bean)MemberResList.get(i);
+									Go=bean.getLea_city()+"("+bean.getLea_time()+")";
+									arrive=bean.getArr_city()+"("+bean.getArr_time()+")";
+									%>
+									<tr>
+									<td><%=bean.getRes_sig_dou() %></td>
+									<td><%=bean.getMember_id() %></td>
+									<td><%=Go %></td>
+									<td><%=arrive %></td>
+									<td><%=sdf.format(bean.getRes_date()) %></td>
+									</tr>
+									<%
+									if(bean.getRes_sig_dou().equals("왕복")){
+										Go=bean.getB_lea_city()+"("+bean.getB_lea_time()+")";
+										arrive=bean.getB_arr_city()+"("+bean.getB_arr_time()+")";
+										%>
+										<tr>
+										<td></td>
+										<td></td>
+										<td><%=Go %></td>
+										<td><%=arrive %></td>
+										<td><%=sdf.format(bean.getRes_date()) %></td>
+										</tr>
+										<%
+									}
+								}
+								%>
 								<!-- 반복해야할곳 -->
 								
 							</table>

@@ -249,14 +249,14 @@ String member_id=(String)session.getAttribute("member_id");
 													<a href="./reserve.re">국내선</a>
 												</li>
 												<li>
-													<a href="#">예약조회</a>
+													<a href="./ReservationList.me">예약조회</a>
 												</li>
 											</ul>
 										</li>
 									</ul>
 									<ul>
 										<li>
-											<a href="#">
+											<a href="./schedual.su">
 												<span>스케쥴 조회</span>
 											</a>
 										</li>
@@ -286,7 +286,7 @@ String member_id=(String)session.getAttribute("member_id");
 								</ul>
 								<ul>
 									<li>
-										<a href="#">
+										<a href="ItanaNews.ne">
 											<span>뉴스/이벤트</span>
 										</a>
 									</li>

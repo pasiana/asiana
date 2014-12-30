@@ -11,6 +11,8 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
+import com.cafe24.itwill3.reservation.db.Reserva5_Bean;
+
 public class MemberDAO {
 	Connection con=null;
 	PreparedStatement pstmt=null;
@@ -363,5 +365,76 @@ public class MemberDAO {
 			if(con!=null) try{con.close();}catch(SQLException ex){}
 		}
 		return memberlist;
+	}
+	
+	//회원 예약 현황
+	public List getReservationList(String member_id){
+		List ReservationList=new ArrayList();
+		try {
+			con=getConnection();
+			sql="select * from Double_res where member_id=? and res_date>=DATE_SUB(NOW(), INTERVAL '6' month) order by res_num";
+			
+			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1, member_id);
+			rs=pstmt.executeQuery();
+			while(rs.next()){
+				Reserva5_Bean bean=new Reserva5_Bean();
+				bean.setRes_sig_dou(rs.getString("res_sig_dou"));
+				bean.setRes_num(rs.getInt("res_num"));
+				bean.setRes_date(rs.getTimestamp("res_date"));
+				bean.setLea_city(rs.getString("lea_city"));
+				bean.setArr_city(rs.getString("arr_city"));
+				bean.setLea_time(rs.getString("lea_time"));
+				bean.setArr_time(rs.getString("arr_time"));
+				bean.setB_lea_city(rs.getString("b_lea_city"));
+				bean.setB_arr_city(rs.getString("b_arr_city"));
+				bean.setB_lea_time(rs.getString("b_lea_time"));
+				bean.setB_arr_time(rs.getString("b_arr_time"));
+				ReservationList.add(bean);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			if(rs!=null) try{rs.close();}catch(SQLException ex){}
+			if(pstmt!=null) try{pstmt.close();}catch(SQLException ex){}
+			if(con!=null) try{con.close();}catch(SQLException ex){}
+		}
+		return ReservationList;
+	}
+	
+	//예약목록(관리자)
+	public List getMemberResList(){
+		List MemberResList=new ArrayList();
+		try {
+			con=getConnection();
+			sql="select * from Double_res";
+			pstmt=con.prepareStatement(sql);
+			rs=pstmt.executeQuery();
+			
+			while(rs.next()){
+				Reserva5_Bean bean=new Reserva5_Bean();
+				
+				bean.setRes_sig_dou(rs.getString("res_sig_dou"));
+				bean.setMember_id(rs.getString("member_id"));
+				bean.setLea_city(rs.getString("lea_city"));
+				bean.setArr_city(rs.getString("arr_city"));
+				bean.setLea_time(rs.getString("lea_time"));
+				bean.setArr_time(rs.getString("arr_time"));
+				bean.setB_lea_city(rs.getString("b_lea_city"));
+				bean.setB_arr_city(rs.getString("b_arr_city"));
+				bean.setB_lea_time(rs.getString("b_lea_time"));
+				bean.setB_arr_time(rs.getString("b_arr_time"));
+				bean.setRes_date(rs.getTimestamp("res_date"));
+				
+				MemberResList.add(bean);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			if(rs!=null) try{rs.close();}catch(SQLException ex){}
+			if(pstmt!=null) try{pstmt.close();}catch(SQLException ex){}
+			if(con!=null) try{con.close();}catch(SQLException ex){}
+		}
+		return MemberResList;
 	}
 }

@@ -1,3 +1,4 @@
+<%@page import="com.cafe24.itwill3.Member.db.MemberBean"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -8,7 +9,7 @@ String member_id = (String)session.getAttribute("member_id");
 if(member_id == null) {
 	response.sendRedirect("./AsianaLogin.me");
 }
-
+MemberBean memberbean=(MemberBean)request.getAttribute("memberbean");
 	String lea_city = (String)request.getAttribute("lea_city"); //출발도시
 	String arr_city = (String)request.getAttribute("arr_city"); //도착도시 (왕복시 출발도시가됨)
 	String lea_time = (String)request.getAttribute("lea_time"); //가는편 출발시간
@@ -28,8 +29,8 @@ if(member_id == null) {
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>예매4</title>
-<link type="text/css" rel="stylesheet" href="css/reserve4.css">
-<script src="js/jquery-1.11.1.js"></script>
+<link type="text/css" rel="stylesheet" href="./asia_sub/css/reserve4.css">
+<script src="./asia_sub/js/jquery-1.11.1.js"></script>
 <style type="text/css">
 <% if(res_sig_dou.equals("왕복")){
 	%>
@@ -119,7 +120,7 @@ if(member_id == null) {
 									<div class="memberBox DmemberBox" style="*z-index: 27;">
 										<div class="mName">
 											<div class="name">
-												<strong>YU/YUYU</strong>
+												<strong><%=memberbean.getLast_name() %>/<%=memberbean.getFirst_name() %></strong>
 											</div>
 										</div>
 										<table class="DtableType1_1">

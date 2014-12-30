@@ -3,7 +3,10 @@ package com.cafe24.itwill3.reservation.db;
 import java.sql.Timestamp;
 
 public class Reserva5_Bean {
+	private String member_id;
+	private int res_num;
 	private String res_sig_dou;
+	private Timestamp res_date;
 	private int res_count;
 	private String lea_city;
 	private String arr_city;
@@ -13,19 +16,30 @@ public class Reserva5_Bean {
 	private String b_arr_city;
 	private String b_lea_time;
 	private String b_arr_time;
- 	private Timestamp res_date;
- 			
-	public Timestamp getRes_date() {
-		return res_date;
+	
+	public String getMember_id() {
+		return member_id;
 	}
-	public void setRes_date(Timestamp res_date) {
-		this.res_date = res_date;
+	public void setMember_id(String member_id) {
+		this.member_id = member_id;
+	}
+	public int getRes_num() {
+		return res_num;
+	}
+	public void setRes_num(int res_num) {
+		this.res_num = res_num;
 	}
 	public String getRes_sig_dou() {
 		return res_sig_dou;
 	}
 	public void setRes_sig_dou(String res_sig_dou) {
 		this.res_sig_dou = res_sig_dou;
+	}
+	public Timestamp getRes_date() {
+		return res_date;
+	}
+	public void setRes_date(Timestamp res_date) {
+		this.res_date = res_date;
 	}
 	public int getRes_count() {
 		return res_count;
@@ -81,6 +95,5 @@ public class Reserva5_Bean {
 	public void setB_arr_time(String b_arr_time) {
 		this.b_arr_time = b_arr_time;
 	}
-	
 	
 }

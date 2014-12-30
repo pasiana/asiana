@@ -1,7 +1,7 @@
 package com.cafe24.itwill3.main.action;
 
-import com.cafe24.itwill3.news.action.Action;
-import com.cafe24.itwill3.news.action.ActionForward;
+import itana.news.action.Action;
+import itana.news.action.ActionForward;
 
 import java.io.IOException;
 
@@ -33,6 +33,12 @@ public class MainFrontController extends HttpServlet{
 					forward=new ActionForward();
 					forward.setPath("./asia_main/main.jsp");
 					forward.setReDirect(false);
+				}else if(RequestURI.substring(contextPath.length()+1).equals("reserve.re")){
+					forward = new ActionForward();
+					forward.setPath("./asia_sub/reserve.jsp");
+					forward.setReDirect(false);
+					
+					
 				}
 			
 				

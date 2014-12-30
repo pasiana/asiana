@@ -7,7 +7,7 @@
 <link href="./asiana_inc/css/footer.css" type="text/css" rel="stylesheet">
 <link href="./asiana_inc/css/header.css" type="text/css" rel="stylesheet">
 <title>Insert title here</title>
-<script src="js/jquery-1.11.1.js"></script>
+<script src="./asiana_inc/js/jquery-1.11.1.js"></script>
 <script type="text/javascript">
 $(function(){
 	$('.info_title>a').click(function(){

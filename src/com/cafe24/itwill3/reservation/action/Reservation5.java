@@ -4,6 +4,7 @@ import java.sql.Timestamp;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.cafe24.itwill3.reservation.db.Reserva5_Bean;
 import com.cafe24.itwill3.reservation.db.ReservationDAO;
@@ -16,6 +17,9 @@ public class Reservation5 implements Action {
 		System.out.println("예약 5번째 페이지");
 		
 		request.setCharacterEncoding("utf-8");
+		
+		HttpSession session=request.getSession();
+		String member_id=(String)session.getAttribute("member_id");
 		
 		String res_sig_dou = request.getParameter("res_sig_dou");
 		
@@ -35,10 +39,11 @@ public class Reservation5 implements Action {
 			reserva5_Bean.setRes_date(new Timestamp(System.currentTimeMillis())); //날짜
 			
 			ReservationDAO reservationDAO = new ReservationDAO();
-			reservationDAO.dou_reserve(reserva5_Bean);
+			reservationDAO.dou_reserve(member_id ,reserva5_Bean);
 			
 		}else{ //편도
 			Reserva5_Bean reserva5_Bean = new Reserva5_Bean();
+			reserva5_Bean.setMember_id(member_id);
 			reserva5_Bean.setRes_sig_dou(request.getParameter("res_sig_dou")); //편도 왕복
 			reserva5_Bean.setRes_count(Integer.parseInt(request.getParameter("res_count"))); //사람수
 			reserva5_Bean.setLea_city(request.getParameter("lea_city")); //출발도시

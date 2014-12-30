@@ -1,4 +1,6 @@
-<%@page import="com.cafe24.itwill3.news.db.NewsBean"%>
+<%@page import="itana.news.db.NewsDAO"%>
+<%@page import="itana.news.db.NewsBean"%>
+<%@page import="itana.news.action.*"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -99,12 +101,14 @@ z-index:20;position: absolute; background-color: white;
 }
 .top_div_in{width:80px; height:312px; float: left;
 }
+
 /* .top_div_onc1:ACTIVE{} */
 .top_div_right{width:334px; height:312px; margin-left: 80px;
-
 }
-.top_in_form{width:321px; height:291px;}
 
+.top_in_form{width:321px; height:291px;}
+#in_form_2{display: none;}
+#in_form_3{display: none;}
 
 
 .in_grey span{background-image: url("./asia_main/images/Sbtn_TTypeL02_2.gif");}
@@ -146,7 +150,7 @@ padding: 3px;}
 background-image:url("./asia_main/images/bg_middleInner.jpg");
 background-position: bottom; 
 }
-#main_bottom{width:976px; height:100%; overflow: hidden;
+#main_bottom{width:976px; height:100%; overflow:hidden;
 margin: 30px auto; }
 .bottom_left{width:270px; height:195px; display: inline-block;
 margin-left:10px; 
@@ -161,12 +165,7 @@ vertical-align:top; margin-left: 40px;
 </style>
 </head>
 <body>
-<%
-List<NewsBean> newslist=(List)request.getAttribute("newslist");
 
-
-
-%>
 	<header>
 		<jsp:include page="../asiana_inc/header.jsp" />
 	</header>
@@ -219,56 +218,14 @@ List<NewsBean> newslist=(List)request.getAttribute("newslist");
 		</div>
 		<div class="top_div_right">
 			<div class="top_in_form" id="in_form_1">
-				<h4>왕복</h4>
-					<div class="in_formset">
-					
-					</div>
-				<h4>편도</h4>
-					<div class="in_formset">
-					
-					</div>
-				<div>
-				<a href="#">기타<img class="vertical-align" src="./asia_main/images/bl_arrowGray.gif"></a>
-				</div>
-				<span class="in_grey"><a href="#">마일리지항공권</a></span>
-				<div class="in_red">
-				<span><a href="#">항공권 조회하기</a></span>
-				</div>
+			<a href="reserve.re"><img src="./asia_main/images/in.png"></a>
 			</div>
-				<!-- <div class="top_in_form" id="in_form_2">
-				<h4>왕복</h4>
-					<div class="in_formset">
-					
-					</div>
-				<h4>편도</h4>
-					<div class="in_formset">
-					
-					</div>
-				<div>
-				<a href="#">기타<img class="vertical-align" src="images/bl_arrowGray.gif"></a>
-				</div>
-				<span class="in_grey"><a href="#">마일리지항공권</a></span>
-				<div class="in_red">
-				<span><a href="#">항공권 조회하기</a></span>
-				</div>
+			<div class="top_in_form" id="in_form_2">
+				<img src="./asia_main/images/out.png">
 			</div>
-				<div class="top_in_form" id="in_form_3">
-				<h4>왕복</h4>
-					<div class="in_formset">
-					
-					</div>
-				<h4>편도</h4>
-					<div class="in_formset">
-					
-					</div>
-				<div>
-				<a href="#">기타<img class="vertical-align" src="images/bl_arrowGray.gif"></a>
-				</div>
-				<span class="in_grey"><a href="#">마일리지항공권</a></span>
-				<div class="in_red">
-				<span><a href="#">항공권 조회하기</a></span>
-				</div>
-			</div> -->
+			<div class="top_in_form" id="in_form_3">
+				<img src="./asia_main/images/res.png">
+			</div>
 		</div>
 		
 	</div>
@@ -409,13 +366,16 @@ List<NewsBean> newslist=(List)request.getAttribute("newslist");
 	 <!-- 하단뉴스ul+ 바로가기배너 S -->
 	<section id="main_bottom">
 		<div class="bottom_left">
-			<h2><img src="./asia_main/images/text_news.jpg"><a href="ItanaNews.ne"><img src="./asia_main/images/btn_addView.gif"></a></h2>
+			<h2><img src="./asia_main/images/text_news.jpg"><a href="./ItanaNews.ne"><img src="./asia_main/images/btn_addView.gif"></a></h2>
 			<ul >
-			<li class="right_li"><img src="./asia_main/images/btnJ_rolinum-num_on.png" style="width:0.4em;vertical-align:middle;"><a href="#">2014년 12월 국제선 유류할증료</a></li>
-			<li class="right_li"><img src="./asia_main/images/btnJ_rolinum-num_on.png" style="width:0.4em;vertical-align:middle;"><a href="#">2014년 12월 국내선 유류할증료</a></li>
-			<li class="right_li"><img src="./asia_main/images/btnJ_rolinum-num_on.png" style="width:0.4em;vertical-align:middle;"><a href="#">동계 기간 국제선 스케줄 변경 안내</a></li>
-			<li class="right_li"><img src="./asia_main/images/btnJ_rolinum-num_on.png" style="width:0.4em;vertical-align:middle;"><a href="#">안전한 여행을 위한 기내 불법행위 금지 안내</a></li>
-			<li class="right_li"><img src="./asia_main/images/btnJ_rolinum-num_on.png" style="width:0.4em;vertical-align:middle;"><a href="#">홈페이지 개인정보취급방침 변경 안내</a></li>
+			
+			<li class="right_li"><img src="./asia_main/images/btnJ_rolinum-num_on.png" style="width:0.4em;vertical-align:middle;"><a href="ItanaNews.ne">2014년 12월 국제선 유류할증료</a></li>
+			<li class="right_li"><img src="./asia_main/images/btnJ_rolinum-num_on.png" style="width:0.4em;vertical-align:middle;"><a href="ItanaNews.ne">2014년 12월 국내선 유류할증료</a></li>
+			<li class="right_li"><img src="./asia_main/images/btnJ_rolinum-num_on.png" style="width:0.4em;vertical-align:middle;"><a href="ItanaNews.ne">동계 기간 국제선 스케줄 변경 안내</a></li>
+			<li class="right_li"><img src="./asia_main/images/btnJ_rolinum-num_on.png" style="width:0.4em;vertical-align:middle;"><a href="ItanaNews.ne">안전한 여행을 위한 기내 불법행위 금지 안내</a></li>
+			<li class="right_li"><img src="./asia_main/images/btnJ_rolinum-num_on.png" style="width:0.4em;vertical-align:middle;"><a href="ItanaNews.ne">홈페이지 개인정보취급방침 변경 안내</a></li>
+			
+			
 			</ul>
 		</div>
 		<div class="bottom_right">

@@ -5,13 +5,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>인터넷예매</title>
-<link type="text/css" rel="stylesheet" href="css/newsear.css">
+<link type="text/css" rel="stylesheet" href="./asia_sub2/css/newsear.css">
 <link rel="stylesheet"
 	href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
 <link rel="stylesheet" href="/resources/demos/style.css">
-<link rel ="shortcut icon" href="images/logo/favicon.ico">
+<link rel ="shortcut icon" href="./asia_sub2/images/logo/favicon.ico">
 <script type="text/javascript">
 var date = new Date();
 /* var lea_time = date.getFullYear()+"/"+new String(date.getMonth()+1)+"/"+date.getDate();
@@ -58,8 +58,12 @@ function click_search(){
 	$('.sear_tb').toggle();/*클릭시 자동으로 온/오프  */
 	var dep = $('#ul_Dom_DepAirport option:selected').text();
 	var arr = $('#ul_Dom_ArrAirport option:selected').text();
-	$.post("./schedual.sc",{},function(result){
-		
+	var sig = "왕복";
+	if($('input:radio:checked').val()=="OW"){
+		sig = "편도";
+	}
+	$.post("./schedual.sc",{lea_city:dep, arr_city:arr, lea_time:lea_time, arr_time:arr_time, sig:sig},function(result){
+		$('.ajax_aa').html(result);
 	});
 }
 
@@ -67,7 +71,7 @@ function click_search(){
 <style type="text/css">
 #h3_type01 {
 	color: #5e14cc;
-	background: url('images/bg/bg_arrow4.gif') no-repeat 114px 16px;
+	background: url('./asia_sub2/images/bg/bg_arrow4.gif') no-repeat 114px 16px;
 	
 }
 
@@ -113,7 +117,7 @@ display: block; */
 
 .notice li {
 	line-height: 20px;
-	background: url("images/bl/bl_ck.gif") no-repeat 0px 5px;
+	background: url("./asia_sub2/images/bl/bl_ck.gif") no-repeat 0px 5px;
 	padding: 0 0 0 14px;
 	font-size: 11px;
 	color: #333;
@@ -180,7 +184,7 @@ display: block; */
 	margin: 0 auto;
 	width: 1440px;
 	height: 30px;
-	background: url("img/bg_location.jpg") no-repeat center bottom;
+	background: url("./asia_sub2/img/bg_location.jpg") no-repeat center bottom;
 }
 .location {
 	margin: 0 auto;
@@ -217,7 +221,7 @@ display: block; */
 }
 
 .scheSrchBox {
-	background: url("images/bg/bgP_scheduleBottom.gif") no-repeat 0 bottom;
+	background: url("./asia_sub2/images/bg/bgP_scheduleBottom.gif") no-repeat 0 bottom;
 	margin: -1px 0 0 0;
 }
 
@@ -323,8 +327,8 @@ width:180px;
 												<span class="span-select" style="height: 23px;"> <select
 													id="ul_Dom_DepAirport" name="ul_Dom_DepAirport"
 													title="선택하세요" >
-														<option value="ICN">서울(인천)</option>
-														<option value="GMP">서울(김포)</option>
+														<option value="ICN">인천</option>
+														<option value="GMP">김포</option>
 														<option value="KWJ" selected="selected">광주</option>
 														<option value="TAE">대구</option>
 														<option value="MWX">무안</option>
@@ -353,7 +357,7 @@ width:180px;
 												<span class="span-select" style="height: 23px;"> <select
 													id="ul_Dom_ArrAirport" name="ul_Dom_ArrAirport"
 													title="선택하세요">
-														<option value="GMP" selected="selected">서울(김포)</option>
+														<option value="GMP" selected="selected">김포</option>
 														<option value="KWJ">광주</option>
 														<option value="PUS">부산</option>
 														<option value="RSU">여수</option>
@@ -401,39 +405,18 @@ style="padding: 4px 0 0 0; display: inline-block; *display: inline; *zoom: 1;">�
 								
 								<!--클릭시 나오는 테이블  -->
 								<tr><td colspan="4">
-								<div class="sear_tb" style="display:none;">
-								<table id="tbtb" border="1" style="width:98%;" >
-								
-가는 항공편 김포->제주<br> <!--가는항공편 김포, 제주는 디비후에 재조정  -->
-<tr><td>편명</td><td>출발일</td><td>출발시간</td>
-    <td>도착시간</td><td>비행시간</td><td>기종</td></tr>
-    
-</table>
+								<div class="sear_tb ajax_aa" style="display:none;">
 								
 								</div></td></tr>
 							<br>
 							<br>
-							
-<tr><td colspan="4">
-								<div class="sear_tb" style="display:none;">
-								<table id="tbtb2" border="1" style="width:98%;" >
-								
-오는 항공편 김포->제주<br> <!--가는항공편 김포, 제주는 디비후에 재조정  -->
-<tr><td>편명</td><td>출발일</td><td>출발시간</td>
-    <td>도착시간</td><td>비행시간</td><td>기종</td></tr>
-    
-   
-    </table>
-								
-								</div></td></tr>
-						
 						
 						<!-- 테이블선 -->
 						<tr>
 							<td colspan="4">
 								<div class="Sbtn_TType04_3" id="dom_scheSrch">
 									<a href="#none" onclick="click_search();"><img
-										src="images/btn/searchbutton.PNG"></a>
+										src="./asia_sub2/images/btn/searchbutton.PNG"></a>
 										<div>
 										
 										
