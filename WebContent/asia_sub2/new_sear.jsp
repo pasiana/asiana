@@ -228,7 +228,7 @@ display: block; */
 #search_table {
 margin-top:-100px;
 	position: relative; 
-	font-size: 15px;
+	font-size: 15px; 
 }
 
 #search_table tr{
